@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["unkn",["G is the seventh letter of the English alphabet, and a vocal consonant. It has two sounds; one simple, as in gave go gull; the other compound (like that of j), as in gem gin dingy. See Guide to Pronunciation, §§ 231-6, 155, 176, 178, 179, 196, 211, 246.","G is the name of the fifth tone of the natural or model scale; -- called also sol by the Italians and French. It was also originally used as the treble clef, and has gradually changed into the character represented in the margin. See Clef. G♯ (G sharp) is a tone intermediate between G and A."]]],"a":[],"f":141}};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("g",o);
+})();

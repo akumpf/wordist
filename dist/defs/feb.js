@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_rifacient":{"e":[["adje",["Febrific."]]],"a":[],"f":0},"_riferous":{"e":[["adje",["Causing fever; as, a febriferous locality."]]],"a":[],"f":0},"_rific":{"e":[["adje",["Producing fever."]]],"a":[],"f":1},"_rifugal":{"e":[["adje",["Having the quality of mitigating or curing fever."]]],"a":[],"f":2},"_rifuge":{"e":[["noun",["A medicine serving to mitigate or remove fever."]]],"a":["febrifuges"],"f":13},"_rile":{"e":[["adje",["Pertaining to fever; indicating fever, or derived from it; as, febrile symptoms; febrile action."]]],"a":[],"f":10},"_ruary":{"e":[["noun",["The second month in the year, said to have been introduced into the Roman calendar by Numa. In common years this month contains twenty-eight days; in the bissextile, or leap year, it has twenty-nine days."]]],"a":["februaries"],"f":14},"_rifuges":"_febrifuge","_ruaries":"_february"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("feb",o);
+})();

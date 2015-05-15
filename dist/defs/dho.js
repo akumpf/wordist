@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_le":{"e":[["noun",["A fierce, wild dog (Canis Dukhunensis), found in the mountains of India. It is remarkable for its propensity to hunt the tiger and other wild animals in packs."]]],"a":["dholes"],"f":1},"_ny":{"e":[["noun",["A Ceylonese boat. See Doni."]]],"a":["dhonies"],"f":0},"_orra":{"e":[["noun",["Indian millet. See Durra."]]],"a":["dhoorras"],"f":0},"_w":{"e":[["noun",["A coasting vessel of Arabia, East Africa, and the Indian Ocean. It has generally but one mast and a lateen sail."]]],"a":["dhows"],"f":1},"_les":"_dhole","_nies":"_dhony","_orras":"_dhoorra","_ws":"_dhow"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dho",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Any one of several species of large marine gastropods belonging to the genus Yetus, or Cymba; a boat shell."]],["adve",["In addition; further; besides; over and above; still.","At the same time; by continuance from a former state; still.","Up to the present time; thus far; hitherto; until now; -- and with the negative, not yet, not up to the present time; not as soon as now; as, Is it time to go? Not yet . See As yet, under As conj.","Before some future time; before the end; eventually; in time.","Even; -- used emphatically."]],["conj",["Nevertheless; notwithstanding; however."]]],"a":["yets"],"f":86},"_s":"_yet"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("yet",o);
+})();

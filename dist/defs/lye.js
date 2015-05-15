@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["A strong caustic alkaline solution of potassium salts, obtained by leaching wood ashes. It is much used in making soap, etc.","Sodium hydroxide or potassium hydroxide, or a concentrated aqueous solution of either compound.","A short side line, connected with the main line; a turn-out; a siding."]]],"a":["lyes"],"f":9},"_ncephala":{"e":[["noun",["A group of Mammalia, including the marsupials and monotremes; -- so called because the corpus callosum is rudimentary."]]],"a":["lyencephalas"],"f":1},"_ncephalous":{"e":[["adje",["Pertaining to, or characteristic of, the Lyencephala."]]],"a":[],"f":0},"_rman":{"e":[["noun",["The cicada."]]],"a":["lyermen"],"f":0},"_s":"_lye","_ncephalas":"_lyencephala","_rmen":"_lyerman"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("lye",o);
+})();

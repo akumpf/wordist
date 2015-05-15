@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_rdines":{"e":[["noun",["An order of Brachiopoda; the Lyopomata. See Brachiopoda."]]],"a":["ecardineses"],"f":1},"_rte":{"e":[["noun",["A game at cards, played usually by two persons, in which the players may discard any or all of the cards dealt and receive others from the pack.","A game at cards for two persons, with 32 cards, ranking K, Q, J, A, 10, 9, 8, 7. Five cards are dealt each player, and the 11th turned as trump. Five points constitute a game."]]],"a":["Ecartes"],"f":0},"_udate":{"e":[["adje",["Without a tail or spur.","Tailless."]]],"a":[],"f":0},"_rdineses":"_ecardines","_rtes":"_ecarte"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("eca",o);
+})();

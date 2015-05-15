@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_bene_esse":{"e":[["unkn",["Of well being; of formal sufficiency for the time; conditionally; provisionally."]]],"a":[],"f":0},"_facto":{"e":[["unkn",["Actually; in fact; in reality; as, a king de facto, -- distinguished from a king de jure, or by right."]]],"a":[],"f":2},"_jure":{"e":[["unkn",["By right; of right; by law; -- often opposed to de facto."]]],"a":[],"f":2},"_rigueur":{"e":[["unkn",["According to strictness (of etiquette, rule, or the like); obligatory; strictly required."]]],"a":[],"f":0}};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("de_",o);
+})();

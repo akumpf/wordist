@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Color or shade of color; tint; dye.","A predominant shade in a composition of primary colors; a primary color modified by combination with others.","A shouting or vociferation."]]],"a":["hues"],"f":42},"_d":{"e":[["adje",["Having color; -- usually in composition; as, bright-hued; many-hued."]]],"a":[],"f":1},"_less":{"e":[["adje",["Destitute of color."]]],"a":[],"f":0},"_r":{"e":[["noun",["One who cries out or gives an alarm; specifically, a balker; a conder. See Balker."]]],"a":["huers"],"f":1},"_s":"_hue","_rs":"_huer"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("hue",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["A slattern.","The name of a female fairy, esp. the queen of the fairies; and hence, sometimes, any fairy."]]],"a":["mabs"],"f":1},"_by":{"e":[["noun",["A spirituous liquor or drink distilled from potatoes; -- used in the Barbadoes."]]],"a":["mabbies"],"f":0},"_olo":{"e":[["noun",["A kind of persimmon tree (Diospyros discolor) from the Philippine Islands, now introduced into the East and West Indies. It bears an edible fruit as large as a quince."]]],"a":["maboloes"],"f":0},"_s":"_mab","_bies":"_mabby","_oloes":"_mabolo"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("mab",o);
+})();

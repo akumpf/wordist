@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_locerque":{"e":[["noun",["The pentail."]]],"a":["ptilocerques"],"f":0},"_lopaedes":{"e":[["noun",["Same as Dasypaedes."]]],"a":["ptilopaedeses"],"f":0},"_lopaedic":{"e":[["adje",["Having nearly the whole surface of the skin covered with down; dasypaedic; -- said of the young of certain birds."]]],"a":[],"f":1},"_lopteri":{"e":[["noun",["An order of birds including only the penguins."]]],"a":["ptilopteris"],"f":1},"_losis":{"e":[["noun",["Same as Pterylosis."]]],"a":["ptiloses"],"f":0},"_san":{"e":[["noun",["A decoction of barley with other ingredients; a farinaceous drink.","An aqueous medicine, containing little, if any, medicinal agent; a tea or tisane."]]],"a":["ptisans"],"f":1},"_locerques":"_ptilocerque","_lopaedeses":"_ptilopaedes","_lopteris":"_ptilopteri","_loses":"_ptilosis","_sans":"_ptisan"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("pti",o);
+})();

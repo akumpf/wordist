@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_calli":{"e":[["noun",["Literally, God's house; a temple, usually of pyramidal form, such as were built by the aborigines of Mexico, Yucatan, etc."]]],"a":["teocallis"],"f":0},"_sinte":{"e":[["noun",["A large grass (Euchlaena luxurians) closely related to maize. It is native of Mexico and Central America, but is now cultivated for fodder in the Southern United States and in many warm countries. Called also Guatemala grass."]]],"a":["teosintes"],"f":1},"_callis":"_teocalli","_sintes":"_teosinte"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("teo",o);
+})();

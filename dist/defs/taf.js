@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ferer":{"e":[["noun",["See Taffrail."]]],"a":["tafferers"],"f":0},"_feta":{"e":[["noun",["A fine, smooth stuff of silk, having usually the wavy luster called watering. The term has also been applied to different kinds of silk goods, from the 16th century to modern times."]]],"a":["taffetas"],"f":3},"_frail":{"e":[["noun",["The upper part of a ship's stern, which is flat like a table on the top, and sometimes ornamented with carved work; the rail around a ship's stern."]]],"a":["taffrails"],"f":2},"_fy":{"e":[["noun",["A kind of candy made of molasses or brown sugar boiled down and poured out in shallow pans.","Flattery; soft phrases."]]],"a":["taffies"],"f":1},"_ia":{"e":[["noun",["A variety of rum."]]],"a":["tafias"],"f":0},"_ferers":"_tafferer","_fetas":"_taffeta","_frails":"_taffrail","_fies":"_taffy","_ias":"_tafia"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("taf",o);
+})();

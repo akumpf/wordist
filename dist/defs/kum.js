@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ish":{"e":[["noun",["See Koumiss."]]],"a":["kumishes"],"f":0},"_mel":{"e":[["noun",["A Russian and German liqueur, consisting of a sweetened spirit flavored with caraway seeds."]]],"a":["kummels"],"f":0},"_quat":{"e":[["noun",["any of several trees or shrubs of the genus Fortunellaformerly Citrus) of the rue family (Rutaceae) (especially Citrus Japonica) growing in China and Japan bearing small orange-colored edible fruits with thick sweet-flavored skin and sour pulp; also, any of the small acid, orange-colored citrus fruits of such plants, used mostly for preserves."]]],"a":["kumquats"],"f":3},"_ishes":"_kumish","_mels":"_kummel","_quats":"_kumquat"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kum",o);
+})();

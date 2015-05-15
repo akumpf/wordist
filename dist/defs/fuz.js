@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["noun",["A tube, filled with combustible matter, for exploding a shell, etc. See Fuse n."]]],"a":["fuzes"],"f":1},"_ee":{"e":[["noun",["a friction match with a large head that will stay alight in the wind.","any device by which an explosive charge is ignited."]]],"a":["fuzees"],"f":1},"_z":{"e":[["noun",["Fine, light particles or fibers; loose, volatile matter."]],["verb",["To fly off in minute particles."]]],"a":["fuzzs","fuzzed","fuzzing"],"f":2},"_zy":{"e":[["adje",["Not firmly woven; that ravels.","Furnished with fuzz; having fuzz; like fuzz; as, the fuzzy skin of a peach."]]],"a":[],"f":0},"_es":"_fuze","_ees":"_fuzee","_zs":"_fuzz","_zed":"_fuzz","_zing":"_fuzz"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("fuz",o);
+})();

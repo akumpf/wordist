@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_har":{"e":[["noun",["A genus of plants found in the fresh-water ponds or lakes of Europe, Asia, and North America; the yellow water lily. Cf. Nymphaea."]]],"a":["nuphars"],"f":4},"_rin":{"e":[["noun",["A nonsteroidal anti-inflammatory medicine used to relieve the pain of arthritis and as an analgesic and antipyretic; Advil and Motrin and Nuprin are trademarks of brands of ibuprofen tablets."]]],"a":["nuprins"],"f":2},"_tial":{"e":[["adje",["Of or pertaining to marriage; done or used at a wedding; as, nuptial rites and ceremonies."]],["noun",["Marriage; wedding; nuptial ceremony; -- now only in the plural."]]],"a":["nuptials"],"f":10},"_hars":"_nuphar","_rins":"_nuprin","_tials":"_nuptial"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("nup",o);
+})();

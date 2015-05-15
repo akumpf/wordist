@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_an":{"e":[["noun",["The first month of the Jewish ecclesiastical year, formerly answering nearly to the month of April, now to March, of the Christian calendar. See Abib."]]],"a":["nisans"],"f":2},"_i":{"e":[["conj",["Unless; if not; -- used mostly in law."]]],"a":[],"f":2},"_us":{"e":[["noun",["A striving; an effort; a conatus.","The periodic procreative desire manifested in the spring by birds, etc.","The contraction of the diaphragm and abdominal muscles to evacuate feces or urine."]]],"a":["nisuses"],"f":0},"_ans":"_nisan","_uses":"_nisus"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("nis",o);
+})();

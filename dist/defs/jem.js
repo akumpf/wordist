@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_idar":{"e":[["noun",["The chief or leader of a band or body of persons; esp., in the native army of India, an officer of a rank corresponding to that of lieutenant in the English army."]]],"a":["jemidars"],"f":1},"_lah_goat":{"e":[["unkn",["The jharal."]]],"a":[],"f":0},"_miness":{"e":[["noun",["Spruceness."]]],"a":["jemminesses"],"f":0},"_my":{"e":[["adje",["Spruce."]],["noun",["A short crowbar. See Jimmy.","A baked sheep's head."]]],"a":["jemmies"],"f":0},"_idars":"_jemidar","_minesses":"_jemminess","_mies":"_jemmy"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("jem",o);
+})();

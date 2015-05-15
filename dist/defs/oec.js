@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_oid":{"e":[["noun",["The colorless porous framework, or stroma, of red blood corpuscles from which the zooid, or hemoglobin and other substances of the corpuscles, may be dissolved out."]]],"a":["OEcoids"],"f":0},"_ology":{"e":[["noun",["The various relations of animals and plants to one another and to the outer world; -- now more commonly spelled ecology."]]],"a":["OEcologies"],"f":0},"_onomical":{"e":[["adje",["See Economical."]]],"a":[],"f":0},"_onomics":{"e":[["noun",["See Economics."]]],"a":["OEconomicses"],"f":0},"_onomy":{"e":[["noun",["See Economy."]]],"a":["OEconomies"],"f":0},"_umenical":{"e":[["adje",["See Ecumenical."]]],"a":[],"f":0},"_oids":"_oecoid","_ologies":"_oecology","_onomicses":"_oeconomics","_onomies":"_oeconomy"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oec",o);
+})();

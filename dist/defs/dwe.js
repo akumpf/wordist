@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ll":{"e":[["verb",["To abide; to remain; to continue.","To abide as a permanent resident, or for a time; to live in a place; to reside.","To inhabit."]]],"a":["dwelt","dwells","dwelling"],"f":154},"_ller":{"e":[["noun",["An inhabitant; a resident; as, a cave dweller ."]]],"a":["dwellers"],"f":16},"_lling":{"e":[["noun",["Habitation; place or house in which a person lives; abode; domicile."]]],"a":["dwellings"],"f":112},"_lt":{"e":[["unkn",["of Dwell."]]],"a":[],"f":9},"_lls":"_dwell","_llers":"_dweller","_llings":"_dwelling"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dwe",o);
+})();

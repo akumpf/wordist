@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["verb",["To give."]]],"a":[],"f":0},"_r-eagle":{"e":[["noun",["A bird referred to in the Bible (Lev. xi. 18and Deut. xiv. 17) as unclean, probably the Egyptian vulture (Neophron percnopterus)."]]],"a":["gier-eagles"],"f":0},"_r-falcon":{"e":[["noun",["The gyrfalcon."]]],"a":["gier-falcons"],"f":0},"_seckite":{"e":[["noun",["A mineral occurring in greenish gray six-sided prisms, having a greasy luster. It is probably a pseudomorph after elaeolite."]]],"a":["gieseckites"],"f":0},"_r-eagles":"_gier-eagle","_r-falcons":"_gier-falcon","_seckites":"_gieseckite"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("gie",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ania":{"e":[["noun",["A genus of grasses including Indian rice. See Indian rice, under Rice."]]],"a":["zizanias"],"f":0},"_el":{"e":[["noun",["The suslik."]]],"a":["zizels"],"f":0},"_ith":{"e":[["noun",["The tassels of twisted cords or threads on the corners of the upper garment worn by strict Jews. The Hebrew for this word is translated in both the Authorized and Revised Versions (Deut. xxii. 12) by the word “fringes.”"]]],"a":["ziziths"],"f":1},"_anias":"_zizania","_els":"_zizel","_iths":"_zizith"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ziz",o);
+})();

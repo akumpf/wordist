@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_il":{"e":[["noun",["Nothing."]]],"a":["nihils"],"f":0},"_ilism":{"e":[["noun",["Nothingness; nihility.","The doctrine that nothing can be known; scepticism as to all knowledge and all reality.","The theories and practices of the Nihilists."]]],"a":["nihilisms"],"f":2},"_ilist":{"e":[["noun",["One who advocates the doctrine of nihilism; one who believes or teaches that nothing can be known, or asserted to exist.","A member of a secret association (esp. in Russia), which is devoted to the destruction of the present political, religious, and social institutions."]]],"a":["nihilists"],"f":1},"_ilistic":{"e":[["adje",["Of, pertaining to, or characterized by, nihilism."]]],"a":[],"f":0},"_ility":{"e":[["noun",["Nothingness; a state of being nothing."]]],"a":["nihilities"],"f":5},"_ils":"_nihil","_ilisms":"_nihilism","_ilists":"_nihilist","_ilities":"_nihility"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("nih",o);
+})();

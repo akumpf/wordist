@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_nymin":{"e":[["noun",["A principle or mixture of principles derived from Euonymus atropurpureus, or spindle tree."]]],"a":["euonymins"],"f":0},"_nymus":{"e":[["noun",["A genus of small European and American trees; the spindle tree. The bark is used as a cathartic."]]],"a":["euonymuses"],"f":3},"_rnithes":{"e":[["noun",["The division of Aves which includes all the typical birds, or all living birds except the penguins and birds of ostrichlike form."]]],"a":["euornitheses"],"f":0},"_smitte":{"e":[["noun",["A fossil resin, so called from its strong, peculiar, pleasant odor."]]],"a":["euosmittes"],"f":0},"_nymins":"_euonymin","_nymuses":"_euonymus","_rnitheses":"_euornithes","_smittes":"_euosmitte"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("euo",o);
+})();

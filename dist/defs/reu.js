@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_nion":{"e":[["noun",["A second union; union formed anew after separation, secession, or discord; as, a reunion of parts or particles of matter; a reunion of parties or sects.","An assembling of persons who have been separated, as of a family, or the members of a disbanded regiment; an assembly so composed."]]],"a":["reunions"],"f":2},"_nite":{"e":[["verb",["To unite again; to join after separation or variance."]]],"a":["reunited","reuniting","reunites"],"f":7},"_nitedly":{"e":[["adve",["In a reunited manner."]]],"a":[],"f":0},"_nition":{"e":[["noun",["A second uniting."]]],"a":["reunitions"],"f":0},"_rge":{"e":[["verb",["To urge again."]]],"a":["reurged","reurging","reurges"],"f":0},"_nions":"_reunion","_nited":"_reunite","_niting":"_reunite","_nites":"_reunite","_nitions":"_reunition","_rged":"_reurge","_rging":"_reurge","_rges":"_reurge"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("reu",o);
+})();

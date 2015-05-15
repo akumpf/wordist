@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["adje",["Other; one or something beside; as, Who else is coming? What else shall I give? Do you expect anything else?"]],["adve",["Besides; except that mentioned; in addition; as, nowhere else; no one else.","Otherwise; in the other, or the contrary, case; if the facts were different."]]],"a":[],"f":163},"_ewhere":{"e":[["adve",["In any other place; as, these trees are not to be found elsewhere .","In some other place; in other places, indefinitely; as, it is reported in town and elsewhere ."]]],"a":[],"f":49},"_ewhither":{"e":[["adve",["To some, or any, other place; as, you will have to go elsewhither for it."]]],"a":[],"f":0},"_ewise":{"e":[["adve",["Otherwise."]]],"a":[],"f":0},"_in":{"e":[["noun",["A shoemaker's awl."]]],"a":["elsins"],"f":0},"_ins":"_elsin"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("els",o);
+})();

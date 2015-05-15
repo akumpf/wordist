@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_l":{"e":[["unkn",["Vars. of Odal, etc.; property held by udal, or allodial, rightObs. exc. in Shetland and the Orkney Islands, where udal designates a freehold, land held in fee simple without any charter and free of any feudal character."]],["adje",["Allodial; -- a term used in Finland, Shetland, and Orkney. See Allodial."]]],"a":[],"f":2},"_ler":{"e":[["noun",["In the Shetland and Orkney Islands, one who holds property by udal, or allodial, right."]]],"a":["udalers"],"f":0},"_lers":"_udaler"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("uda",o);
+})();

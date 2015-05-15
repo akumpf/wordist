@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_inoor":{"e":[["noun",["A famous diamond, surrendered to the British crown on the annexation of the Punjab. According to Hindu legends, it was found in a Golconda mine, and has been the property of various Hindu and Persian rulers."]]],"a":["kohinoors"],"f":0},"_l":{"e":[["noun",["A mixture of soot and other ingredients, used by Egyptian and other Eastern women to darken the edges of the eyelids."]]],"a":["kohls"],"f":0},"_l-rabi":{"e":[["noun",["A variety of cabbage, in which the edible part is a large, turnip-shaped swelling of the stem, above the surface of the ground."]]],"a":["kohl-rabis"],"f":0},"_inoors":"_kohinoor","_ls":"_kohl","_l-rabis":"_kohl-rabi"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("koh",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_l":{"e":[["noun",["A place of confinement, especially for minor offenses or provisional imprisonment; a jail."]]],"a":["gaols"],"f":0},"_lbird":{"e":[["noun",["a person serving a prison sentence; a jail bird."]]],"a":["gaolbirds"],"f":0},"_lbreak":{"e":[["noun",["an escape from jail; same as jailbreak."]]],"a":["gaolbreaks"],"f":0},"_ler":{"e":[["noun",["The keeper of a jail. Same as Jailer."]]],"a":["gaolers"],"f":0},"_ls":"_gaol","_lbirds":"_gaolbird","_lbreaks":"_gaolbreak","_lers":"_gaoler"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("gao",o);
+})();

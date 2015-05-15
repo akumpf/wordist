@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["One of a class of water spirits, commonly described as of a mischievous disposition."]]],"a":["nices"],"f":1},"_ie":{"e":[["noun",["See Nix.","Nothing.","A piece of mail matter which cannot be delivered, either because no post office exists at the place to which is it addressed, or because there is no place of the name mentioned in the designated State, Territory, or the like."]]],"a":["nixies"],"f":1},"_ie_clerk":{"e":[["unkn",["A post-office clerk in charge of the nixies."]]],"a":[],"f":0},"_ies":"_nixie"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("nix",o);
+})();

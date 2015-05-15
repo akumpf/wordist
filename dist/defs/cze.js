@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ch":{"e":[["noun",["One of the Czechs.","The language of the Czechs (often called Bohemian), the harshest and richest of the Slavic languages.","Of or pertaining to Czechoslovakia or the Czech Republic."]]],"a":["czeches"],"f":1},"_chic":{"e":[["adje",["Of or pertaining to the Czechs."]]],"a":[],"f":0},"_choslovakian":{"e":[["adje",["Of or pertaining to Czechoslovakia.","Of, pertaining to, or characteristic of the inhabitants of Czechoslovakia or the Czech Republic; as, the Czech population."]],["noun",["a native or inhabitant of Czechoslovakia."]]],"a":["czechoslovakians"],"f":1},"_chs":{"e":[["noun",["The most westerly branch of the great Slavic family of nations, numbering now more than 6,000,000, and found principally in Bohemia and Moravia."]]],"a":["czechses"],"f":4},"_ches":"_czech","_choslovakians":"_czechoslovakian","_chses":"_czechs"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("cze",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_armonic":{"e":[["adje",["Producing mathematically perfect harmony or concord; sweetly or perfectly harmonious."]]],"a":[],"f":0},"_emerism":{"e":[["noun",["The theory, held by Euhemerus, that the gods of mythology were but deified mortals, and their deeds only the amplification in imagination of human acts."]]],"a":["euhemerisms"],"f":3},"_emerist":{"e":[["noun",["One who advocates euhemerism."]]],"a":["euhemerists"],"f":0},"_emeristic":{"e":[["adje",["Of or pertaining to euhemerism."]]],"a":[],"f":0},"_emerize":{"e":[["verb",["To interpret (mythology) on the theory of euhemerism."]]],"a":["euhemerized","euhemerizing","euhemerizes"],"f":0},"_emerisms":"_euhemerism","_emerists":"_euhemerist","_emerized":"_euhemerize","_emerizing":"_euhemerize","_emerizes":"_euhemerize"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("euh",o);
+})();

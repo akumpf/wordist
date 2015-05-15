@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ba":{"e":[["noun",["The small and nearly cubical stone building, in the court of the Great Mosque at Mecca, toward which all Mohammedans must pray. It contains a sacred black stone, believed by Mohammedans to be one of the precious stones of paradise, and to have been brought to Abraham when he was contructing the Kaaba, by the Angel Gabriel. The Kaaba itself predates Mohammed, having been a pantheon which contained Arab idols, which were destroyed by Mohammed."]]],"a":["kaabas"],"f":0},"_ma":{"e":[["noun",["The hartbeest."]]],"a":["kaamas"],"f":0},"_bas":"_kaaba","_mas":"_kaama"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kaa",o);
+})();

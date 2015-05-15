@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["unkn",["the preterit of Eat."]],["noun",["The goddess of mischievous folly; also, in later poets, the goddess of vengeance."]]],"a":["ates"],"f":10},"_chnic":{"e":[["adje",["Without technical or artistic knowledge."]]],"a":[],"f":0},"_les":{"e":[["noun",["A genus of American monkeys with prehensile tails, and having the thumb wanting or rudimentary. See Spider monkey, and Coaita."]]],"a":["ateleses"],"f":4},"_lets_sauce":{"e":[["unkn",["A sauce (such as egg and bread crumbs) used for covering bits of meat, small birds, or fish, strung on skewers for frying."]]],"a":[],"f":0},"_lier":{"e":[["noun",["A workshop; a studio."]]],"a":["ateliers"],"f":0},"_llan":{"e":[["adje",["Of or pertaining to Atella, in ancient Italy; as, Atellan plays; farcical; ribald."]]],"a":[],"f":0},"_s":"_ate","_leses":"_ateles","_liers":"_atelier","_r":"_eat"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ate",o);
+})();

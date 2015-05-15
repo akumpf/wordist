@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["The bitter vetch (Ervum Ervilia)."]]],"a":["erses"],"f":0},"_e":{"e":[["noun",["A name sometimes given to that dialect of the Celtic which is spoken in the Highlands of Scotland; -- called, by the Highlanders, Gaelic."]],["adje",["Of or pertaining to the Celtic race in the Highlands of Scotland, or to their language."]]],"a":["erses"],"f":1},"_h":{"e":[["noun",["See Arrish."]]],"a":["ershes"],"f":0},"_t":{"e":[["adve",["First.","Previously; before; formerly; heretofore."]]],"a":[],"f":0},"_twhile":{"e":[["adve",["Till then or now; heretofore; formerly."]]],"a":[],"f":0},"_es":"_erse","_hes":"_ersh"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ers",o);
+})();

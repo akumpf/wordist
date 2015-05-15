@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["noun",["A small mass of dough baked; especially, a thin loaf from unleavened dough; as, an oatmeal cake; johnnycake .","A sweetened composition of flour and other ingredients, leavened or unleavened, baked in a loaf or mass of any size or shape.","A thin wafer-shaped mass of fried batter; a griddlecake or pancake; as buckwheat cakes.","A mass of matter concreted, congealed, or molded into a solid mass of any form, esp. into a form rather flat than high; as, a cake of soap; an ague cake ."]],["verb",["To form into a cake, or mass.","To concrete or consolidate into a hard mass, as dough in an oven; to coagulate.","To cackle as a goose."]]],"a":["cakes","caked","caking"],"f":111},"_ing_coal":{"e":[["unkn",["See Coal."]]],"a":[],"f":0},"_es":"_cake","_ed":"_cake","_ing":"_cake"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("cak",o);
+})();

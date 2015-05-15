@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_er":{"e":[["noun",["The armpit; also, the arm."]]],"a":["oxters"],"f":0},"_ongue":{"e":[["noun",["A widespread European weed (Picris echioides formerly Helminthia echioides) with spiny tongue-shaped leaves and yellow flowers. The name is applied to several plants, from the shape and roughness of their leaves; as, Anchusa officinalis, a kind of bugloss, and Helminthia echioides, both European herbs. It has been naturalized in the U. S."]]],"a":["oxtongues"],"f":1},"_ers":"_oxter","_ongues":"_oxtongue"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oxt",o);
+})();

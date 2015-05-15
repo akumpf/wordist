@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_amb":{"e":[["noun",["A diiambus."]]],"a":["diiambs"],"f":0},"_ambus":{"e":[["noun",["A double iambus; a foot consisting of two iambuses (� � � �)."]]],"a":["diiambuses"],"f":1},"_odide":{"e":[["noun",["A compound of a binary type containing two atoms of iodine; -- called also biniodide."]]],"a":["diiodides"],"f":1},"_odotyrosine":{"e":[["noun",["a chemical substance consisting of tyrosine with two hydrogen atoms on the benzene ring replaced by iodine atoms."]]],"a":["diiodotyrosines"],"f":0},"_satogen":{"e":[["noun",["A red crystalline nitrogenous substance of artificial production, which by reduction passes directly to indigo."]]],"a":["diisatogens"],"f":0},"_ambs":"_diiamb","_ambuses":"_diiambus","_odides":"_diiodide","_odotyrosines":"_diiodotyrosine","_satogens":"_diisatogen"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dii",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["a pimple."]]],"a":["zits"],"f":0},"_her":{"e":[["noun",["An instrument of music used in Austria and Germany. It has from thirty to forty wires strung across a shallow sounding-board, which lies horizontally on a table before the performer, who uses both hands in playing on it. Not to be confounded with the old lute-shaped cittern, or cithern"]]],"a":["zithers","zitherlike"],"f":4},"_tern":{"e":[["noun",["See Cittern."]]],"a":["zitterns"],"f":0},"_s":"_zit","_hers":"_zither","_herlike":"_zither","_terns":"_zittern"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("zit",o);
+})();

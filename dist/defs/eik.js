@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ing":{"e":[["noun",["See Eking."]]],"a":["eikings"],"f":0},"_on":{"e":[["noun",["An image or effigy; -- used rather in an abstract sense, and rarely for a work of art.","an ikon."]]],"a":["eikons"],"f":0},"_onogen":{"e":[["noun",["The sodium salt of a sulphonic acid of a naphthol, C10H5(OH)(NH2)SO3Na used as a developer."]]],"a":["eikonogens"],"f":0},"_osane":{"e":[["noun",["A solid hydrocarbon, C20H42, of the paraffin series, of artificial production, and also probably occurring in petroleum."]]],"a":["eikosanes"],"f":0},"_osylene":{"e":[["noun",["A liquid hydrocarbon, C20H38, of the acetylene series, obtained from brown coal."]]],"a":["eikosylenes"],"f":0},"_ings":"_eiking","_ons":"_eikon","_onogens":"_eikonogen","_osanes":"_eikosane","_osylenes":"_eikosylene"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("eik",o);
+})();

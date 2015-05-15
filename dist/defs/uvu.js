@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_la":{"e":[["noun",["The pendent fleshy lobe in the middle of the posterior border of the soft palate."]]],"a":["uvulas"],"f":8},"_lar":{"e":[["adje",["Of or pertaining to a uvula."]]],"a":[],"f":0},"_latome":{"e":[["noun",["An instrument for removing the uvula."]]],"a":["uvulatomes"],"f":0},"_latomy":{"e":[["noun",["The operation of removing the uvula."]]],"a":["uvulatomies"],"f":0},"_litis":{"e":[["noun",["Inflammation of the uvula."]]],"a":["uvulitis"],"f":0},"_las":"_uvula","_latomes":"_uvulatome","_latomies":"_uvulatomy"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("uvu",o);
+})();

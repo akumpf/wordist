@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["verb",["To render turbid or muddy; to stir up; to roil.","To stir up in feelings; to make angry; to vex."]]],"a":["riled","riling","riles"],"f":0},"_ievo":{"e":[["noun",["Same as Relief n., 5."]]],"a":["rilievoes"],"f":8},"_l":{"e":[["noun",["A very small brook; a streamlet.","See Rille."]],["verb",["To run a small stream."]]],"a":["rills","rilled","rilling"],"f":3},"_le":{"e":[["noun",["One of certain narrow, crooked valleys seen, by aid of the telescope, on the surface of the moon."]]],"a":["rilles"],"f":1},"_let":{"e":[["noun",["A little rill."]]],"a":["rillets"],"f":0},"_y":{"e":[["adje",["Roily."]]],"a":[],"f":0},"_ed":"_rile","_ing":"_rile","_es":"_rile","_ievoes":"_rilievo","_ls":"_rill","_led":"_rill","_ling":"_rill","_les":"_rille","_lets":"_rillet"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ril",o);
+})();

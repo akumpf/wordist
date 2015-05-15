@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["noun",["An imaginary monster, or hideous giant of fairy tales, who lived on human beings; hence, any frightful giant; a cruel monster."]]],"a":["ogres"],"f":5},"_eish":{"e":[["adje",["Resembling an ogre; having the character or appearance of an ogre; suitable for an ogre."]]],"a":[],"f":0},"_eism":{"e":[["noun",["The character or manners of an ogre."]]],"a":["ogreisms"],"f":0},"_ess":{"e":[["noun",["A female ogre."]]],"a":["ogresses"],"f":0},"_es":"_ogre","_eisms":"_ogreism","_esses":"_ogress"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ogr",o);
+})();

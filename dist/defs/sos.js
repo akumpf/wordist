@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["unkn",["The letters signified by the signal ( . . . --- . . . ) prescribed by the International Radiotelegraphic Convention of 1912 for use by ships in distress."]]],"a":[],"f":0},"_s":{"e":[["noun",["A heavy fall.","Anything dirty or muddy; a dirty puddle."]]],"a":["sosses"],"f":0},"_tenuto":{"e":[["adje",["Sustained; -- applied to a movement or passage the sounds of which are to sustained to the utmost of the nominal value of the time; also, to a passage the tones of which are to be somewhat prolonged or protacted."]]],"a":[],"f":0},"_ses":"_soss"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("sos",o);
+})();

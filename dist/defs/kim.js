@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_bo":{"e":[["adje",["Crooked; arched; bent."]]],"a":[],"f":0},"_merian":{"e":[["adje",["See Cimmerian."]]],"a":[],"f":0},"_ono":{"e":[["noun",["A kind of loose robe or gown tied with a sash, worn as a traditional outer garment by Japanese women and men. Women may wear it with a broad sash called an obi, having a large bow in the back. At present (1998), most Japanese wear it only at home or on ceremonial occasions, western-style clothing being more common in the workplace.","A similar gown worn as a dressing gown by women of Western nations."]]],"a":["kimonos"],"f":1},"_ry":{"e":[["noun",["See Cymry."]]],"a":["kimries"],"f":0},"_onos":"_kimono","_ries":"_kimry"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kim",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_t":{"e":[["noun",["Weight; ponderousness.","The greater part or bulk of anything; as, the heft of the crop was spoiled.","A number of sheets of paper fastened together, as for a notebook; also, a part of a serial publication."]],["verb",["To heave up; to raise aloft.","To prove or try the weight of by raising."]]],"a":["hefts","hefted","hefting"],"f":0},"_ty":{"e":[["adje",["Moderately heavy.","Strong; muscular; -- of people.","Substantial; large; as, a hefty increase in annual profits."]]],"a":[],"f":0},"_ts":"_heft","_ted":"_heft","_ting":"_heft"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("hef",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_enmast":{"e":[["noun",["mizzenmast."]]],"a":["mizenmasts"],"f":0},"_zen":{"e":[["adje",["Hindmost; nearest the stern; as, the mizzen shrouds, sails, etc."]],["noun",["The hindmost of the fore and aft sails of a three-masted vessel; also, the spanker."]]],"a":["mizzens"],"f":4},"_zenmast":{"e":[["noun",["the third mast from the bow in a vessel having three or more masts; the after and shorter mast of a yawl, ketch, or dandy."]]],"a":["mizzenmasts"],"f":8},"_zle":{"e":[["verb",["To rain in very fine drops; to drizzle.","To take one's self off; to go."]],["noun",["Mist; fine rain."]]],"a":["mizzled","mizzling","mizzles"],"f":1},"_enmasts":"_mizenmast","_zens":"_mizzen","_zenmasts":"_mizzenmast","_zled":"_mizzle","_zling":"_mizzle","_zles":"_mizzle"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("miz",o);
+})();

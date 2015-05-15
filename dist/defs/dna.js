@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["abbreviation for deoxyribonucleic acid; -- more commonly used than the full name. See also RNA."]]],"a":["dnas","dna-containing","dna-rna"],"f":31},"__polymerase":{"e":[["noun",["an enzyme that catalyzes the formation of DNA from deoxyribonucleoside triphosphates. Cells contain several types of DNA polymerase, some of which are required for replication of DNA, and are indispensable for multipliation and division of cells."]]],"a":["dna polymerases"],"f":1},"_se":{"e":[["noun",["any of numerous enzymes that catalyze the breakdown of DNA into oligonucleotides or mononucleotides."]]],"a":["dnases"],"f":0},"_s":"_dna","_-containing":"_dna","_-rna":"_dna","__polymerases":"_dna_polymerase","_ses":"_dnase"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dna",o);
+})();

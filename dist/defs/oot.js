@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_heca":{"e":[["noun",["An egg case, especially those of many kinds of mollusks, and of some insects, as the cockroach. Cf. Ooecium."]]],"a":["oothecas"],"f":2},"_icoid":{"e":[["noun",["A half oviparous, or an oviparous, mammal; a marsupial or monotreme."]]],"a":["ooticoids"],"f":0},"_ype":{"e":[["noun",["The part of the oviduct of certain trematode worms in which the ova are completed and furnished with a shell."]]],"a":["ootypes"],"f":0},"_hecas":"_ootheca","_icoids":"_ooticoid","_ypes":"_ootype"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oot",o);
+})();

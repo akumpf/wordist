@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_dah":{"e":[["noun",["An inclosure constructed to entrap wild elephants; an elephant trap."]]],"a":["keddahs"],"f":0},"_ge":{"e":[["verb",["To move (a vessel) by carrying out a kedge in a boat, dropping it overboard, and hauling the vessel up to it."]],["noun",["A small anchor used whenever a large one can be dispensed with. See Kedge v. t., and Anchor n."]]],"a":["kedged","kedging","kedges"],"f":1},"_ger":{"e":[["noun",["A small anchor; a kedge."]]],"a":["kedgers"],"f":0},"_lock":{"e":[["noun",["See Charlock."]]],"a":["kedlocks"],"f":1},"_dahs":"_keddah","_ged":"_kedge","_ging":"_kedge","_ges":"_kedge","_gers":"_kedger","_locks":"_kedlock"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ked",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_asement":{"e":[["noun",["The operation performed with an ecraseur."]]],"a":["Ecrasements"],"f":0},"_aseur":{"e":[["noun",["An instrument intended to replace the knife in many operations, the parts operated on being severed by the crushing effect produced by the gradual tightening of a steel chain, so that hemorrhage rarely follows."]]],"a":["Ecraseurs"],"f":1},"_u":{"e":[["adje",["Having the color or appearance of unbleached stuff, as silk, linen, or the like."]]],"a":[],"f":0},"_asements":"_ecrasement","_aseurs":"_ecraseur"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ecr",o);
+})();

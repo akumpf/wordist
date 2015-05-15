@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ascent":{"e":[["adje",["Growing to or on something else."]]],"a":[],"f":0},"_ate":{"e":[["adje",["Grown to congenitally.","Growing together; -- said only of organic cohesion of unlike parts.","Growing with one side adherent to a stem; -- a term applied to the lateral zooids of corals and other compound animals."]]],"a":[],"f":5},"_ation":{"e":[["noun",["The adhesion or cohesion of different floral verticils or sets of organs."]]],"a":["adnations"],"f":1},"_ominal":{"e":[["adje",["Pertaining to an adnoun; adjectival; attached to a noun."]]],"a":[],"f":0},"_oun":{"e":[["noun",["An adjective, or attribute."]]],"a":["adnouns"],"f":1},"_ubilated":{"e":[["adje",["Clouded; obscured."]]],"a":[],"f":0},"_ations":"_adnation","_ouns":"_adnoun"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("adn",o);
+})();

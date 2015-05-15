@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_a":{"e":[["noun",["A kind of food, made from the almondlike seeds of the Irvingia Barteri, much used by natives of the west coast of Africa; -- called also dika bread."]]],"a":["dikas"],"f":0},"_e":{"e":[["noun",["A ditch; a channel for water made by digging.","An embankment to prevent inundations; a levee.","A wall of turf or stone.","A wall-like mass of mineral matter, usually an intrusion of igneous rocks, filling up rents or fissures in the original strata."]],["verb",["To surround or protect with a dike or dry bank; to secure with a bank.","To drain by a dike or ditch."]]],"a":["dikes","diked","diking"],"f":14},"_er":{"e":[["noun",["A ditcher.","One who builds stone walls; usually, one who builds them without lime."]]],"a":["dikers"],"f":0},"_as":"_dika","_es":"_dike","_ed":"_dike","_ing":"_dike","_ers":"_diker"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dik",o);
+})();

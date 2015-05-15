@@ -1,0 +1,4 @@
+(function(){
+ var o = ["a","abaft","aboard","aboon","about","above","across","adown","afore","after","against","along","amid","amidst","among","anenst","around","aslant","at","athwart","bating","before","behind","below","beneath","beside","besides","between","betwixt","beyond","but","by","concerning","cross","cum","dehors","despite","down","durante","during","except","for","foreby","forenenst","forth","from","'gainst","gin","in","inside","into","malgre","mauger","mid","midst","'mongst","near","nigh","notwithstanding","o'","of","off","on","onto","over","overthwart","par","past","pending","per","pro","regarding","respecting","rising","round","sans","senza","since","sine","through","throughout","thwart","till","to","touching","toward","under","underneath","until","unto","up","upon","uptill","versus","via","vice","while","with","within","without"];
+ if(!window.on_pos_cb) console.warn("on_pos_cb?"); else on_pos_cb("prep",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_l":{"e":[["noun",["The lime tree, or linden; -- called also teil tree."]]],"a":["teils"],"f":1},"_nd":{"e":[["noun",["A tithe."]]],"a":["teinds"],"f":0},"_nland":{"e":[["noun",["Land granted by the crown to a thane or lord."]]],"a":["teinlands"],"f":0},"_noscope":{"e":[["noun",["An instrument formed by combining prisms so as to correct the chromatic aberration of the light while linear dimensions of objects seen through the prisms are increased or diminished; -- called also prism telescope."]]],"a":["teinoscopes"],"f":0},"_ls":"_teil","_nds":"_teind","_nlands":"_teinland","_noscopes":"_teinoscope"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("tei",o);
+})();

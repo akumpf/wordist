@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_rial":{"e":[["adje",["Dotingly fond of, or servilely submissive to, a wife; uxorious; also, becoming a wife; pertaining to a wife."]]],"a":[],"f":0},"_ricidal":{"e":[["adje",["Of or pertaining to uxoricide; tending to uxoricide."]]],"a":[],"f":0},"_ricide":{"e":[["noun",["The murder of a wife by her husband.","One who murders his wife."]]],"a":["uxoricides"],"f":1},"_rious":{"e":[["adje",["Excessively fond of, or submissive to, a wife; being a dependent husband."]]],"a":["uxoriousness"],"f":2},"_ricides":"_uxoricide","_riousness":"_uxorious"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("uxo",o);
+})();

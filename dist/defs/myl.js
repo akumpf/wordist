@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_itta":{"e":[["noun",["The goddess of love and fertility and war; also called Ishtar; the counterpart of Ashtoreth and Astarte."]]],"a":["mylittas"],"f":1},"_odon":{"e":[["noun",["An extinct genus of large slothlike American edentates, allied to Megatherium."]]],"a":["mylodons"],"f":0},"_odontidae":{"e":[["noun",["A natural family of extinct South American edentates."]]],"a":["mylodontidaes"],"f":0},"_ohyoid":{"e":[["adje",["Pertaining to, or in the region of, the lower jaw and the hyoid apparatus; as, the mylohyoid nerve."]]],"a":[],"f":0},"_ittas":"_mylitta","_odons":"_mylodon","_odontidaes":"_mylodontidae"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("myl",o);
+})();

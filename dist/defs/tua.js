@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_tara":{"e":[["noun",["A large iguanalike reptile (Sphenodon punctatum) formerly common in New Zealand, but by 1900 confined to certain islets near the coast. It reaches a length of two and a half feet, is dark olive-green with small white or yellowish specks on the sides, and has yellow spines along the back, except on the neck. It is the only surviving member of the order Rhyncocephala. Also called tuatera and hatteria."]]],"a":["tuataras"],"f":2},"_tera":{"e":[["noun",["Same as tuatara."]]],"a":["tuateras"],"f":2},"_taras":"_tuatara","_teras":"_tuatera"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("tua",o);
+})();

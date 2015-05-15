@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_a-":{"e":[["unkn",["A prefix signifying ten. See Deca-."]]],"a":[],"f":0},"_abrist":{"e":[["noun",["A Decembrist."]]],"a":["dekabrists"],"f":1},"_agram":{"e":[["noun",["Same as Decagram."]]],"a":["dekagrams"],"f":0},"_aliter":{"e":[["noun",["Same as Decaliter."]]],"a":["dekaliters"],"f":0},"_ameter":{"e":[["noun",["Same as Decameter."]]],"a":["dekameters"],"f":0},"_astere":{"e":[["noun",["Same as Decastere."]]],"a":["dekasteres"],"f":0},"_le":{"e":[["noun",["See Deckle."]]],"a":["dekles"],"f":0},"_abrists":"_dekabrist","_agrams":"_dekagram","_aliters":"_dekaliter","_ameters":"_dekameter","_asteres":"_dekastere","_les":"_dekle"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("dek",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ophagus":{"e":[["unkn",["Same as Esophagus Esophageal, etc."]]],"a":[],"f":0},"_trian":{"e":[["adje",["Of or pertaining to the gadflies."]]],"a":[],"f":0},"_trual":{"e":[["adje",["Of or pertaining to sexual desire; -- mostly applied to brute animals; as, the oestrual period; oestrual influence."]]],"a":[],"f":1},"_truation":{"e":[["noun",["The state of being under oestrual influence, or of having sexual desire."]]],"a":["OEstruations"],"f":0},"_trus":{"e":[["noun",["A genus of gadflies. The species which deposits its larvae in the nasal cavities of sheep is oestrus ovis.","A vehement desire.","The periodical sexual impulse of animals; the period during which female animals are most receptive to males; heat; rut."]]],"a":["OEstruses"],"f":3},"_":"_o","_truations":"_oestruation","_truses":"_oestrus"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oes",o);
+})();

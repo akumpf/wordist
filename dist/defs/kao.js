@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_lin":{"e":[["noun",["A very pure white clay, ordinarily in the form of an impalpable powder, and used to form the paste of porcelain; China clay; porcelain clay. It is chiefly derived from the decomposition of common feldspar."]]],"a":["kaolins"],"f":3},"_linization":{"e":[["noun",["The process by which feldspar is changed into kaolin."]]],"a":["kaolinizations"],"f":0},"_linize":{"e":[["verb",["To convert into kaolin."]]],"a":["kaolinized","kaolinizing","kaolinizes"],"f":0},"_lins":"_kaolin","_linizations":"_kaolinization","_linized":"_kaolinize","_linizing":"_kaolinize","_linizes":"_kaolinize"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kao",o);
+})();

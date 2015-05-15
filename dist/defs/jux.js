@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_tapose":{"e":[["verb",["To place in juxtaposition."]]],"a":["juxtaposed","juxtaposing","juxtaposes"],"f":3},"_taposit":{"e":[["verb",["To place in close connection or contiguity; to juxtapose."]]],"a":["juxtaposited","juxtapositing","juxtaposits"],"f":0},"_taposition":{"e":[["noun",["A placing or being placed in nearness or contiguity, or side by side; as, a juxtaposition of words."]]],"a":["juxtapositions"],"f":6},"_taposed":"_juxtapose","_taposing":"_juxtapose","_taposes":"_juxtapose","_taposited":"_juxtaposit","_tapositing":"_juxtaposit","_taposits":"_juxtaposit","_tapositions":"_juxtaposition"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("jux",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ul":{"e":[["adje",["Oppressing with fear or horror; appalling; terrible; as, an awful scene.","Inspiring awe; filling with profound reverence, or with fear and admiration; fitted to inspire reverential fear; profoundly impressive.","Frightful; exceedingly bad; great; -- applied intensively; as, an awful bonnet; an awful boaster."]]],"a":[],"f":6},"_ully":{"e":[["adve",["In an awful manner; in a manner to fill with terror or awe; fearfully; reverently.","Very; excessively."]]],"a":[],"f":0},"_ulness":{"e":[["noun",["The quality of striking with awe, or with reverence; dreadfulness; solemnity; as, the awfulness of this sacred place."]]],"a":["awfulnesses"],"f":0},"_ulnesses":"_awfulness"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("awf",o);
+})();

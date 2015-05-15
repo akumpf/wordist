@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ist":{"e":[["noun",["A tense in the Greek language, which expresses an action as completed in past time, but leaves it, in other respects, wholly indeterminate."]]],"a":["aorists"],"f":1},"_istic":{"e":[["adje",["Indefinite; pertaining to the aorist tense."]]],"a":[],"f":0},"_ta":{"e":[["noun",["The great artery which carries the blood from the heart to all parts of the body except the lungs; the main trunk of the arterial system."]]],"a":["aortas"],"f":8},"_tal":{"e":[["adje",["of or pertaining to the aorta."]]],"a":[],"f":0},"_tic":{"e":[["adje",["Of or pertaining to the aorta."]]],"a":[],"f":3},"_titis":{"e":[["noun",["Inflammation of the aorta."]]],"a":["aortitis"],"f":0},"_ists":"_aorist","_tas":"_aorta"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("aor",o);
+})();

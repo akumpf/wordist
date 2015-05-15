@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_uit":{"e":[["noun",["A suit worn by aviators and astronauts, designed to counteract the effects of high accelerations experienced in aerial maneuvers, in particular to avoid unconsciousness; called also anti-g suit. It exerts force on the abdomen and legs to prevent blackouts by counteracting the tendency of blood to accumulate below the heart, thus reducing the supply to the brain, when the forces due to acceleration are directed from head to toe."]]],"a":["g suits"],"f":0},"_uits":"_g_suit"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("g_s",o);
+})();

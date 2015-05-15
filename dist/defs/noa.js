@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_chian":{"e":[["adje",["Of or pertaining to the patriarch Noah, or to his time."]]],"a":[],"f":2},"_h":{"e":[["noun",["A patriarch of Biblical history, in the time of the Deluge."]]],"a":["noahs"],"f":16},"_h~s_ark":{"e":[["noun",["The ship built by Noah according to God's command, as related in the bible.","A marine bivalve shell (Arca Noae), which somewhat resembles an ark, or ship, in form.","A child's toy, consisting of an ark-shaped box containing many different wooden animals.","Anything having a wide and representative assortment of people or objects of a particular class; as, the bar scene in Star Wars was a Noah's Ark of almost every imaginable alien form.."]]],"a":["noah's arks"],"f":1},"_hs":"_noah","_h~s_arks":"_noah~s_ark"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("noa",o);
+})();

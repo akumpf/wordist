@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["adve",["Often; frequently; not rarely; many times."]],["adje",["Frequent; often; repeated."]]],"a":[],"f":1},"_en":{"e":[["adve",["Frequently; many times; not seldom."]],["adje",["Frequent; common; repeated."]]],"a":["oftenest","oftener"],"f":1630},"_enness":{"e":[["noun",["Frequency."]]],"a":["oftennesses"],"f":0},"_entimes":{"e":[["adve",["Frequently; often; many times."]]],"a":[],"f":0},"_times":{"e":[["adve",["Frequently; often."]]],"a":[],"f":0},"_enest":"_often","_ener":"_often","_ennesses":"_oftenness"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oft",o);
+})();

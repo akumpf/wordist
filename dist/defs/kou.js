@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_lan":{"e":[["noun",["A wild horse (Equus onagerorAsinus onager) inhabiting the plains of Central Asia; -- called also gour khur, and onager."]]],"a":["koulans"],"f":3},"_miss":{"e":[["noun",["An intoxicating fermented or distilled liquor originally made by the Tartars of central Asia from mare's or camel's milk. It can be obtained from any kind of milk, and is now largely made in Europe."]]],"a":["koumisses"],"f":1},"_sso":{"e":[["noun",["An Abyssinian rosaceous tree (Brayera anthelmintica), the flowers of which are used as a vermifuge."]]],"a":["koussoes"],"f":0},"_lans":"_koulan","_misses":"_koumiss","_ssoes":"_kousso"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kou",o);
+})();

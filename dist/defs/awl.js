@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["A pointed instrument for piercing small holes, as in leather or wood; used by shoemakers, saddlers, cabinetmakers, etc. The blade is differently shaped and pointed for different uses, as in the brad awl saddler's awl shoemaker's awl, etc."]]],"a":["awls"],"f":14},"_ess":{"e":[["adje",["Wanting reverence; void of respectful fear."]]],"a":[],"f":2},"_essness":{"e":[["noun",["The quality of being awless."]]],"a":["awlessnesses"],"f":0},"_-shaped":{"e":[["adje",["Shaped like an awl.","Subulate. See Subulate."]]],"a":[],"f":3},"_wort":{"e":[["noun",["A plant (Subularia aquatica), with awl-shaped leaves."]]],"a":["awlworts"],"f":0},"_s":"_awl","_essnesses":"_awlessness","_worts":"_awlwort"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("awl",o);
+})();

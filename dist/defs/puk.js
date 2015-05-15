@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["verb",["To eject the contests of the stomach; to vomit; to spew.","To eject from the stomach; to vomit up."]],["noun",["A medicine that causes vomiting; an emetic; a vomit."]],["adje",["Of a color supposed to be between black and russet."]]],"a":["puked","puking","pukes"],"f":2},"_er":{"e":[["noun",["One who pukes, vomits.","That which causes vomiting."]]],"a":["pukers"],"f":0},"_ka":{"e":[["adje",["Same as Pucka."]]],"a":[],"f":0},"_ed":"_puke","_ing":"_puke","_es":"_puke","_ers":"_puker"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("puk",o);
+})();

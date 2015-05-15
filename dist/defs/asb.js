@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_estic":{"e":[["adje",["Of, pertaining to, or resembling asbestus; inconsumable; asbestine."]]],"a":[],"f":2},"_estiform":{"e":[["adje",["Having the form or structure of asbestus."]]],"a":[],"f":0},"_estine":{"e":[["adje",["Of or pertaining to asbestus, or partaking of its nature; incombustible; asbestic."]]],"a":[],"f":1},"_estous":{"e":[["adje",["Asbestic."]]],"a":[],"f":0},"_estus":{"e":[["noun",["A variety of amphibole or of pyroxene, occurring in long and delicate fibers, or in fibrous masses or seams, usually of a white, gray, or green-gray color. The name is also given to a similar variety of serpentine."]]],"a":["asbestuses"],"f":11},"_olin":{"e":[["noun",["A peculiar acrid and bitter oil, obtained from wood soot."]]],"a":["asbolins"],"f":0},"_estuses":"_asbestus","_olins":"_asbolin"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("asb",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_uacious":{"e":[["adje",["Given to continual talking; talkative; garrulous.","Speaking; expressive.","Apt to blab and disclose secrets."]]],"a":[],"f":11},"_uaciously":{"e":[["adve",["In a loquacious manner."]]],"a":[],"f":0},"_uaciousness":{"e":[["noun",["Loquacity."]]],"a":["loquaciousnesses"],"f":1},"_uacity":{"e":[["noun",["The habit or practice of talking continually or excessively; inclination to talk too much; talkativeness; garrulity."]]],"a":["loquacities"],"f":6},"_uat":{"e":[["noun",["The fruit of the Japanese medlar (Photinia Japonica). It is as large as a small plum, but grows in clusters, and contains four or five large seeds. Also, the tree itself."]]],"a":["loquats"],"f":1},"_uaciousnesses":"_loquaciousness","_uacities":"_loquacity","_uats":"_loquat"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("loq",o);
+})();

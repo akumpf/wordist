@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ri":{"e":[["noun",["A tall coniferous tree of New Zealand Agathis australisorDammara australis), having white straight-grained wood furnishing valuable timber and also yielding one kind of dammar resin.","Kauri resin.","any of various species of Dammara; as, the red kauri Dammara lanceolata ."]]],"a":["kauris"],"f":6},"_ri_resin":{"e":[["unkn",["A resinous product of the kauri, found in the form of yellow or brown lumps in the ground where the trees have grown. It is used for making varnish, and as a substitute for amber."]]],"a":[],"f":1},"_ry":{"e":[["noun",["Same as kauri."]]],"a":["kauries"],"f":0},"_ris":"_kauri","_ries":"_kaury"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kau",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_lse":{"e":[["verb",["To pluck or pull off."]]],"a":["avulsed","avulsing","avulses"],"f":0},"_lsion":{"e":[["noun",["A tearing asunder; a forcible separation.","A fragment torn off.","The sudden removal of lands or soil from the estate of one man to that of another by an inundation or a current, or by a sudden change in the course of a river by which a part of the estate of one man is cut off and joined to the estate of another. The property in the part thus separated, or cut off, continues in the original owner."]]],"a":["avulsions"],"f":1},"_ncular":{"e":[["adje",["Of or pertaining to an uncle."]]],"a":[],"f":0},"_lsed":"_avulse","_lsing":"_avulse","_lses":"_avulse","_lsions":"_avulsion"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("avu",o);
+})();

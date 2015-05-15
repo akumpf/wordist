@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ge":{"e":[["noun",["Debeige."]]],"a":["beiges"],"f":0},"_ld":{"e":[["noun",["A place of shelter; protection; refuge."]]],"a":["beilds"],"f":2},"_ng":{"e":[["unkn",["Existing."]],["noun",["Existence, as opposed to nonexistence; state or sphere of existence.","That which exists in any form, whether it be material or spiritual, actual or ideal; living existence, as distinguished from a thing without life; as, a human being; spiritual beings .","An abode; a cottage."]],["adve",["Since; inasmuch as."]]],"a":["beings"],"f":6807},"_ges":"_beige","_lds":"_beild","_ngs":"_being"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("bei",o);
+})();

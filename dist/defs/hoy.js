@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_a":{"e":[["noun",["any plant of the genus Hoya having fleshy leaves and usually nectariferous flowers.","any plant of the genus Hoya having fleshy leaves and usually nectariferous flowers.","Any plant of the genus Hoya having fleshy leaves and usually nectariferous flowers."]]],"a":["hoyas"],"f":0},"_":{"e":[["noun",["A small coaster vessel, usually sloop-rigged, used in conveying passengers and goods from place to place, or as a tender to larger vessels in port."]],["inte",["Ho! Halloe! Stop!"]]],"a":["hoys"],"f":1},"_den":{"e":[["noun",["Same as Hoiden."]]],"a":["hoydens"],"f":0},"_man":{"e":[["noun",["One who navigates a hoy."]]],"a":["hoymen"],"f":0},"_as":"_hoya","_s":"_hoy","_dens":"_hoyden","_men":"_hoyman"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("hoy",o);
+})();

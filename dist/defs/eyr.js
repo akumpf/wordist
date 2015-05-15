@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_a":{"e":[["noun",["A wild cat (Felis eyra) ranging from southern Brazil to Texas. It is reddish yellow and about the size of the domestic cat, but with a more slender body and shorter legs."]]],"a":["eyras"],"f":0},"_e":{"e":[["noun",["A journey in circuit of certain judges called justices in eyreor in itinere)."]]],"a":["eyres"],"f":1},"_en":{"e":[["noun",["See Ey, an egg."]]],"a":["eyrens"],"f":0},"_ie":{"e":[["noun",["The nest of a bird of prey or other large bird that builds in a lofty place; aerie."]]],"a":["eyries"],"f":2},"_as":"_eyra","_es":"_eyre","_ens":"_eyren","_ies":"_eyrie"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("eyr",o);
+})();

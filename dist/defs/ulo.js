@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_dendron":{"e":[["noun",["A genus of fossil trees."]]],"a":["ulodendrons"],"f":0},"_id":{"e":[["adje",["Resembling a scar; scarlike."]]],"a":[],"f":0},"_nata":{"e":[["noun",["A division of insects nearly equivalent to the true Orthoptera."]]],"a":["ulonatas"],"f":0},"_trichan":{"e":[["adje",["Of or pertaining to the Ulotrichi."]]],"a":[],"f":0},"_trichi":{"e":[["noun",["The division of mankind which embraces the races having woolly or crispy hair. Cf. Leiotrichi."]]],"a":["ulotrichis"],"f":1},"_trichous":{"e":[["adje",["Having woolly or crispy hair; -- opposed to leiotrichous."]]],"a":[],"f":0},"_dendrons":"_ulodendron","_natas":"_ulonata","_trichis":"_ulotrichi"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ulo",o);
+})();

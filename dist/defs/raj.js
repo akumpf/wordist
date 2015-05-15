@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Reign; rule."]]],"a":["rajs"],"f":0},"_a":{"e":[["noun",["Same as Rajah."]]],"a":["rajas"],"f":1},"_ah":{"e":[["noun",["A native prince or king; also, a landholder or person of importance in the agricultural districts."]]],"a":["rajahs"],"f":3},"_ahship":{"e":[["noun",["The office or dignity of a rajah."]]],"a":["rajahships"],"f":0},"_poot":{"e":[["noun",["A Hindoo of the second, or royal and military, caste; a Kshatriya; especially, an inhabitant of the country of Rajpootana, in northern central India."]]],"a":["rajpoots"],"f":0},"_s":"_raj","_as":"_raja","_ahs":"_rajah","_ahships":"_rajahship","_poots":"_rajpoot"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("raj",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ble":{"e":[["verb",["To move staggeringly or unsteadily from one side to the other; to vacillate; to move the manner of a rotating disk when the axis of rotation is inclined to that of the disk; -- said of a turning or whirling body; as, a top wabbles; a buzz saw wabbles ."]],["noun",["A hobbling, unequal motion, as of a wheel unevenly hung; a staggering to and fro."]]],"a":["wabbled","wabbling","wabbles"],"f":3},"_bly":{"e":[["adje",["Inclined to wabble; wabbling."]]],"a":[],"f":0},"_bled":"_wabble","_bling":"_wabble","_bles":"_wabble"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("wab",o);
+})();

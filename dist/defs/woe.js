@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Grief; sorrow; misery; heavy calamity.","A curse; a malediction."]]],"a":["woes"],"f":10},"_-begone":{"e":[["adje",["Beset or overwhelmed with woe; immersed in grief or sorrow; woeful."]]],"a":[],"f":0},"_ful":{"e":[["adje",["Full of woe; sorrowful; distressed with grief or calamity; afflicted; wretched; unhappy; sad.","Bringing calamity, distress, or affliction; as, a woeful event; woeful want.","Wretched; paltry; miserable; poor."]]],"a":[],"f":9},"_fully":{"e":[["adve",["In a woeful manner; sorrowfully; mournfully; miserably; dolefully."]]],"a":[],"f":0},"_fulness":{"e":[["noun",["The quality or state of being woeful; misery; wretchedness."]]],"a":["woefulnesses"],"f":1},"_s":"_woe","_fulnesses":"_woefulness"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("woe",o);
+})();

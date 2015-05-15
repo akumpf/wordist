@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_uated":{"e":[["adje",["Shaped like a bow; arcuate; curved."]]],"a":[],"f":0},"_uebus":{"e":[["noun",["A sort of hand gun or firearm a contrivance answering to a trigger, by which the burning match was applied. The musket was a later invention."]]],"a":["arquebuses"],"f":4},"_uebusade":{"e":[["noun",["The shot of an arquebus.","A distilled water from a variety of aromatic plants, as rosemary, millefoil, etc.; -- originally used as a vulnerary in gunshot wounds."]]],"a":["arquebusades"],"f":0},"_uebusier":{"e":[["noun",["A soldier armed with an arquebus."]]],"a":["arquebusiers"],"f":0},"_uifoux":{"e":[["noun",["Same as Alquifou."]]],"a":["arquifouxes"],"f":0},"_uebuses":"_arquebus","_uebusades":"_arquebusade","_uebusiers":"_arquebusier","_uifouxes":"_arquifoux"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("arq",o);
+})();

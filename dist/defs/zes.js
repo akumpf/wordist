@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_t":{"e":[["noun",["A piece of orange or lemon peel, or the aromatic oil which may be squeezed from such peel, used to give flavor to liquor, etc.","Hence, something that gives or enhances a pleasant taste, or the taste itself; an appetizer; also, keen enjoyment; relish; gusto."]],["verb",["To cut into thin slips, as the peel of an orange, lemon, etc.; to squeeze, as peel, over the surface of anything.","To give a relish or flavor to; to heighten the taste or relish of; as, to zest wine."]]],"a":["zests","zested","zesting"],"f":6},"_ts":"_zest","_ted":"_zest","_ting":"_zest"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("zes",o);
+})();

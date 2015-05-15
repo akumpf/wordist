@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_an":{"e":[["noun",["One who wields an ax."]]],"a":["axmen"],"f":1},"_inster":{"e":[["unkn",["A variety of Turkey carpet, woven by machine or, when more than 27 inches wide, on a hand loom, and consisting of strips of worsted chenille so colored as to produce a pattern on a stout jute backing. It has a fine soft pile. So called from Axminster, England, where it was formerly (1755 -- 1835) made.","A similar but cheaper machine-made carpet, resembling moquette in construction and appearance, but finer and of better material."]]],"a":[],"f":0},"_en":"_axman"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("axm",o);
+})();

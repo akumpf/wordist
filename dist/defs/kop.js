@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Hill; mountain."]]],"a":["kops"],"f":1},"_eck":{"e":[["noun",["A small Russian coin, continued as a unit of currency within the Soviet Union. One hundred kopecks make a ruble. The ruble was worth about sixty cents (U. S.) in 1910; in 1991 a two-kopeck coin could be used for a local telephone call at a pay telephone. After the breakup of the Soviet Union in 1993, the exchange value of the ruble declined rapidly and by the end of 1994 the ruble was worth three hundredths of a cent, and by 1997 two hundredths of a cent. By 1993, the kopek had become of such small value that it was obsolete and no longer minted."]]],"a":["kopecks"],"f":1},"_je":{"e":[["noun",["A hillock; a small kop, especially a small hill rising up from the African veld."]]],"a":["kopjes"],"f":0},"_s":"_kop","_ecks":"_kopeck","_jes":"_kopje"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kop",o);
+})();

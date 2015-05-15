@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ly":{"e":[["noun",["A small napkin, used at table with the fruit, etc.; -- commonly colored and fringed."]]],"a":["doilies"],"f":2},"_ng":{"e":[["noun",["Anything done; a deed; an action good or bad; hence, in the plural, conduct; behavior. See Do."]]],"a":["doings"],"f":146},"_t":{"e":[["noun",["A small Dutch coin, worth about half a farthing; also, a similar small coin once used in Scotland; hence, any small piece of money.","A thing of small value; as, I care not a doit ."]]],"a":["doits"],"f":2},"_tkin":{"e":[["noun",["A very small coin; a doit."]]],"a":["doitkins"],"f":0},"_lies":"_doily","_ngs":"_doing","_ts":"_doit","_tkins":"_doitkin"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("doi",o);
+})();

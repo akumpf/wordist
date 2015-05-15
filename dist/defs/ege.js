@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_an":{"e":[["adje",["See AEgean."]]],"a":[],"f":0},"_nce":{"e":[["noun",["The state of needing, or of suffering a natural want."]]],"a":["egences"],"f":0},"_r":{"e":[["noun",["An impetuous flood; a bore. See Eagre."]]],"a":["egers"],"f":0},"_st":{"e":[["verb",["To cast or throw out; to void, as excrement; to excrete, as the indigestible matter of the food; in an extended sense, to excrete by the lungs, skin, or kidneys."]]],"a":["egested","egesting","egests"],"f":2},"_sta":{"e":[["noun",["That which is egested or thrown off from the body by the various excretory channels; excrements; -- opposed to ingesta."]]],"a":["egestas"],"f":2},"_stion":{"e":[["noun",["Act or process of egesting; a voiding."]]],"a":["egestions"],"f":0},"_nces":"_egence","_rs":"_eger","_sted":"_egest","_sting":"_egest","_sts":"_egest","_stas":"_egesta","_stions":"_egestion"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ege",o);
+})();

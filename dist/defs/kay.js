@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ak":{"e":[["noun",["A light canoe, made of skins stretched over a frame, and usually capable of carrying but one person, who sits amidships and uses a double-bladed paddle. It is peculiar to the Eskimos and other Arctic tribes."]]],"a":["kayaks"],"f":2},"_aker":{"e":[["noun",["One who uses a kayak."]]],"a":["kayakers"],"f":0},"_ko":{"e":[["noun",["The dog salmon."]]],"a":["kaykoes"],"f":0},"_les":{"e":[["noun",["A game; ninepins."]]],"a":["kayleses"],"f":1},"_aks":"_kayak","_akers":"_kayaker","_koes":"_kayko","_leses":"_kayles"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kay",o);
+})();

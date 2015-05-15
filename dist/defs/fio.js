@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_rd":{"e":[["noun",["A narrow inlet of the sea, penetrating between high banks or rocks, as on the coasts of Norway and Alaska."]]],"a":["fiords"],"f":1},"_rin":{"e":[["noun",["A species of creeping bent grass (Agrostis alba); -- called also fiorin grass."]]],"a":["fiorins"],"f":1},"_rite":{"e":[["noun",["A variety of opal occuring in the cavities of volcanic tufa, in smooth and shining globular and botryoidal masses, having a pearly luster; -- so called from Fiora, in Ischia."]]],"a":["fiorites"],"f":0},"_riture":{"e":[["noun",["Little flowers of ornament introduced into a melody by a singer or player."]]],"a":["fioritures"],"f":1},"_rds":"_fiord","_rins":"_fiorin","_rites":"_fiorite","_ritures":"_fioriture"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("fio",o);
+})();

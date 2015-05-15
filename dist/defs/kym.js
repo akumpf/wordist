@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ograph":{"e":[["noun",["An instrument for measuring, and recording graphically, the pressure of the blood in any of the blood vessels of a living animal; -- called also kymographion."]]],"a":["kymographs"],"f":2},"_ographic":{"e":[["adje",["Of or pertaining to a kymograph; as, a kymographic tracing."]]],"a":[],"f":0},"_ric":{"e":[["noun",["See Cymric a. & n."]]],"a":["kymrics"],"f":0},"_ry":{"e":[["noun",["See Cymry."]]],"a":["kymries"],"f":0},"_ographs":"_kymograph","_rics":"_kymric","_ries":"_kymry"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kym",o);
+})();

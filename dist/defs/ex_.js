@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_libris":{"e":[["unkn",["An inscription, label, or the like, in a book indicating its ownership; esp., a bookplate."]]],"a":[],"f":0},"_officio":{"e":[["unkn",["From office; by virtue, or as a consequence, of an office; officially."]]],"a":[],"f":0},"_parte":{"e":[["unkn",["Upon or from one side only; one-sided; partial; as, an ex parte statement."]]],"a":[],"f":0},"_post_facto":{"e":[["unkn",["From or by an after act, or thing done afterward; in consequence of a subsequent act; retrospective."]]],"a":[],"f":0}};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ex_",o);
+})();

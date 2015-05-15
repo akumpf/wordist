@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["Aurora, the goddess of morn."]]],"a":["eoses"],"f":0},"_aurus":{"e":[["noun",["An extinct marine reptile from the coal measures of Nova Scotia; -- so named because supposed to be of the earliest known reptiles."]]],"a":["eosauruses"],"f":0},"_in":{"e":[["noun",["A yellow or brownish red dyestuff obtained by the action of bromine on fluorescein, and named from the fine rose-red which it imparts to silk. It is also used for making a fine red ink. Its solution is fluorescent."]]],"a":["eosins"],"f":1},"_phorite":{"e":[["noun",["A hydrous phosphate of alumina and manganese. It is generally of a rose-pink color, -- whence the name."]]],"a":["eosphorites"],"f":0},"_es":"_eos","_auruses":"_eosaurus","_ins":"_eosin","_phorites":"_eosphorite"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("eos",o);
+})();

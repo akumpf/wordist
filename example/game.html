@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">-->
+  <title>Circular Dictionary</title>
+<style>
+	body {color: #333; background: #FCFCFC; font-size: 16px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; border: 0;}
+  .goal {text-align: left; line-height: 24px; font-size: 14px; padding-right: 60px; position: relative; border-bottom: 1px solid #DDD; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+  .goalpts {position: absolute; right: 10px; width: 60px; text-align: right; font-weight: 600; top: 0; font-size: 16px; letter-spacing: 1px; color: #333;}
+  .goal.claimed {color: #4C8;}
+  .goal.claimed .goalpts {color: #4C8;}
+  .goal.hdr {font-weight: 300; color: #999; border-bottom: 2px solid #777;}
+  .goal.hdr .goalpts {color: #999;}
+  .clickword {cursor: pointer;}
+  .clickword.undef {cursor: default; opacity: 0.5;}
+  .clickword:hover {text-decoration: underline; color: #111;}
+</style>
+</head>
+<body>
+  
+<div id='game_header' style='background: #DDD; position: fixed; left: 0; right: 0; top: 0; height: 60px; box-shadow: 0 0 3px rgba(0,0,0,0.5); line-height: 54px; font-size: 24px; color: #52A7CE; text-align: center; word-spacing: 4px; font-weight: 600; z-index: 10; padding-left: 210px;'>
+  CIRCULAR DICTIONARY
+  <div style='font-size: 12px; position: absolute; line-height: 20px; top: 40px; left: 210px; right: 0; text-align: center; font-weight: 400; word-spacing: 1px; color: #555;'>Select any word in the definition to keep going!</div>
+  <div id='game_pts' style='position: absolute; left: 0; top: 0; width: 200px; text-align: center; font-size: 48px; color: #222; line-height: 60px; text-shadow: 0 0 2px #FFF;'>0</div>
+</div>
+<div id='game_body' style='padding-top: 60px;'>
+  <div id='activeDef' style='margin-top: 20px; max-width: 620px; padding: 10px; padding-left: 210px; margin: 0 auto;'></div>
+</div>
+<div id='goals' style='position: absolute; top: 60px; left: 0; width: 200px; padding: 10px; border: 1px solid #CCC; border-left: none; border-top: none; border-radius: 0 0 5px 0; color: #555;'>
+</div>
+<div id='prevwords' style='position: absolute; top: 610px; left: 0; width: 200px; padding: 10px;color: #555; bottom: 0; overflow: hidden; text-align: right;'>
+</div>
+
+<br/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../src/wordist.js"></script>
+<script>
+$(document).ready(function(){
+  wordist.init({path: "../dist"});
+  // --
+  var goalWords = [];
+  var score     = 0;
+  // --
+  var prevWord = null;
+  function showWordDef(word, fromEl){
+    if(word == prevWord) return;
+    wordist.getDef(word, function(err, root, data){
+      if(err) return console.log(err);
+      if(!data && prevWord){
+        if(fromEl) $(fromEl).addClass("undef");
+        return; // showWordDef(prevWord);
+      }
+      if(data) prevWord = word;
+      // --
+      $("#prevwords").prepend("<div class='clickword fresh'>"+root+"</div>");
+      // --
+      var entries = data.e||[];
+      // --
+      var html =  "<b>"+root+":</b><br/>";
+      for(var i=0; i<entries.length; i++){
+        var partOfSpeech = entries[i][0];
+        html += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em;'>"+partOfSpeech+".</div><ol style='margin: 5px 0;'>";
+        var defs = entries[i][1]||[];
+        for(var j=0; j<defs.length; j++){
+          var def = defs[j];
+          var dws = def.split(" ");
+          html += "<li>";
+          for(var d=0; d<dws.length; d++) html += "<span class='clickword'>"+dws[d]+"</span> ";
+          html += "</li>";
+        }
+        html += "</ol>";
+      }
+      $("#activeDef").html(html);
+      $("#activeDef .clickword, #prevwords .clickword.fresh").click(function(){
+        var newWord = $(this).text();
+        newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+        showWordDef(newWord, this);
+      });
+      $("#prevwords .clickword.fresh").removeClass("fresh");
+      // --
+      //var wordTest = word.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+      $(".goal").each(function(index, el){
+        if($(el).hasClass("claimed")) return;
+        var gw = $(el).attr("data-word");
+        if(gw == root){
+          $(el).addClass("claimed");
+          score += (parseInt($(el).find(".goalpts").text()||"1", 10)||1);
+          $("#game_pts").text(score);
+        }
+      });
+    });
+  }
+  //--
+  showWordDef("dictionary");
+  // --
+  
+  function addGoalWords(level, goalCount, cb){
+    wordist.getFindable(level,function(err,percent,words){
+      if(err || !words || words.length <= 0) return console.warn(err);
+      // --
+      while(goalWords.length < goalCount){
+        var word = words[Math.floor(Math.random()*words.length)];
+        if(word.indexOf(" ") > 0) continue;
+        var isDifferent = true;
+        for(var i=0; i<goalWords.length; i++){
+          if(goalWords[i] == word) isDifferent = false;
+        }
+        if(isDifferent) goalWords.push(word);
+      }
+      cb();
+    });
+  }
+  // --
+  addGoalWords(1,14,function(){
+    addGoalWords(2,16,function(){
+      addGoalWords(3,17,function(){
+        addGoalWords(5,18,function(){
+          addGoalWords(10,19,function(){
+            goalWords.push(["book",10000]);
+            goalWords.sort(function(a,b){
+              if(a[1] > b[1]) return  1;
+              if(a[1] < b[1]) return -1;
+              return 0;
+            });
+            initGoalUI();
+          });
+        });
+      });
+    });
+  });
+  // --
+  function initGoalUI(){
+    var html = "<div class='goal hdr'>word<div class='goalpts'>pts.</div></div>";
+    for(var i=0; i<goalWords.length; i++){
+      goalWords[i].push(Math.max(1,Math.round(10000/goalWords[i][1]))*10);
+      html += "<div class='goal' data-word=\""+goalWords[i][0]+"\">"+goalWords[i][0]+"<div class='goalpts'>"+goalWords[i][2]+"</div></div>";
+    }
+    $("#goals").html(html);
+  }
+});
+</script>
+  
+</body>
+</html>

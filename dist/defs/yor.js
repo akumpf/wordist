@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_e":{"e":[["adve",["In time long past; in old time; long since."]]],"a":[],"f":0},"_ker":{"e":[["noun",["A tice."]]],"a":["yorkers"],"f":0},"_k_rite":{"e":[["unkn",["The rite or ceremonial observed by one of the Masonic systems, deriving its name from the city of York, in England; also, the system itself, which, in England, confers only the first three degrees."]]],"a":[],"f":1},"_kshire":{"e":[["noun",["A county in the north of England."]]],"a":["yorkshires"],"f":8},"_k_use":{"e":[["unkn",["The one of the three printed uses of England which was followed in the north. It was based on the Sarum use. See Use n., 6."]]],"a":[],"f":1},"_kers":"_yorker","_kshires":"_yorkshire"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("yor",o);
+})();

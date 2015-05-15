@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_ea":{"e":[["noun",["transient cessation of respiration."]]],"a":["apneas"],"f":2},"_eic":{"e":[["adje",["of or pertaining to apnea."]]],"a":[],"f":1},"_eumatic":{"e":[["adje",["Devoid of air; free from air; as, an apneumatic lung; also, effected by or with exclusion of air; as, an apneumatic operation."]]],"a":[],"f":0},"_eumona":{"e":[["noun",["An order of holothurians in which the internal respiratory organs are wanting; -- called also Apoda or Apodes."]]],"a":["apneumonas"],"f":1},"_oea":{"e":[["noun",["Partial privation or suspension of breath; suffocation; same as apnea ."]]],"a":["apnoeas"],"f":0},"_oeic":{"e":[["adje",["same as apneic."]]],"a":[],"f":0},"_eas":"_apnea","_eumonas":"_apneumona","_oeas":"_apnoea"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("apn",o);
+})();

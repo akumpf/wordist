@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_lanite":{"e":[["noun",["A dingy blue, or grayish black, variety of spinel. It is also called pleonaste."]]],"a":["ceylanites"],"f":1},"_lon":{"e":[["noun",["the former name of an island republic in the Indian Ocean off the southeast coast of India, now called Sri Lanka. It is an independent nation with an area of 25,332 sq. mi. and a population of about 14 million people."]]],"a":["ceylons"],"f":32},"_lonese":{"e":[["adje",["Of or pertaining to Ceylon; -- since the change of name, replaced by Sri Lankan."]]],"a":[],"f":1},"_lanites":"_ceylanite","_lons":"_ceylon"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("cey",o);
+})();

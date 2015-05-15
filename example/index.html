@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Wordist Examples</title>
+<style>
+	body {color: #333; background: #FCFCFC; font-size: 16px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; border: 0; overflow-y: scroll;}
+  .clickword {cursor: pointer;}
+  .clickword:hover {text-decoration: underline; color: #111;}
+  #exampleDef b {font-size: 1.4em;}
+</style>
+</head>
+<body>
+
+<div id='exampleWelcome' style='font-size: 2em;  max-width: 640px; margin-left: auto; margin-right: auto; padding: 20px 0;'>
+  Wordist makes words <span class='clickword' style='font-weight: 600;'>playful</span>.
+</div>
+<div id='exampleSearch' style='margin-top: 20px; max-width: 640px; margin-left: auto; margin-right: auto; padding-bottom: 20px;'>
+  <input id='exampleInput' type='text' style='width: 90%; line-height: 30px; font-size: 20px; padding: 0 10px;' placeholder='type something...'/>
+</div>
+<div id='exampleDef' style='margin-top: 20px; max-width: 640px; margin-left: auto; margin-right: auto; min-height: 320px;'>
+  ...
+</div>
+<br/>
+<center><div style='display: inline-block; font-size: 15px; line-height: 20px; text-align: left; font-weight: 400; color: #555; margin-top: 40px; border-top: 1px solid #999; padding: 40px; max-width: 640px; padding-top: 20px;'>
+<center><span style='font-size: 12px;'>Select any word in the definition to keep searching!</span></center><br/><br/>
+<p>This open source dictionary with incremental search is hosted entirely on a static web server.</p>
+<p>There's no backend logic doing anything fancy; it's just a big folder full of little javascipt snippets with corresponding definitions, parts of speech, etc. so you can experiment with language without 3rd-party APIs.</p>
+<p>The entire dataset is a bit hefty to access directly (> 20MB), but breaking it up into little pages of words and definitions keeps it light-weight and speedy for the web. Big thanks to the GNU Collaborative International Dictionary of English for the data that makes Wordist possible.</p>
+<p>See the source code on this page for examples on how to use <b>Wordist</b> in your own projects.</p>
+<p>There's also a wordist searching game called <a href='./game.html'>circular dictionary</a>.</p>
+<p>Download and fork this project on <a href=''>GitHub</a></p>
+</div></center>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../src/wordist.js"></script>
+
+<script>
+// Example usage:
+
+// Initialize the path to the dictionary files.
+wordist.init({path: "../dist"});
+
+// Get a definition for a word.
+wordist.getDef("apple", function exampleDefHandler(err, root, data){
+  if(err)   return console.warn(err); 
+  if(!root) return console.warn("Unexpected result?", root, data);
+  if(!data) return console.log("No def for: "+root);
+  // --
+  var entries = data.e||[];
+  var alts    = data.a||[];
+  console.log(root, alts, entries);
+});
+
+// Or if you want to try harder (in case the word is not a direct hit)...
+// This will fallback to the definition for "apple".
+wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
+  if(err)   return console.warn(err); 
+  if(!root) return console.warn("Unexpected result?", root, data);
+  if(!data) return console.log("No def for: "+root);
+  // --
+  var entries = data.e||[];
+  var alts    = data.a||[];
+  console.log(root, alts, entries);
+})
+
+// Get the full list of english words for a part of speech,
+// using first 4 letters. Note: this may be big!
+// wordist.getPoSAll("adje", function examplePoSHandler(err, pos, words){
+//   if(err) return console.warn(err);
+//   if(!pos || !words) return console.warn("Unexpected result?", pos, words);
+//   // --
+//   console.log(words.length+" words for Parts of Speech ["+pos+"]: ", words);
+// });
+
+// And here's a simple app that gets a definition when a user types.
+$(document).ready(function(){
+  var prevWord = null;
+  function showWordDef(word){
+    wordist.getDefClosest(word, function(err, root, data){
+      if(err) return console.log(err);
+      if(!data && prevWord) return showWordDef(prevWord);
+      if(!data) return;
+      if(data) prevWord = word;
+      // --
+      var entries = data.e||[];
+      // --
+      var html =  "<b>"+root+":</b><br/>";
+      for(var i=0; i<entries.length; i++){
+        var partOfSpeech = entries[i][0];
+        html += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em; border-bottom: 1px solid #EEE; margin-bottom: 7px;'>"+wordist.prettyPoS(partOfSpeech)+"</div><ol style='margin: 5px 0;'>";
+        var defs = entries[i][1]||[];
+        for(var j=0; j<defs.length; j++){
+          var def = defs[j];
+          var dws = def.split(" ");
+          html += "<li>";
+          for(var d=0; d<dws.length; d++) html += "<span class='clickword'>"+dws[d]+"</span> ";
+          html += "</li>";
+        }
+        html += "</ol>";
+      }
+      $("#exampleDef").html(html);
+      // --
+      $("#exampleDef .clickword").click(function(){
+        var newWord = $(this).text();
+        newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+        $("#exampleInput").val("");
+        showWordDef(newWord);
+      });
+    });
+  }
+  // --
+  var prevTxt = "";
+  function onSearchInputChanged(){
+    var text = $(this).val()||"";
+    text = text.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+    if(text == prevTxt) return;
+    prevTxt = text;
+    // --
+    showWordDef(text);
+  }
+  $("#exampleInput").keyup(onSearchInputChanged);
+  $("#exampleInput").change(onSearchInputChanged);
+  // --
+  
+  // Here's an example of getting a random adjective to update something on the page.
+  // wordist.getPoSRand("adje", function(err, randAdj){
+  //   $("#exampleWelcome").html("Wordist is made for <span class='clickword' style='font-weight: 600;'>"+randAdj+"</span> users.");
+    $("#exampleWelcome .clickword").click(function(){
+      var newWord = $(this).text();
+      showWordDef(newWord);
+    });
+    showWordDef($("#exampleWelcome .clickword").text());
+  // });
+});
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_erick":{"e":[["noun",["In the southwestern part of the united States, a bullock or heifer that has not been branded, and is unclaimed or wild; -- said to be from Maverick, the name of a cattle owner in Texas who neglected to brand his cattle."]],["verb",["To take a maverick."]]],"a":["mavericks","mavericked","mavericking"],"f":1},"_erick_brand":{"e":[["unkn",["A brand originated by a dishonest cattleman, who, without owning any stock, gradually accumulates a herd by finding mavericks."]]],"a":[],"f":0},"_is":{"e":[["noun",["The European throstle or song thrush (Turdus musicus)."]]],"a":["mavises"],"f":0},"_ournin":{"e":[["noun",["My darling; -- an Irish term of endearment for a girl or woman."]]],"a":["mavournins"],"f":0},"_ericks":"_maverick","_ericked":"_maverick","_ericking":"_maverick","_ises":"_mavis","_ournins":"_mavournin"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("mav",o);
+})();

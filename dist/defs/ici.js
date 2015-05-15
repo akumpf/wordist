@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_cle":{"e":[["noun",["A pendent, and usually conical, mass of ice, formed by freezing of dripping water; as, the icicles on the eaves of a house."]]],"a":["icicles"],"f":4},"_cled":{"e":[["adje",["Having icicles attached."]]],"a":[],"f":0},"_ly":{"e":[["adve",["In an icy manner; coldly."]]],"a":[],"f":0},"_ness":{"e":[["noun",["The state or quality of being icy or very cold; frigidity."]]],"a":["icinesses"],"f":0},"_ng":{"e":[["noun",["A coating or covering resembling ice, as of sugar and milk or white of egg; frosting."]]],"a":["icings"],"f":6},"_cles":"_icicle","_nesses":"_iciness","_ngs":"_icing"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ici",o);
+})();

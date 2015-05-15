@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_antine":{"e":[["unkn",["See Byzantine."]]],"a":[],"f":0},"_arre":{"e":[["adje",["Odd in manner or appearance; fantastic; whimsical; extravagant; grotesque."]]],"a":[],"f":3},"_e":{"e":[["noun",["a dry cold north wind in southeastern France."]]],"a":["bizes"],"f":0},"_et":{"e":[["noun",["The upper faceted portion of a brilliant-cut diamond, which projects from the setting and occupies the zone between the girdle and the table. See Brilliant n."]]],"a":["bizets"],"f":1},"_onal":{"e":[["adje",["relating to or concerned with the combined affairs of two administrative zones."]]],"a":[],"f":0},"_es":"_bize","_ets":"_bizet"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("biz",o);
+})();

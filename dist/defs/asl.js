@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["same as American sign language, the sign language used in the US."]]],"a":["asls"],"f":0},"_ake":{"e":[["verb",["To mitigate; to moderate; to appease; to abate; to diminish."]]],"a":["aslaked","aslaking","aslakes"],"f":0},"_ant":{"e":[["adje",["Toward one side; in a slanting direction; obliquely."]],["prep",["In a slanting direction over; athwart."]]],"a":[],"f":1},"_eep":{"e":[["adje",["In a state of sleep; in sleep; dormant.","In the sleep of the grave; dead.","Numbed, and, usually, tingling."]]],"a":[],"f":11},"_ope":{"e":[["adje",["Slopingly; aslant; declining from an upright direction; sloping."]]],"a":[],"f":0},"_s":"_asl","_aked":"_aslake","_aking":"_aslake","_akes":"_aslake"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("asl",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_":{"e":[["noun",["See Key, a ledge."]]],"a":["cays"],"f":0},"_enne":{"e":[["noun",["Cayenne pepper."]]],"a":["cayennes"],"f":4},"_man":{"e":[["noun",["The south America alligator. See Alligator."]]],"a":["caymen"],"f":3},"_o":{"e":[["noun",["A small island or ledge of rock in the water; a key."]]],"a":["cayoes"],"f":0},"_ugas":{"e":[["noun",["A tribe of Indians formerly inhabiting western New-York, forming part of the confederacy called the Five Nations."]]],"a":["cayugases"],"f":0},"_use":{"e":[["noun",["An Indian pony."]]],"a":["cayuses"],"f":0},"_s":"_cay","_ennes":"_cayenne","_men":"_cayman","_oes":"_cayo","_ugases":"_cayugas","_uses":"_cayuse"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("cay",o);
+})();

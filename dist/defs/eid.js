@@ -1,0 +1,4 @@
+(function(){
+ var o = {"_er":{"e":[["noun",["Any species of sea duck of the genus Somateria, esp. Somateria mollissima, which breeds in the northern parts of Europe and America, and lines its nest with fine down (taken from its own body) which is an article of commerce; -- called also eider duck. The American eider (S. Dresseri), the king eider (S. spectabilis), and the spectacled eider (Arctonetta Fischeri) are related species."]]],"a":["eiders"],"f":3},"_ograph":{"e":[["noun",["An instrument for copying drawings on the same or a different scale; a form of the pantograph."]]],"a":["eidographs"],"f":0},"_olon":{"e":[["noun",["An image or representation; a form; a phantom; an apparition."]]],"a":["eidolons"],"f":0},"_ers":"_eider","_ographs":"_eidograph","_olons":"_eidolon"};
+ if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("eid",o);
+})();
