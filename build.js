@@ -1165,7 +1165,7 @@ function buildMasterDictConnectedness(cb){
   dictReady();
 }
 // --
-var STAGE = 2;
+var STAGE = 3;
 console.log("STAGE: "+STAGE);
 // --
 if(STAGE == 1){
@@ -1278,7 +1278,13 @@ if(STAGE == 2){
       toc.sort();
       fs.writeFileSync(PATH_DST+"/toc.js", getObjAsJSInlineCallback("toc", "toc", toc));
     });
-    
   }
+}
+if(STAGE == 3){
+	fsExtra.copy(__dirname+"/src/wordist.js", PATH_DST+"/wordist.js", function(err){
+		if(err) console.log(err);
+    // --
+    console.log("DONE!");
+  });
 }
 
