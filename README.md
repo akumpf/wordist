@@ -12,9 +12,13 @@ The entire dataset is a bit hefty to access directly (> 20MB), but breaking it u
 
 ## License
 
-Wordist is Licensed as Creative Commons 0 (Public Domain) except where otherwise noted (the libraries, for example, have their own terms). 
+Wordist is licensed under Creative Commons 0 (Public Domain) except where otherwise noted (the libraries, for example, have their own terms). 
 
-Wordist is backed by dictionary data from the GNU Collaborative International Dictionary of English (or GCIDE). GCIDE is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3, or (at your option) any later version.
+Wordist is backed by dictionary data from the GNU Collaborative International Dictionary of English (or GCIDE). See http://gcide.gnu.org.ua/.
+
+GCIDE is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3, or (at your option) any later version.
+
+On top of GCIDE, Wordist also makes use of a cleanly parsed version of the dictionary by javierjulio https://github.com/javierjulio/dictionary.
 
 Wordist is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
