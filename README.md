@@ -1,7 +1,7 @@
 Wordist
 =============
 
-Wordist is an open source dictionary with incremental search is **hosted entirely on a static web server**.
+Wordist is an open source dictionary with incremental search **hosted entirely on a static web server**.
 
 Try out wordist here http://akumpf.github.io/wordist/
 
