@@ -16,20 +16,23 @@
   Wordist makes words <span class='clickword' style='font-weight: 600;'>playful</span>.
 </div>
 <div id='exampleSearch' style='margin-top: 20px; max-width: 640px; margin-left: auto; margin-right: auto; padding-bottom: 20px;'>
-  <input id='exampleInput' type='text' style='width: 90%; line-height: 30px; font-size: 20px; padding: 0 10px;' placeholder='type something...'/>
+  <input id='exampleInput' type='text' style='width: 90%; line-height: 30px; font-size: 20px; padding: 0 10px;' placeholder='type something...'/><br/>
+  <span style='font-size: 12px; line-height: 40px; padding-left: 12px;'>Or select any word in the definition to keep searching!</span>
 </div>
-<div id='exampleDef' style='margin-top: 20px; max-width: 640px; margin-left: auto; margin-right: auto; min-height: 320px;'>
+<div id='exampleDef' style='max-width: 640px; margin-left: auto; margin-right: auto; min-height: 320px;'>
   ...
 </div>
 <br/>
 <center><div style='display: inline-block; font-size: 15px; line-height: 20px; text-align: left; font-weight: 400; color: #555; margin-top: 40px; border-top: 1px solid #999; padding: 40px; max-width: 640px; padding-top: 20px;'>
-<center><span style='font-size: 12px;'>Select any word in the definition to keep searching!</span></center><br/><br/>
-<p>This open source dictionary with incremental search is hosted entirely on a static web server.</p>
+<h2>What is Wordist?</h2>
+<p>This open source dictionary with incremental search is <b>hosted entirely on a static web server</b>.</p>
 <p>There's no backend logic doing anything fancy; it's just a big folder full of little javascipt snippets with corresponding definitions, parts of speech, etc. so you can experiment with language without 3rd-party APIs.</p>
 <p>The entire dataset is a bit hefty to access directly (> 20MB), but breaking it up into little pages of words and definitions keeps it light-weight and speedy for the web. Big thanks to the GNU Collaborative International Dictionary of English for the data that makes Wordist possible.</p>
+<h2>Play Around</h2>
 <p>See the source code on this page for examples on how to use <b>Wordist</b> in your own projects.</p>
 <p>There's also a wordist searching game called <a href='./game'>circular dictionary</a> &mdash; try to find words and get points by how often the occur in the dictionary!</p>
-<p>Download and fork this project on <a href=''>GitHub</a></p>
+<h2>Open Source</h2>
+<p>Wordist is fully open source. You can read more, download, and fork this project on <a href=''>GitHub</a>.</p>
 </div></center>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
