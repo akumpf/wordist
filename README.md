@@ -65,6 +65,23 @@ wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
 });
 ```
 
+### wordist.getDefRandom(callback)
+
+Sometimes you just want a random word, and `getDefRandom` will do that for you.
+
+```
+// Get a random word.
+wordist.getDefRandom(function exampleDefHandler(err, root, data){
+  if(err)   return console.warn(err); 
+  if(!root) return console.warn("Unexpected result?", root, data);
+  if(!data) return console.log("No def for: "+root);
+  // --
+  var entries = data.e||[];
+  var alts    = data.a||[];
+  console.log(root, alts, entries);
+});
+```
+
 ### wordist.getPoSAll(partOfSpeech, callback)
 
 Wordist contains lists of all defined words grouped by part of speech (like noun, verb, adjective, etc.).
@@ -110,21 +127,19 @@ wordist.getFindable(1, function(err, findableWords){
 });
 ```
 
-
-
-
 ### example code
 
 You can also see wordist in action by checking out `index.html` or play with the demo here http://akumpf.github.io/wordist/
 
-## Building from source
+## Building wordist from source
 
 To use wordist, you shouldn't need to build anything. 
 
 But in case you want to monkey with the internals and add functionality to wordist...
 
 * Download the source
-* run `node build.js` for each stage (currently 3). This takes about an hour.
+* run `node build.js` for each stage (currently 3, set this in build.js). This takes about an hour.
+* load `index.html` and make sure it worked!
 
 ## License
 
