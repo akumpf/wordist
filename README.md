@@ -9,6 +9,18 @@ There's no backend logic doing anything fancy; it's just a big folder full of li
 
 The entire dataset is a bit hefty to access directly (> 20MB), but breaking it up into 3000+ little pages of words and definitions keeps it light-weight and speedy for the web. Big thanks to the GNU Collaborative International Dictionary of English for the data that makes Wordist possible.
 
+## Usage
+
+See `index.html` for example usage.
+
+## Building from source
+
+To use wordist, you shouldn't need to build anything. 
+
+But in case you want to monkey with the internals and add functionality to wordist...
+
+* Download the source
+* run `node build.js` for each stage (currently 3). This takes about an hour.
 
 ## License
 
