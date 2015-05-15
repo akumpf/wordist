@@ -138,6 +138,7 @@ To use wordist, you shouldn't need to build anything.
 But in case you want to monkey with the internals and add functionality to wordist...
 
 * Download the source
+* Run `npm install` to get all the required node modules.
 * run `node build.js` for each stage (currently 3, set this in build.js). This takes about an hour.
 * load `index.html` and make sure it worked!
 
