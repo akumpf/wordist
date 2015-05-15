@@ -19,6 +19,8 @@ First things first! You'll need to add a script tag to your HTML to get the part
 <script src="http://akumpf.github.io/wordist/dist/wordist.js"></script>
 ```
 
+You'll probably want to download your own copy and put it on your server to ensure things are fast, but for testing you can just pull in the javascript remotely as shown above.
+
 ### wordist.init(options)
 
 Before you make calls to wordist, you should tell it where things are. Do this by calling `init`.
@@ -90,6 +92,25 @@ wordist.getPoSRandom("adje", function(err, randAdjective){
   if(err) return console.warn(err);
   console.log(randAdjective);
 });
+```
+
+### wordist.getFindable(percent, callback)
+
+Wordist computes the findability of each word in the dictionary. 
+
+Findability is a measure of how many times a word is included other definitions (without double counting). It can be used to get a general sense of how common a word is in the language.
+
+The findable words are pre-sorted into 100 sections. 1 will return the most common words. 100 will return the least common words that are still findable (occurance >= 2).  
+
+```
+// Get the most findable words in the dictioary!
+wordist.getFindable(1, function(err, findableWords){
+   if(err) return console.warn(err);
+   console.log(findableWords);
+});
+```
+
+
 
 
 ### example code
