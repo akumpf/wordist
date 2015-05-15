@@ -3,7 +3,7 @@ Wordist
 
 Wordist is an open source dictionary with incremental search is hosted entirely on a static web server.
 
-Try out wordist here: http://akumpf.github.io/wordist/
+Try out wordist here http://akumpf.github.io/wordist/
 
 There's no backend logic doing anything fancy; it's just a big folder full of little javascipt snippets with corresponding definitions, parts of speech, etc. so you can experiment with language without 3rd-party APIs.
 
@@ -11,7 +11,90 @@ The entire dataset is a bit hefty to access directly (> 20MB), but breaking it u
 
 ## Usage
 
-See `index.html` for example usage.
+### including wordist.js
+
+First things first! You'll need to add a script tag to your HTML to get the party started.
+
+```
+<script src="http://akumpf.github.io/wordist/dist/wordist.js"></script>
+```
+
+### wordist.init(options)
+
+Before you make calls to wordist, you should tell it where things are. Do this by calling `init`.
+
+```
+options = {
+  path: "PATH_TO_DICTIONARY_DIST" // default is "./dist"
+}
+```
+
+### wordist.getDef(word, callback)
+
+Get a definition for a word.
+
+```
+// get the definition of "apple"
+wordist.getDef("apple", function exampleDefHandler(err, root, data){
+  if(err)   return console.warn(err); 
+  if(!root) return console.warn("Unexpected result?", root, data);
+  if(!data) return console.log("No def for: "+root);
+  // --
+  var entries = data.e||[];
+  var alts    = data.a||[];
+  console.log(root, alts, entries);
+});
+```
+
+### wordist.getDefClosest(word, callback)
+
+If you want to try harder to find a definition (in case the word is not a direct hit in the dictionary) use `getDefClosest()`. 
+
+```
+//This will fallback to the definition for "apple".
+wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
+  if(err)   return console.warn(err); 
+  if(!root) return console.warn("Unexpected result?", root, data);
+  if(!data) return console.log("No def for: "+root);
+  // --
+  var entries = data.e||[];
+  var alts    = data.a||[];
+  console.log(root, alts, entries);
+});
+```
+
+### wordist.getPoSAll(partOfSpeech, callback)
+
+Wordist contains lists of all defined words grouped by part of speech (like noun, verb, adjective, etc.).
+
+None of the lists are enormous in size, but nouns and adjectives are a few hundred kB, so be aware of that if you are looking to keep your site fast.
+
+Note that `partOfSpeech` is just the first 4 lettters of the part of speech you are interested in.
+
+```
+// get all the adjectives!
+wordist.getPoSAll("adje", function(err, allAdjectives){
+  if(err) return console.warn(err);
+  console.log(allAdjectives);
+});
+```
+
+### wordist.getPoSRandom(partOfSpeech, callback)
+
+You can also just get a random word within a part of speech. 
+
+This is handy for generating creative output (e.x. Mad Libs).
+
+```
+wordist.getPoSRandom("adje", function(err, randAdjective){
+  if(err) return console.warn(err);
+  console.log(randAdjective);
+});
+
+
+### example code
+
+You can also see wordist in action by checking out `index.html` or play with the demo here http://akumpf.github.io/wordist/
 
 ## Building from source
 

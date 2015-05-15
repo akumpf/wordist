@@ -453,7 +453,7 @@ var wordist = (function(){
             if(!data){ z = wf.substring(0,wf.length-2);      data = dataCache[_DEFS+z];}
             if(!data){ z = wf.substring(0,wf.length-3);      data = dataCache[_DEFS+z];}
           }
-          if(wf.search(/(est)$/) > 0){
+          if(wf.search(/(est|ish)$/) > 0){
             if(!data){ z = wf.substring(0,wf.length-3);      data = dataCache[_DEFS+z];}
           }
           if(wf.search(/(ing)$/) > 0){
@@ -461,7 +461,7 @@ var wordist = (function(){
             if(!data){ z = wf.substring(0,wf.length-4);      data = dataCache[_DEFS+z];}
             if(!data){ z = wf.substring(0,wf.length-3)+"e";  data = dataCache[_DEFS+z];}
           }
-          if(wf.search(/(like|ness|ment)$/) > 0){
+          if(wf.search(/(like|ness|ment|able)$/) > 0){
             if(!data){ z = wf.substring(0,wf.length-4);      data = dataCache[_DEFS+z];}
           }
           if(wf.search(/(un|in)/) == 0){
@@ -493,7 +493,7 @@ var wordist = (function(){
       return cb(null, pos, dataCache[_POS+pos]);
     });
   };
-  exports.getPoSRand    = function(pos, cb){
+  exports.getPoSRandom  = function(pos, cb){
     exports.getPoSAll(pos, function(err,pos,words){
       if(err) return cb(err);
       words = words||[];
