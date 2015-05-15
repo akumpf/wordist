@@ -1,0 +1,13 @@
+{
+  "name": "wordist",
+  "description": "Async. online dictionary based on GNU Collab. Int. Dictionary of English",
+  "author": "Adam Kumpf <akumpf@gmail.com>",
+  "repository" : {},
+  "dependencies": {
+		"cheerio":"latest",
+    "lodash":"latest",
+    "rimraf":"latest",
+    "fs-extra":"latest"
+  },
+  "engine": "node >= 0.10.0"
+}
