@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["noun",["A Turkish and Egyptian weight, equal to about 23/4 pounds.","An Hungarian and Wallachian measure, equal to about 21/2 pints."]]],"a":["okes"],"c":[]},"_h":{"e":[["noun",["Variant spellings of okay."]]],"a":["okehs"],"c":[]},"_nite":{"e":[["noun",["A massive and fibrous mineral of a whitish color, chiefly hydrous silicate of lime."]]],"a":["okenites"],"c":["min"]},"_r":{"e":[["noun",["See Ocher."]]],"a":["okers"],"c":["min"]},"_s":"_oke","_hs":"_okeh","_nites":"_okenite","_rs":"_oker"};
+ var o = {"_":{"e":[["noun",["A Turkish and Egyptian weight, equal to about 23/4 pounds.","An Hungarian and Wallachian measure, equal to about 21/2 pints."]]],"a":["okes"],"c":[],"f":0},"_h":{"e":[["noun",["Variant spellings of okay."]]],"a":["okehs"],"c":[],"f":0},"_nite":{"e":[["noun",["A massive and fibrous mineral of a whitish color, chiefly hydrous silicate of lime."]]],"a":["okenites"],"c":["min"],"f":0},"_r":{"e":[["noun",["See Ocher."]]],"a":["okers"],"c":["min"],"f":0},"_s":"_oke","_hs":"_okeh","_nites":"_okenite","_rs":"_oker"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oke",o);
 })();

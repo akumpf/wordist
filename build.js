@@ -1,7 +1,8 @@
 console.log("Running jsdict...");
 // --
-var STAGE = 2;
+var STAGE = 1;
 console.log("STAGE: "+STAGE);
+var MAX_THOUSAND_TO_PROCESS = 1000; // words in dictionary ~ 100,000
 // --
 var PATH_DICT     = __dirname+"/src/gcide_mod_javierjulio";
 var PATH_DST      = __dirname+"/dist";
@@ -1064,7 +1065,7 @@ function buildMasterDictConnectedness(cb){
   function dictReady(){
     console.log("Start!");
     var indexStart =    0;
-    var indexEnd   =   1000;
+    var indexEnd   =   MAX_THOUSAND_TO_PROCESS*1000;
     var index      =    0;
     var t0 = new Date().getTime();
     // FINDABILITY
@@ -1076,13 +1077,13 @@ function buildMasterDictConnectedness(cb){
           var hits = getUsedCount(w)||0;
           masterDict[_word].f = hits;
           // --
-          if(index % 1000 === 0) console.log("@"+index+", f Hits for: "+w+" = "+hits);
+          if(index % 500 === 0) console.log("@"+index+", f Hits for: "+w+" = "+hits);
         }
       }
       index++;
     });
     var t1 = new Date().getTime();
-    console.log("Time to traverse: "+Math.floor((t1-t0)/6000)/10.0+" minutes.", "Indexed "+indexStart+" to "+indexEnd);
+    console.log("Time to traverse: "+Math.floor((t1-t0)/6000)/10.0+" minutes.", "Indexed "+indexStart+" to "+Math.min(index,indexEnd));
     // --
     var somewhatFindable = 0;
     _.each(masterDict,function(_data, _word){

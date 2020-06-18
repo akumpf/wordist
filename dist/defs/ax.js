@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["noun",["A tool or instrument of steel, or of iron with a steel edge or blade, for felling trees, chopping and splitting wood, hewing timber, etc. It is wielded by a wooden helve or handle, so fixed in a socket or eye as to be in the same plane with the blade. The broadax, or carpenter's ax, is an ax for hewing timber, made heavier than the chopping ax, and with a broader and thinner blade and a shorter handle."]],["verb",["To ask; to inquire or inquire of."]]],"a":["axes","axed","axing"],"c":[]}};
+ var o = {"_":{"e":[["noun",["A tool or instrument of steel, or of iron with a steel edge or blade, for felling trees, chopping and splitting wood, hewing timber, etc. It is wielded by a wooden helve or handle, so fixed in a socket or eye as to be in the same plane with the blade. The broadax, or carpenter's ax, is an ax for hewing timber, made heavier than the chopping ax, and with a broader and thinner blade and a shorter handle."]],["verb",["To ask; to inquire or inquire of."]]],"a":["axes","axed","axing"],"c":[],"f":74}};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ax",o);
 })();

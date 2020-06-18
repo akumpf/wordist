@@ -1,4 +1,4 @@
 (function(){
- var o = {"_el":{"e":[["noun",["Same as Ousel."]]],"a":["ouzels"],"c":["zool"]},"_els":"_ouzel"};
+ var o = {"_el":{"e":[["noun",["Same as Ousel."]]],"a":["ouzels"],"c":["zool"],"f":4},"_els":"_ouzel"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ouz",o);
 })();
