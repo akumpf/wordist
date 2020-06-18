@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["unkn",["One of the runes (�) adopted into the Anglo-Saxon, or Old English, alphabet. It had the value of modern English w, and was replaced from about a. d. 1280 at first by uu, later by w."]]],"a":[],"f":0},"_d":{"e":[["noun",["A narrow lane or alley."]]],"a":["wynds"],"f":0},"_kernel":{"e":[["noun",["The European moor hen."]]],"a":["wynkernels"],"f":0},"_n":{"e":[["noun",["A kind of timber truck, or carriage."]]],"a":["wynns"],"f":0},"_ds":"_wynd","_kernels":"_wynkernel","_ns":"_wynn"};
+ var o = {"_":{"e":[["unkn",["One of the runes (�) adopted into the Anglo-Saxon, or Old English, alphabet. It had the value of modern English w, and was replaced from about a. d. 1280 at first by uu, later by w."]]],"a":[],"c":[]},"_d":{"e":[["noun",["A narrow lane or alley."]]],"a":["wynds"],"c":[]},"_kernel":{"e":[["noun",["The European moor hen."]]],"a":["wynkernels"],"c":["zool"]},"_n":{"e":[["noun",["A kind of timber truck, or carriage."]]],"a":["wynns"],"c":[]},"_ds":"_wynd","_kernels":"_wynkernel","_ns":"_wynn"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("wyn",o);
 })();

@@ -371,19 +371,23 @@ var wordist = (function(){
     }
     var url = path;
     switch(pre){
-      case _DEFS: url += "/defs/"+key+".js";   break;
-      case _POS:  url += "/pos/"+key+".js";    break;
-      case _FIND: url += "/sort_f/"+key+".js"; break;
-      case _TOC:  url += "/toc.js";            break;
+      case _DEFS:   url += "/defs/"+key+".js";   break;
+      case _POS:    url += "/pos/"+key+".js";    break;
+      case _FIND:   url += "/sort_f/"+key+".js"; break;
+      case _FIELD:  url += "/fields/"+key+".js"; break;
+      case _TOC:    url += "/toc.js";            break;
+      case _FIELDS: url += "/fields.js"; break;
       default: console.log("Unknown request pre:", pre);
     }
     addDataScript(rid, url, key, cb);
   }
   // --
-  var _DEFS = "defs_";
-  var _POS  = "pos_";
-  var _FIND = "find_";
-  var _TOC  = "toc_";
+  var _DEFS   = "defs_";
+  var _POS    = "pos_";
+  var _FIND   = "find_";
+  var _TOC    = "toc_";
+  var _FIELD  = "field_";
+  var _FIELDS = "fields_";
   window.on_defs_cb     = function(key, data){
     var pre = _DEFS;
     var rid = dataRootID+pre+key;
@@ -403,6 +407,14 @@ var wordist = (function(){
     // --
     callDataCbsAndRemoveScript(rid,key);
   };
+  window.on_field_cb      = function(key, data){
+    var pre = _FIELD;
+    var rid = dataRootID+pre+key;
+    // --
+    dataCache[pre+key] = data||[];
+    // --
+    callDataCbsAndRemoveScript(rid,key);
+  };
   window.on_sort_f_cb   = function(key, data){
     var pre = _FIND;
     var rid = dataRootID+pre+key;
@@ -413,6 +425,14 @@ var wordist = (function(){
   };
   window.on_toc_cb      = function(key, data){
     var pre = _TOC;
+    var rid = dataRootID+pre+key;
+    // --
+    dataCache[pre+key] = data||[];
+    // --
+    callDataCbsAndRemoveScript(rid,key);
+  };
+  window.on_fields_cb      = function(key, data){
+    var pre = _FIELDS;
     var rid = dataRootID+pre+key;
     // --
     dataCache[pre+key] = data||[];
@@ -481,7 +501,62 @@ var wordist = (function(){
         if(!data) return cb(null, unfilenameWord(wf), null);
       }
       // --
-      return cb(null, unfilenameWord(wf), data);
+      let root = unfilenameWord(wf);
+      let entries = data.e||[];
+      let seeAlso = {
+				words: [],
+				phrases: [],
+				usedBy: []
+			};
+			for(var i=0; i<entries.length; i++){
+				var defs = entries[i][1]||[];
+				for(var j=0; j<defs.length; j++){
+					var def = defs[j]||"";
+					let semis = def.split(";");
+					if(semis.length > 1){
+						for(let k=0; k<semis.length; k++){
+							let semiA = semis[k].toLowerCase();
+							let semiAs = semiA.split(",");
+							for(let m=0; m<semiAs.length; m++){
+								let semi = $.trim(semiAs[m]);
+								semi = semi.replace(/(^)(a|as|an|the|or|to)(\s|$)/g, "");
+								semi = semi.replace(/(\.|\!|\?|\-)/g, "");
+								semi = $.trim(semi).toLowerCase();
+								// --
+								let semiWords = (semi.split(" ")||[]).length;
+								if(k == 0 && semiWords > 1) continue; // most definitions start with a phrase/sentence, and then provide similar words and examples...
+								// --
+								semi = semi.replace(/(^)(usually)(\s|$)/g, "");
+                semi = semi.replace(/(^)(often)(\s|$)/g, "");
+                semi = semi.replace(/(^)(typically)(\s|$)/g, "");
+								semi = semi.replace(/(^)(called)(\s|$)/g, "");
+                semi = semi.replace(/(^)(used)(\s|$)/g, "");
+                // --
+								semi = semi.replace(/(^)(a|as|an|the|or|to|with|esp)(\s|$)/g, ""); // esp = "especially" in dictionary speak
+								// --
+								if(semi.length < 1) continue; // entry is blank after cleaning.
+								if(semi == root) continue; // entry is same as root after cleaning.
+								if(semiWords > 5) continue; // seems too long.
+								if(semi.indexOf(",")>=0) continue; // looks like multiples.
+								if(semi.indexOf("etc")>=0) continue; // looks like etc.
+								if(semi.indexOf(")")>=0) continue; // something is not quite right
+								if(semi.indexOf("(")>=0) continue; // something is not quite right
+								// --
+								if(semi.indexOf(root) >= 0){
+									seeAlso.usedBy.push(semi);
+								}else if(semi.indexOf(" ") > 0){
+									seeAlso.phrases.push(semi);
+								}else{
+									seeAlso.words.push(semi);
+								}
+							}
+						}
+					}
+				}
+			}
+      data.seeAlso = seeAlso;
+      // --
+      return cb(null, root, data);
     });
   };
   exports.getDefClosest = function(word, cb){
@@ -500,6 +575,12 @@ var wordist = (function(){
       return cb(null, words[Math.floor(words.length*Math.random())]);
     });
   };
+  exports.getFieldAll   = function(field, cb){
+    requestData(_FIELD, field, function(err){
+      if(err) return console.warn(err);
+      return cb(null, field, dataCache[_FIELD+field]);
+    });
+  };
   exports.getFindable   = function(percent, cb){
     percent = Math.round(percent||1);
     requestData(_FIND, percent, function(err){
@@ -511,6 +592,12 @@ var wordist = (function(){
     requestData(_TOC, "toc", function(err){
       if(err) return console.warn(err);
       return cb(null, dataCache[_TOC+"toc"]);
+    });
+  };
+  exports.getFields  = function(cb){
+    requestData(_FIELDS, "fields", function(err){
+      if(err) return console.warn(err);
+      return cb(null, dataCache[_FIELDS+"fields"]);
     });
   };
   exports.getPage       = function(pg, cb){

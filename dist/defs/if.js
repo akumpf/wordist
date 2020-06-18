@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["conj",["In case that; granting, allowing, or supposing that; -- introducing a condition or supposition.","Whether; -- in dependent questions."]]],"a":[],"f":583}};
+ var o = {"_":{"e":[["conj",["In case that; granting, allowing, or supposing that; -- introducing a condition or supposition.","Whether; -- in dependent questions."]]],"a":[],"c":[]}};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("if",o);
 })();

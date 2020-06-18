@@ -1,0 +1,4 @@
+(function(){
+ var o = ["butt","camber","carvelbuilt","chase","clamp","compartment","compassing","cross-pawl","cross-spale","dousing-chock","driftpiece","eking","fair","fay","forefoot","furring","hood","keel","keelson","knee","knuckle","ledge","line","moot","nog","pale","plank-sheer","quicken","ravehook","ribband","ribbon","rider","rung","runghead","side","siding","snape","spale","sponson","spur","standard","stealer","steeler","steeve","stemson","stock","strake","streak","string","stringer","supporter","surmark","throat","timber","treenail","trenail","trunnel","watercourse","water line","wringbolt","wringstaff"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("shipbuilding",o);
+})();

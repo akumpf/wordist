@@ -1,0 +1,4 @@
+(function(){
+ var o = ["action","adjusted","backup","bank","bebung","bel canto","boogie","boogie-woogie","bowed","capo tasto","chordophone","clipped","connected","contredanse","downbeat","down-bow","dramatic","figure","flue pipe","free-reed","funky","glockenspiel","half tone","honky-tonk","increasing","jam","lead","lentissimo","metallophone","motif","on-key","overblow","pralltriller","rag","ridotto","saengerbund","singspiel","solo","techniphone","time signature","toccatella","tonguing","vamp","vox angelica"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("music",o);
+})();

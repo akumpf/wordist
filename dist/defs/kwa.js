@@ -1,4 +1,4 @@
 (function(){
- var o = {"_jalein":{"e":[["noun",["A battle of World War II (January 1944); American forces landed and captured a Japanese airbase."]]],"a":["kwajaleins"],"f":0},"_n_yin":{"e":[["noun",["A female Bodhisattva; often called Goddess of Mercy and considered an aspect of the Bodisattva Avalokitesvara; identified with Japanese Kwannon."]]],"a":["kwan yins"],"f":0},"_nnon":{"e":[["noun",["Japanese counterpart of the Chinese Kuan Yin."]]],"a":["kwannons"],"f":1},"_jaleins":"_kwajalein","_n_yins":"_kwan_yin","_nnons":"_kwannon"};
+ var o = {"_jalein":{"e":[["noun",["A battle of World War II (January 1944); American forces landed and captured a Japanese airbase."]]],"a":["kwajaleins"],"c":[]},"_n_yin":{"e":[["noun",["A female Bodhisattva; often called Goddess of Mercy and considered an aspect of the Bodisattva Avalokitesvara; identified with Japanese Kwannon."]]],"a":["kwan yins"],"c":["buddhism"]},"_nnon":{"e":[["noun",["Japanese counterpart of the Chinese Kuan Yin."]]],"a":["kwannons"],"c":[]},"_jaleins":"_kwajalein","_n_yins":"_kwan_yin","_nnons":"_kwannon"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kwa",o);
 })();

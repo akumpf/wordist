@@ -1,0 +1,4 @@
+(function(){
+ var o = ["agon","atheneum","atimy","bema","boule","choragus","corypheus","deme","demiurge","demon","dolphin","ecclesia","eirenarch","enomotarch","enomoty","ephor","ethnarch","gerontes","gymnasiarch","harmost","hellanodic","hetaera","hippodrome","hoplite","hydria","hypaspist","irenarch","lampadist","lampadrome","lochage","metic","navarch","ostracism","ostracize","palladium","pancratium","panhellenium","paranymph","pedagogue","pentaconter","penteconter","pentecoster","pentecosty","petalism","phalanx","phratry","phylarch","plethron","pnyx","polemarch","procrustes","programma","proxene","prytaneum","prytanis","prytany","psephism","pylagore","pyrrhicist","pythiad","pythoness","rhapsode","stater","stela","strategus","symposiarch","taxiarch","theorica","thesmothete","thranite","timocracy","triaconter","trierarch","xenelasia","xystarch"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("gr_antiq",o);
+})();

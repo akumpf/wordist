@@ -1,4 +1,4 @@
 (function(){
- var o = {"_nkit":{"e":[["noun",["The Indians of a seafaring group of tribes of southern Alaska comprising the Koluschan stock. Previous to deterioration from contact with the whites they were the foremost traders of the northwest. They built substantial houses of cedar adorned with totem poles, and were expert stone carvers and copper workers. Slavery, the potlatch, and the use of immense labrets were characteristic. Many now work in the salmon industry."]]],"a":["tlinkits"],"f":1},"_nkits":"_tlinkit"};
+ var o = {"_nkit":{"e":[["noun",["The Indians of a seafaring group of tribes of southern Alaska comprising the Koluschan stock. Previous to deterioration from contact with the whites they were the foremost traders of the northwest. They built substantial houses of cedar adorned with totem poles, and were expert stone carvers and copper workers. Slavery, the potlatch, and the use of immense labrets were characteristic. Many now work in the salmon industry."]]],"a":["tlinkits"],"c":[]},"_nkits":"_tlinkit"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("tli",o);
 })();

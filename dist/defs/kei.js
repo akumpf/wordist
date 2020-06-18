@@ -1,4 +1,4 @@
 (function(){
- var o = {"_lhauite":{"e":[["noun",["A mineral of a brownish black color, related to titanite in form. It consists chiefly of silica, titanium dioxide, lime, and yttria."]]],"a":["keilhauites"],"f":0},"_r":{"e":[["noun",["See Kier."]]],"a":["keirs"],"f":0},"_tloa":{"e":[["noun",["A black, two-horned, African rhinoceros (Atelodus keitloa). It has the posterior horn about as long as the anterior one, or even longer."]]],"a":["keitloas"],"f":0},"_lhauites":"_keilhauite","_rs":"_keir","_tloas":"_keitloa"};
+ var o = {"_lhauite":{"e":[["noun",["A mineral of a brownish black color, related to titanite in form. It consists chiefly of silica, titanium dioxide, lime, and yttria."]]],"a":["keilhauites"],"c":["min"]},"_r":{"e":[["noun",["See Kier."]]],"a":["keirs"],"c":[]},"_tloa":{"e":[["noun",["A black, two-horned, African rhinoceros (Atelodus keitloa). It has the posterior horn about as long as the anterior one, or even longer."]]],"a":["keitloas"],"c":["zool"]},"_lhauites":"_keilhauite","_rs":"_keir","_tloas":"_keitloa"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kei",o);
 })();

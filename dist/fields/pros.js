@@ -1,0 +1,4 @@
+(function(){
+ var o = ["acatalectic","accent","acephalous","anacrusis","anapest","antepenult","antibacchius","antispast","arsis","assonance","assonant","bacchius","catalectic","choliamb","dactyl","diiambus","dipody","distich","ditrochean","ditrochee","dochmiac","dochmius","ectasis","foot","galliambic","glyconic","heptastich","hypercatalectic","hypermeter","iambic","iambus","ictus","ionic","monopody","monostrophic","octameter","ottava rima","pentapody","penult","proceleusmatic","pyrrhic","quatrain","reduplication","rest","rhopalic","rhyme","sapphic","scansion","semiped","sextain","spondee","tetracolon","thesis","tiercet","trimeter","tripody","trochaic","trochee","ultima"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("pros",o);
+})();

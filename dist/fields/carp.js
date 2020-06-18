@@ -1,0 +1,4 @@
+(function(){
+ var o = ["ashlaring","bent","brob","browpost","butt","cage","chamfer","chamfret","clear","cleat","coak","cog","countergage","cradle","cradling","cramp","culvertail","doorstop","dovetail","drawing knife","dwang","edgeshot","escutcheon","feather","franking","frowey","furring","grafting","heelpost","interduce","king-post","kingtruss","list","listing","mopboard","notchboard","notching","pan","puncheon","rabbet","relish","ripsaw","router","sark","sarking","scribe","shoot","siding","spur","standard","stirrup","strickle","stringer","swallowtail","swallow-tailed","syphering","table","tabling","tenon","toed","torsal","torsel","traverse","trim","tusk","twister","underhung","wair","wale"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("carp",o);
+})();

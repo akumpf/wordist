@@ -1,5 +1,8 @@
 console.log("Running jsdict...");
-
+// --
+var STAGE = 2;
+console.log("STAGE: "+STAGE);
+// --
 var PATH_DICT     = __dirname+"/src/gcide_mod_javierjulio";
 var PATH_DST      = __dirname+"/dist";
 var PATH_SRC      = __dirname+"/src";
@@ -365,6 +368,7 @@ function getGCIDELetterDict(l, cb){
       if(key == "a" || key == "an" || key == "the") defaultPoSForThisWord = "article";
       // --
       var altWordForms = [];
+      var usedInFields = [];
       for(var i=0; i<defs.length; i++){
         var d = defs[i];
         var pos = (d.part_of_speech||defaultPoSForThisWord).substring(0,4);
@@ -375,9 +379,18 @@ function getGCIDELetterDict(l, cb){
         }
         var defClean = replaceDiacritics(d.definition.replace(/[\n\t]/g, "").replace(/\s{2,}/g, ' '));
         defsByPoS[pos][1].push(defClean);
+        // --
+        let field = d.field||"";
+        if(field){
+          let fields2 = field.split("&");
+          for(var j=0; j<fields2.length; j++){
+            var field2 = filenameWord((fields2[j]||"").toLowerCase().replace(/\./g, "").trim());
+            if(field2 && usedInFields.indexOf(field2) < 0) usedInFields.push(field2);
+          }
+        }
       }
       // --
-      ldict[wkey] = ldict[wkey]||{e:[],a:[]};
+      ldict[wkey] = ldict[wkey]||{e:[],a:[],c:usedInFields};
       _.each(defsByPoS,function(val2,key2){
         ldict[wkey].e.push(val2);
       });
@@ -395,13 +408,20 @@ function getGCIDENumberDict(n,cb){
 function prepareDirectories(cb){
   rimraf(PATH_DST, function(err){
   	if(err) return cb("Error cleaning dist dir.");
+    console.log("** CLEANED DIST DIR. READY TO REBUILD FROM SCRATCH. **");
   	fs.mkdir(PATH_DST, function(err){
 		  if(err) return cb("Error creating dist dir.");
       fs.mkdir(PATH_DST+"/pos", function(err){
         if(err) return cb("Error creating dist/pos dir.");
         fs.mkdir(PATH_DST+"/defs", function(err){
           if(err) return cb("Error creating dist/defs dir.");
-          cb(null);
+          fs.mkdir(PATH_DST+"/sort_f", function(err){
+            if(err) return cb("Error creating dist/sort_f dir.");
+            fs.mkdir(PATH_DST+"/fields", function(err){
+              if(err) return cb("Error creating dist/fields dir.");
+              cb(null);
+            });
+          });
         });
       });
     });
@@ -417,7 +437,8 @@ function unfilenameWord(w){
   return w.replace(/\_/g, " ").replace(/\~/g, "'");
 }
 function filenameWord(w){
-  return w.toLowerCase().replace(/\ /g, "_").replace(/\'/g, "~");
+  //return w.toLowerCase().replace(/\ /g, "_").replace(/\'/g, "~");
+  return replaceDiacritics(w||"").toLowerCase().replace(/[^a-z0-9\-\.\ \']/g, "").replace(/\ /g, "_").replace(/\'/g, "~");
 }
 
 // --
@@ -479,7 +500,7 @@ var plurizeNoun    = (function(){
 
 		// latin plural in popular usage.
 		syllabus: 'syllabi',
-		alumnus: 'alumni', 
+		alumnus: 'alumni',
 		genus: 'genera',
 		viscus: 'viscera',
 		stigma: 'stigmata'
@@ -502,7 +523,7 @@ var plurizeNoun    = (function(){
 		[ /^(agend|addend|memorand|millenni|dat|extrem|bacteri|desiderat|strat|candelabr|errat|ov|symposi)um$/i, '$1a' ],
 		[ /^(apheli|hyperbat|periheli|asyndet|noumen|phenomen|criteri|organ|prolegomen|\w+hedr)on$/i, '$1a' ],
 		[ /^(alumn|alg|vertebr)a$/i, '$1ae' ],
-		
+
 		// churches, classes, boxes, etc.
 		[ /([cs]h|ss|x)$/i, '$1es' ],
 
@@ -524,11 +545,11 @@ var plurizeNoun    = (function(){
 	];
 
 	// plural(String noun, Number count?, String plural?) -> String
-	// 
+	//
 	// pluralizes the given singular noun.  There are three ways to call it:
 	//   plural(noun) -> pluralNoun
 	//     Returns the plural of the given noun.
-	//   Example: 
+	//   Example:
 	//     plural("person") -> "people"
 	//     plural("me") -> "us"
 	//
@@ -577,7 +598,7 @@ var plurizeNoun    = (function(){
 		if ( lowerWord in irregular ) {
 			return capitalizeSame(irregular[lowerWord], word);
 		}
-		
+
 		// try to pluralize the word depending on its suffix.
 		var suffixRulesLength = suffixRules.length;
 		for ( var i=0; i < suffixRulesLength; i++ ) {
@@ -594,7 +615,7 @@ var plurizeNoun    = (function(){
 	// plural.define(String singular, String plural) -> String
 	//   Define your own plurals. User defined plurals
 	//   have priority over all other rules.
-	// 
+	//
 	//   Example:
 	//     plural.define('emacs', 'emacsen')
 	plural.define = function(singular, plural) {
@@ -664,7 +685,7 @@ function getAlternativesForWord(w,pos){
 // masterDict.json quick dictionary is one big object that contains key:value pairs of the form...
 //
 // _word: _data,
-// where _data = { 
+// where _data = {
 //    e: [[part_of_speech, [array of definitions]], ...  ],
 //    a: [array of alternative spellings, conjugations, plural, ...],
 //    u: # of definitions this word appears in.
@@ -674,11 +695,11 @@ function getAlternativesForWord(w,pos){
 // --
 // Note that "_word" is simply the word:
 // 1. lowercased
-// 2. space replaced by "_" 
+// 2. space replaced by "_"
 // 3. apostroophe (') replaced by "~"
 // 4. prefixed with WPREFIX = "_"
 // ------------------
-  
+
 // --
 var masterDict    = {};
 var revLookup = {};
@@ -729,6 +750,33 @@ function buildPartOfSpeechDict(cb){
    });
    // --
    if(cb) cb();
+}
+function buildFieldsDict(cb){
+  var wordsByField = {};
+  // --
+  _.each(masterDict,function(_data, _word){
+    var word    = _word.substring(1);
+    var fields  = _data.c||[];
+    for(var i=0; i<fields.length; i++){
+      var field = (fields[i]||"").toLowerCase();
+      // if(field){
+      //   let fields2 = field.split("&");
+      //   for(var j=0; j<fields2.length; j++){
+      //     var field2 = filenameWord((fields2[j]||"").toLowerCase().replace(/\./g, "").trim());
+          wordsByField[field] = wordsByField[field]||[];
+          wordsByField[field].push(unfilenameWord(word));
+        // }
+      // }
+    }
+  });
+  // --
+  _.each(wordsByField,function(val,key){
+    if((val||[]).length > 1){
+      fs.writeFileSync(PATH_DST+"/fields/"+key+".js",  getObjAsJSInlineCallback("field", key, val));
+    }
+  });
+  // --
+  if(cb) cb();
 }
 function buildReverseLookup(cb){
   // --
@@ -896,7 +944,7 @@ function buildMasterDictPages(cb){
   // --
   _.each(masterDict, function(_data, _word){
     var h = _word.substring(1,4); // first 3 letters ~ 20:1 grouping, first 4 letters ~ 5:1
-    if(!h || h.search(/[a-z]/) > 0) return; // doesn't start with a letter. 
+    if(!h || h.search(/[a-z]/) > 0) return; // doesn't start with a letter.
     var s = WPREFIX+_word.substring(4);
     pages[h]    = pages[h]||{};
     pages[h][s] = _data;
@@ -910,7 +958,7 @@ function buildMasterDictPages(cb){
       if(!masterDict[_alt]){
         // provide a redirect to entry link
         var h = _alt.substring(1,4); // first 3 letters ~ 20:1 grouping, first 4 letters ~ 5:1
-        if(!h || h.search(/[a-z]/) > 0) return; // doesn't start with a letter. 
+        if(!h || h.search(/[a-z]/) > 0) return; // doesn't start with a letter.
         var s = WPREFIX+_alt.substring(4);
         pages[h]    = pages[h]||{};
         pages[h][s] = _word;
@@ -1016,7 +1064,7 @@ function buildMasterDictConnectedness(cb){
   function dictReady(){
     console.log("Start!");
     var indexStart =    0;
-    var indexEnd   =   100*9000;
+    var indexEnd   =   1000;
     var index      =    0;
     var t0 = new Date().getTime();
     // FINDABILITY
@@ -1165,34 +1213,35 @@ function buildMasterDictConnectedness(cb){
   dictReady();
 }
 // --
-var STAGE = 3;
-console.log("STAGE: "+STAGE);
-// --
-if(STAGE == 1){
+
+function runStage1(){ // BUILD MASTER/REVERSE DICTIONARIES AND GENERATE LOTS OF JSON FILES (takes about 1 hour)
   prepareDirectories(function(){
     buildMasterDict(function(){
       buildPartOfSpeechDict(function(){
-        buildReverseLookup(function(){
-          findUndefinedWordsAndUpdateRev(function(){
-            // --
-            console.log("Saving master and reverse dictionaries...");
-            fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
-            fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
-            // --
-            buildMasterDictConnectedness(function(){
+        buildFieldsDict(function(){
+          buildReverseLookup(function(){
+            findUndefinedWordsAndUpdateRev(function(){
               // --
               console.log("Saving master and reverse dictionaries...");
               fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
+              fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
               // --
-              buildMasterDictPages(function(){
-                console.log("DONE");
-                // var word = "compelling";
-                // var root = revLookup[WPREFIX+filenameWord(word)];
-                // var data = masterDict[root];
-                // console.log(word,root,data.a,data.e);
-                // console.log("repeat",masterDict[WPREFIX+"repeat"]);
-                // console.log("admit", masterDict[WPREFIX+"admit"]);
-                // console.log("usual", masterDict[WPREFIX+"usual"]);
+              buildMasterDictConnectedness(function(){
+                // --
+                console.log("Saving master and reverse dictionaries...");
+                fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
+                // --
+                buildMasterDictPages(function(){
+                  console.log("DONE");
+                  runStage2();
+                  // var word = "compelling";
+                  // var root = revLookup[WPREFIX+filenameWord(word)];
+                  // var data = masterDict[root];
+                  // console.log(word,root,data.a,data.e);
+                  // console.log("repeat",masterDict[WPREFIX+"repeat"]);
+                  // console.log("admit", masterDict[WPREFIX+"admit"]);
+                  // console.log("usual", masterDict[WPREFIX+"usual"]);
+                });
               });
             });
           });
@@ -1201,7 +1250,7 @@ if(STAGE == 1){
     });
   });
 }
-if(STAGE == 2){
+function runStage2(){ // HANDLE IRREGULAR VERBS and GNEREATE TABLE OF CONTENTS (file lookup keys)
   fs.readFile(FILE_MASTER, {}, function(err, data) {
     if (err) console.log(err);
     try{
@@ -1277,14 +1326,32 @@ if(STAGE == 2){
     	});
       toc.sort();
       fs.writeFileSync(PATH_DST+"/toc.js", getObjAsJSInlineCallback("toc", "toc", toc));
+      runStage3();
+    });
+    // --
+    console.log("Building FieldsTOC");
+    fs.readdir(PATH_DST+"/fields", function(err, files) {
+    	if (err) return;
+      var toc = [];
+    	files.forEach(function(f){
+        if(f && f.lastIndexOf(".js") == f.length-3){
+          toc.push(f.substring(0,f.length-3));
+        }
+    	});
+      toc.sort();
+      fs.writeFileSync(PATH_DST+"/fields.js", getObjAsJSInlineCallback("fields", "fields", toc));
+      runStage3();
     });
   }
 }
-if(STAGE == 3){
+function runStage3(){ // COPY OVER WORDIST.JS
 	fsExtra.copy(__dirname+"/src/wordist.js", PATH_DST+"/wordist.js", function(err){
 		if(err) console.log(err);
     // --
     console.log("DONE!");
   });
 }
-
+// --
+if(STAGE == 1) runStage1();
+if(STAGE == 2) runStage2();
+if(STAGE == 3) runStage3();

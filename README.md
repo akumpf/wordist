@@ -44,7 +44,8 @@ wordist.getDef("apple", function exampleDefHandler(err, root, data){
   // --
   var entries = data.e||[];
   var alts    = data.a||[];
-  console.log(root, alts, entries);
+  var seeAlso = data.seeAlso||{};
+  console.log(root, alts, entries, seeAlso);
 });
 ```
 
@@ -61,7 +62,8 @@ wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
   // --
   var entries = data.e||[];
   var alts    = data.a||[];
-  console.log(root, alts, entries);
+  var seeAlso = data.seeAlso||{};
+  console.log(root, alts, entries, seeAlso);
 });
 ```
 
@@ -78,7 +80,8 @@ wordist.getDefRandom(function exampleDefHandler(err, root, data){
   // --
   var entries = data.e||[];
   var alts    = data.a||[];
-  console.log(root, alts, entries);
+  var seeAlso = data.seeAlso||{};
+  console.log(root, alts, entries, seeAlso);
 });
 ```
 
@@ -108,6 +111,32 @@ This is handy for generating creative output (e.x. Mad Libs).
 wordist.getPoSRandom("adje", function(err, randAdjective){
   if(err) return console.warn(err);
   console.log(randAdjective);
+});
+```
+
+### wordist.getFieldAll(field, callback)
+
+Wordist contains lists of all defined words grouped by field where defined (like acoustics, forestry, navigation, etc.).
+
+Note that `field` is often shorthand for a longer, more readable name. See `getFields()` for the full list.
+
+```
+// get all the zoology words!
+wordist.getFieldAll("zool", function(err, field, wordsInField){
+  if(err) return console.warn(err);
+  console.log(field, wordsInField);
+});
+```
+
+### wordist.getFields(callback)
+
+Fetches and returns the full list of fields specified in the dictionary (like acoustics, forestry, navigation, etc.).
+
+```
+// get all the fields defined in the dictionary
+wordist.getFields(function(err, allFields){
+  if(err) return console.warn(err);
+  console.log(allFields);
 });
 ```
 

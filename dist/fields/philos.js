@@ -1,0 +1,4 @@
+(function(){
+ var o = ["a posteriori","a priori","associationism","associationist","cerebralism","conation","dualism","egoism","egoist","eject","esoteric","exoterics","experientialism","hedonics","humanitarian","humanitarianism","idealism","immaterialism","immaterialist","induction","instrumentalism","judgment","life","monadology","mysticism","nativism","nous","operationalism","operationalist","orectic","pneumatics","pneumatology","preexistentism","psychism","rationalism","realism","realist","sensualism","sequence","speculate","subliminal","summum bonum","theocrasy","transcendental"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("philos",o);
+})();

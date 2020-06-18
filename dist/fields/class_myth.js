@@ -1,0 +1,4 @@
+(function(){
+ var o = ["augean","aurora","calliope","centaur","cerberus","ceres","clio","dryad","dryas","erato","erinys","eumenides","euterpe","hamadryad","hebe","hesperides","hippocampus","hydra","hymen","hyperion","ichor","iris","lamia","laocoon","lethe","limoniad","lotophagi","lotus-eater","medusa","melpomene","minos","minotaur","mnemosyne","morpheus","muse","nemesis","nereid","nereis","niobe","nymph","oread","pandora","perseus","phaethon","phlegethon","phoebus","pierides","pluto","plutus","pomona","prometheus","proteus","psyche","pygmy","satyr","siren","sisyphus","styx","talaria","tartarus","thalia","trident","urania","venus"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("class_myth",o);
+})();

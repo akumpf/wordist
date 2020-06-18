@@ -1,0 +1,4 @@
+(function(){
+ var o = ["flower","hepar","inhumation","lithargyrum","magisterial","martial","muride","nitrum","noctiluca","osmazome","oxymuriate","pelican","phlegm","phlogistic","phlogistical","phlogisticate","phlogistication","phlogiston","phosgene","phosphorical","phthor","picromel","pompholyx","potelot","promethean","prussic","pyroligneous","pyrolithic","pyromalic","pyrophorus","pyrouric","pyroxylic","regulize","revive","revivification","rostrum","saleratus","salmiac","saturnine","siliciureted","spiritualize","subtilization","thermogen","ustulation","vitriolate","vitriolated","vitriolation","vitriolization","vodanium","zymic","zymome"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("old_chem",o);
+})();

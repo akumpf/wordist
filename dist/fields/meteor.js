@@ -1,0 +1,4 @@
+(function(){
+ var o = ["aerolite","aerosiderite","alto-cumulus","altostratus","anthelion","antimonsoon","barber","barogram","barograph","bayamo","beaufort's scale","brontograph","brontometer","cirro-cumulus","cirro-stratus","cirrus","cold wave","cumu-cirro-stratus","cumulostratus","cumulus","cyclone","dew-point","foehn","frost signal","hydrosphere","isobront","lester","leveche","nimbus","orometer","paraselene","photo-electrograph","photonephograph","shaitan","strato-cirrus","strato-cumulus","stratus","tramontana","trough","udometer","weather station"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("meteor",o);
+})();

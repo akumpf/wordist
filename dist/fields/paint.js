@@ -1,0 +1,4 @@
+(function(){
+ var o = ["accidental","action","air","airy","allegory","attitude","attribute","background","bambocciade","bice","bise","bister","blending","brooch","carnation","chilled","cold","crude","daub","dead","distemper","drier","ecce homo","exaggeration","filler","glaze","glazing","ground","gumption","impaste","impasting","impasto","keeping","light","magilp","magnase black","medium","megilp","middle-ground","offskip","palette","pallet","penumbra","priming","profile","relief","sfumato","sgraffito","stipple","sublition","synchronism","tablature","tempera","three-quarter","umber","vehicle","warm","warmth","waterwork"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("paint",o);
+})();

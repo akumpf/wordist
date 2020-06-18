@@ -1,4 +1,4 @@
 (function(){
- var o = {"_ead":{"e":[["noun",["Literally, the head of an ox (emblem of cuckoldom); hence, a dolt; a blockhead."]]],"a":["oxheads"],"f":0},"_eal":{"e":[["noun",["Same as Bear's-foot."]]],"a":["oxheals"],"f":0},"_eart":{"e":[["noun",["A large heart-shaped cherry, either black, red, or white."]]],"a":["oxhearts"],"f":1},"_ide":{"e":[["noun",["The skin of an ox, or leather made from it.","A measure of land. See 3d Hide."]]],"a":["oxhides"],"f":2},"_eads":"_oxhead","_eals":"_oxheal","_earts":"_oxheart","_ides":"_oxhide"};
+ var o = {"_ead":{"e":[["noun",["Literally, the head of an ox (emblem of cuckoldom); hence, a dolt; a blockhead."]]],"a":["oxheads"],"c":[]},"_eal":{"e":[["noun",["Same as Bear's-foot."]]],"a":["oxheals"],"c":["bot"]},"_eart":{"e":[["noun",["A large heart-shaped cherry, either black, red, or white."]]],"a":["oxhearts"],"c":[]},"_ide":{"e":[["noun",["The skin of an ox, or leather made from it.","A measure of land. See 3d Hide."]]],"a":["oxhides"],"c":["o_eng_law"]},"_eads":"_oxhead","_eals":"_oxheal","_earts":"_oxheart","_ides":"_oxhide"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oxh",o);
 })();

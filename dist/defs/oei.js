@@ -1,4 +1,4 @@
 (function(){
- var o = {"_l-de-boeuf":{"e":[["noun",["A circular or oval window; -- generally used of architecture of the 17th and 18th centuries. A famous room in the palace of Versailles bears this name, from the oval window opening into it."]]],"a":["OEil-de-boeufs"],"f":0},"_l-de-perdrix":{"e":[["adje",["Characterized by, or decorated with, small round points, spots, or rings; as, oeil-de-perdrix pattern.","Having a brownish red color; -- used esp. of light-colored red wine."]]],"a":[],"f":0},"_l-de-boeufs":"_oeil-de-boeuf"};
+ var o = {"_l-de-boeuf":{"e":[["noun",["A circular or oval window; -- generally used of architecture of the 17th and 18th centuries. A famous room in the palace of Versailles bears this name, from the oval window opening into it."]]],"a":["OEil-de-boeufs"],"c":["arch"]},"_l-de-perdrix":{"e":[["adje",["Characterized by, or decorated with, small round points, spots, or rings; as, oeil-de-perdrix pattern.","Having a brownish red color; -- used esp. of light-colored red wine."]]],"a":[],"c":["ornamental_art"]},"_l-de-boeufs":"_oeil-de-boeuf"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("oei",o);
 })();

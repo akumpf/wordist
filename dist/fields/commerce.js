@@ -1,0 +1,4 @@
+(function(){
+ var o = ["book","closing","c.o.d.","connection","generic","markup","merchandising"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("commerce",o);
+})();

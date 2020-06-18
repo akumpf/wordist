@@ -1,4 +1,4 @@
 (function(){
- var o = {"_egsspiel":{"e":[["noun",["A game of war, played for practice, on maps."]]],"a":["kriegsspiels"],"f":0},"_s":{"e":[["noun",["A Malay dagger. See Creese."]]],"a":["krises"],"f":0},"_shna":{"e":[["noun",["The most popular of the Hindu divinities, usually held to be the eighth incarnation of the god Vishnu."]]],"a":["krishnas"],"f":3},"_tarchy":{"e":[["noun",["The rule of the judges over Israel."]]],"a":["kritarchies"],"f":0},"_egsspiels":"_kriegsspiel","_ses":"_kris","_shnas":"_krishna","_tarchies":"_kritarchy"};
+ var o = {"_egsspiel":{"e":[["noun",["A game of war, played for practice, on maps."]]],"a":["kriegsspiels"],"c":[]},"_s":{"e":[["noun",["A Malay dagger. See Creese."]]],"a":["krises"],"c":[]},"_shna":{"e":[["noun",["The most popular of the Hindu divinities, usually held to be the eighth incarnation of the god Vishnu."]]],"a":["krishnas"],"c":["hindu_myth"]},"_tarchy":{"e":[["noun",["The rule of the judges over Israel."]]],"a":["kritarchies"],"c":[]},"_egsspiels":"_kriegsspiel","_ses":"_kris","_shnas":"_krishna","_tarchies":"_kritarchy"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("kri",o);
 })();

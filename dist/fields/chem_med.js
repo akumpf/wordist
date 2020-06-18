@@ -1,0 +1,4 @@
+(function(){
+ var o = ["diiodotyrosine","indomethacin","penicillamine"];
+ if(!window.on_field_cb) console.warn("on_field_cb?"); else on_field_cb("chem_med",o);
+})();
