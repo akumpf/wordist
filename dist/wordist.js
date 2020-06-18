@@ -1,7 +1,7 @@
 var wordist = (function(){
   var exports = {};
   // --
-  var path = "../dist";
+  var path  = "../dist";
   // --
   var dataReqd  = {};
   var dataCache = {};
@@ -445,6 +445,10 @@ var wordist = (function(){
     //console.log("looking up word: ", word);
     var wf     = filenameWord(word.replace(/\./g,""));
     var prefix = wf.substring(0,3);
+    if(dataCache[_TOC+"toc"] && dataCache[_TOC+"toc"].indexOf(prefix) < 0){
+      //console.log("Shouldn't try to fetch def for word prefix that doesn't have a TOC entry.");
+      return cb(null, unfilenameWord(wf), null);
+    }
     requestData(_DEFS, prefix, function(err){
       if(err) return console.warn(err);
       var data = dataCache[_DEFS+wf];
@@ -641,6 +645,9 @@ var wordist = (function(){
   // --
   exports.init = function(options){
     path = options.path || "../dist";
+    exports.getTOC(function(err,toc){
+      if(err) return console.warn(err);
+    });
   };
   // --
   return exports;

@@ -45,27 +45,27 @@
 wordist.init({path: "./dist"});
 
 // Get a definition for a word.
-wordist.getDef("apple", function exampleDefHandler(err, root, data){
-  if(err)   return console.warn(err);
-  if(!root) return console.warn("Unexpected result?", root, data);
-  if(!data) return console.log("No def for: "+root);
-  // --
-  var entries = data.e||[];
-  var alts    = data.a||[];
-  console.log(root, alts, entries);
-});
+// wordist.getDef("apple", function exampleDefHandler(err, root, data){
+//   if(err)   return console.warn(err);
+//   if(!root) return console.warn("Unexpected result?", root, data);
+//   if(!data) return console.log("No def for: "+root);
+//   // --
+//   var entries = data.e||[];
+//   var alts    = data.a||[];
+//   console.log(root, alts, entries);
+// });
 
 // Or if you want to try harder (in case the word is not a direct hit)...
 // This will fallback to the definition for "apple".
-wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
-  if(err)   return console.warn(err);
-  if(!root) return console.warn("Unexpected result?", root, data);
-  if(!data) return console.log("No def for: "+root);
-  // --
-  var entries = data.e||[];
-  var alts    = data.a||[];
-  console.log(root, alts, entries);
-})
+// wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
+//   if(err)   return console.warn(err);
+//   if(!root) return console.warn("Unexpected result?", root, data);
+//   if(!data) return console.log("No def for: "+root);
+//   // --
+//   var entries = data.e||[];
+//   var alts    = data.a||[];
+//   console.log(root, alts, entries);
+// })
 
 // Get the full list of english words for a part of speech,
 // using first 4 letters. Note: this may be big!
@@ -134,8 +134,15 @@ $(document).ready(function(){
 				}
 				html += "</p>";
 			}
-			"</ul>"
-			console.log(root, seeAlso);
+			//console.log(root, seeAlso);
+			if(data.c && data.c.length > 0){
+				html += "<p>Used in fields: ";
+				let fields = data.c||[];
+				for(let i=0; i<fields.length; i++){
+					html += (i>0?", ":"")+ "<span style='font-style: italic; color: #38F;'>"+fields[i]+"</span>";
+				}
+				html += "</p>";
+			}
 			// --
       $("#exampleDef").html(html);
       // --

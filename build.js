@@ -1,6 +1,6 @@
 console.log("Running jsdict...");
 // --
-var STAGE = 1;
+var STAGE = 3;
 console.log("STAGE: "+STAGE);
 var MAX_THOUSAND_TO_PROCESS = 1000; // words in dictionary ~ 100,000
 // --
