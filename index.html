@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Wordist Examples</title>
+  <title>Wordist Example</title>
 <style>
 	body {color: #333; background: #FCFCFC; font-size: 16px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; border: 0; overflow-y: scroll;}
-  .clickword {cursor: pointer;}
-  .clickword:hover {text-decoration: underline; color: #111;}
+  .clickword, .fieldtag {cursor: pointer;}
+  .clickword:hover, .fieldtag:hover {text-decoration: underline;}
+	.fieldtag {color: #38F; font-style: italic;}
   #exampleDef b {font-size: 1.4em;}
 </style>
 </head>
 <body>
 
 <div id='exampleWelcome' style='font-size: 2em;  max-width: 640px; margin-left: auto; margin-right: auto; padding: 20px 0;'>
-  Wordist makes words <span class='clickword' style='font-weight: 600;'>playful</span>.
+  Wordist makes words <span class='clickword' style='font-weight: 600;'>radiant</span>.
 </div>
 <div id='exampleSearch' style='margin-top: 20px; max-width: 640px; margin-left: auto; margin-right: auto; padding-bottom: 20px;'>
   <input id='exampleInput' type='text' style='width: 90%; line-height: 30px; font-size: 20px; padding: 0 10px;' placeholder='type something...'/><br/>
@@ -139,7 +140,7 @@ $(document).ready(function(){
 				html += "<p>Used in fields: ";
 				let fields = data.c||[];
 				for(let i=0; i<fields.length; i++){
-					html += (i>0?", ":"")+ "<span style='font-style: italic; color: #38F;'>"+fields[i]+"</span>";
+					html += (i>0?", ":"")+ "<span class='fieldtag'>"+fields[i]+"</span>";
 				}
 				html += "</p>";
 			}
@@ -151,6 +152,28 @@ $(document).ready(function(){
         newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
         $("#exampleInput").val("");
         showWordDef(newWord);
+      });
+			$("#exampleDef .fieldtag").click(function(){
+        var fieldtag = $(this).text();
+        fieldtag = fieldtag.toLowerCase();
+				wordist.getFieldAll(fieldtag,function(err,field,words){
+					if(err) return console.warn(err);
+					words = words||[];
+					$("#exampleInput").val("");
+					var html =  "";
+					html += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em; border-bottom: 1px solid #EEE; margin-bottom: 7px;'>Commonly used words in the field of <span class='fieldtag'>"+field+"</span></div><div style='margin-left: 10px;'>";
+					for(let i=0; i<words.length; i++){
+						  html += (i==0?"":", ")+"<span class='clickword'>"+words[i]+"</span>";
+					}
+					html += "</div>";
+					$("#exampleDef").html(html);
+					$("#exampleDef .clickword").click(function(){
+		        var newWord = $(this).text();
+		        newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+		        $("#exampleInput").val("");
+		        showWordDef(newWord);
+		      });
+				})
       });
     });
   }

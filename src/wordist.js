@@ -532,7 +532,9 @@ var wordist = (function(){
 								// --
 								semi = semi.replace(/(^)(usually)(\s|$)/g, "");
                 semi = semi.replace(/(^)(often)(\s|$)/g, "");
+                semi = semi.replace(/(^)(also)(\s|$)/g, "");
                 semi = semi.replace(/(^)(typically)(\s|$)/g, "");
+                semi = semi.replace(/(^)(especially)(\s|$)/g, "");
 								semi = semi.replace(/(^)(called)(\s|$)/g, "");
                 semi = semi.replace(/(^)(used)(\s|$)/g, "");
                 // --
@@ -645,6 +647,9 @@ var wordist = (function(){
   // --
   exports.init = function(options){
     path = options.path || "../dist";
+    // We fetch the TOC on init so we can check if a prfix exists before trying to
+    // request it, but wordist is ready to run immedidately (there's just a chance of
+    // a returned error / page-not-found before the TOC is loaded).
     exports.getTOC(function(err,toc){
       if(err) return console.warn(err);
     });
