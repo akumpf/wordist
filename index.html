@@ -150,7 +150,7 @@ $(document).ready(function(){
       $("#exampleDef .clickword").click(function(){
         var newWord = $(this).text();
         newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
-        $("#exampleInput").val("");
+        $("#exampleInput").val(newWord);
         showWordDef(newWord);
       });
 			$("#exampleDef .fieldtag").click(function(){
@@ -170,7 +170,7 @@ $(document).ready(function(){
 					$("#exampleDef .clickword").click(function(){
 		        var newWord = $(this).text();
 		        newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
-		        $("#exampleInput").val("");
+		        $("#exampleInput").val(newWord);
 		        showWordDef(newWord);
 		      });
 				})
