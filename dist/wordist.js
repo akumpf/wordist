@@ -7,6 +7,34 @@ var wordist = (function(){
   var dataCache = {};
   var dataCbs   = {};
   // --
+  let unhelpfulWords = [
+    // articles
+    "a","an","the",
+    // conjunctions
+    "albeit","altho","although","an","and","because","both","cause","either","except","excepting","for","forasmuch","gin","howbeit","however","if","lest","ma","neither","nisi","nor","only","or","provided","qua","save","saving","seeing","since","so","syne","than","then","tho","though","till","unless","until","where","whereas","whether","while","whiles","without","yet",
+    // pronouns and common placeholders
+    "cestuy","he","hers","herself","him","himself","his","i","it","its","itself","me","myself","one","oneself","our","ours","ourselves","she","thee","them","themselves","these","they","those","thou","thy","thyself","us","we","what","when","whate'er","whatever","whatsoe'er","whether","which","whilk","who","whoever","whom","whomsoever","whose","whosesoever","whoso","whosoever","ye","you","yours","yourself","that","my","your","her","their","theirs","mine","why","how","there",
+    // prepositions
+    "a","abaft","aboard","aboon","about","above","across","adown","afore","after","against","along","amid","amidst","among","anenst","around","aslant","at","athwart","bating","before","behind","below","beneath","beside","besides","between","betwixt","beyond","but","by","concerning","cross","cum","dehors","despite","down","durante","during","except","for","foreby","forenenst","forth","from","'gainst","gin","in","inside","into","malgre","mauger","mid","midst","'mongst","near","nigh","notwithstanding","o'","of","off","on","onto","over","overthwart","par","past","pending","per","pro","regarding","respecting","rising","round","sans","senza","since","sine","through","throughout","thwart","till","to","touching","toward","under","underneath","until","unto","up","upon","uptill","versus","via","vice","while","with","within","without",
+    // helping verbs
+    "am","is","are","was","were","being","been","be","have","has","had","do","does","did","will","would","shall","should","may","might","must","can","could",
+    // negation
+    "not","no",
+    // too common
+    "as","like","unlike","if","similar","especially","typically","commonly","often","usually","called","used","former","latter","also","pertaining","anything","something","other","supposed","any","resemble","resembling","differs","different","etc","few","many","containing","contains","termed","term","collectively","belonging","use","sets","set","see","esp",
+  ];
+  function distillTextToMeaningfulWordArr(txt,otherUnhelpfulWordsArr){
+    otherUnhelpfulWordsArr = otherUnhelpfulWordsArr||[];
+    let txtArr = (txt||"").toLowerCase().replace(/\s\s+/g, ' ').replace(/[^A-Za-z0-9\' ]/g, '').trim().split(" ");
+    let meaningfulWords = [];
+    for(let i=0; i<txtArr.length; i++){
+      let w = txtArr[i]||"";
+      // only keep if helpful and not a contraction.
+      if(unhelpfulWords.indexOf(w) < 0 && w.indexOf("'") < 0 && otherUnhelpfulWordsArr.indexOf(w) < 0 && w.length > 1) meaningfulWords.push(w);
+    }
+    return meaningfulWords;
+  }
+  // --
   exports._dataCache = dataCache;
   // --
   var replaceDiacritics = (function(){
@@ -523,7 +551,8 @@ var wordist = (function(){
 							let semiAs = semiA.split(",");
 							for(let m=0; m<semiAs.length; m++){
 								let semi = $.trim(semiAs[m]);
-								semi = semi.replace(/(^)(a|as|an|the|or|to)(\s|$)/g, "");
+								semi = semi.replace(/(^)(a|as|an|in|the|or|to)(\s|$)/g, "");
+                semi = semi.replace(/(^)(a|as|an|in|the|or|to)(\s|$)/g, "");
 								semi = semi.replace(/(\.|\!|\?|\-)/g, "");
 								semi = $.trim(semi).toLowerCase();
 								// --
@@ -531,22 +560,27 @@ var wordist = (function(){
 								if(k == 0 && semiWords > 1) continue; // most definitions start with a phrase/sentence, and then provide similar words and examples...
 								// --
 								semi = semi.replace(/(^)(usually)(\s|$)/g, "");
+                semi = semi.replace(/(^)(popularly)(\s|$)/g, "");
                 semi = semi.replace(/(^)(often)(\s|$)/g, "");
                 semi = semi.replace(/(^)(also)(\s|$)/g, "");
                 semi = semi.replace(/(^)(typically)(\s|$)/g, "");
                 semi = semi.replace(/(^)(especially)(\s|$)/g, "");
+                semi = semi.replace(/(^)(so)(\s|$)/g, "");
 								semi = semi.replace(/(^)(called)(\s|$)/g, "");
                 semi = semi.replace(/(^)(used)(\s|$)/g, "");
+                semi = semi.replace(/(^)(whether)(\s|$)/g, "");
                 // --
-								semi = semi.replace(/(^)(a|as|an|the|or|to|with|esp)(\s|$)/g, ""); // esp = "especially" in dictionary speak
+								semi = semi.replace(/(^)(a|as|an|so|the|or|to|with|esp|of)(\s|$)/g, ""); // esp = "especially" in dictionary speak
 								// --
-								if(semi.length < 1) continue; // entry is blank after cleaning.
+								if(semi.length < 2) continue; // entry is blank after cleaning.
 								if(semi == root) continue; // entry is same as root after cleaning.
 								if(semiWords > 5) continue; // seems too long.
 								if(semi.indexOf(",")>=0) continue; // looks like multiples.
 								if(semi.indexOf("etc")>=0) continue; // looks like etc.
 								if(semi.indexOf(")")>=0) continue; // something is not quite right
 								if(semi.indexOf("(")>=0) continue; // something is not quite right
+                if(semi.indexOf("{")>=0) continue; // something is not quite right
+                if(semi.indexOf("}")>=0) continue; // something is not quite right
 								// --
 								if(semi.indexOf(root) >= 0){
 									seeAlso.usedBy.push(semi);
@@ -561,6 +595,16 @@ var wordist = (function(){
 				}
 			}
       data.seeAlso = seeAlso;
+      // --
+      let keyWordsTxt = "";
+      let des = data.e||[];
+      for(let i=0; i<des.length; i++){
+        let de = (des[i]||[])[1]||[];
+        for(let j=0; j<de.length; j++){
+          keyWordsTxt += (de[j]||"")+" ";
+        }
+      }
+      data.keyWords = [... new Set(distillTextToMeaningfulWordArr(keyWordsTxt,(data.a||[]).concat([root])))];
       // --
       return cb(null, root, data);
     });
@@ -600,7 +644,7 @@ var wordist = (function(){
       return cb(null, dataCache[_TOC+"toc"]);
     });
   };
-  exports.getFields  = function(cb){
+  exports.getFields     = function(cb){
     requestData(_FIELDS, "fields", function(err){
       if(err) return console.warn(err);
       return cb(null, dataCache[_FIELDS+"fields"]);
@@ -644,6 +688,8 @@ var wordist = (function(){
     }
     return pos;
   }
+  // --
+  exports.distillText   = distillTextToMeaningfulWordArr;
   // --
   exports.init = function(options){
     path = options.path || "../dist";

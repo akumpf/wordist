@@ -45,7 +45,8 @@ wordist.getDef("apple", function exampleDefHandler(err, root, data){
   var entries = data.e||[];
   var alts    = data.a||[];
   var seeAlso = data.seeAlso||{};
-  console.log(root, alts, entries, seeAlso);
+  var keyWords= data.keyWords||[];
+  console.log(root, alts, entries, seeAlso, keyWords);
 });
 ```
 
@@ -63,7 +64,8 @@ wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
   var entries = data.e||[];
   var alts    = data.a||[];
   var seeAlso = data.seeAlso||{};
-  console.log(root, alts, entries, seeAlso);
+  var keyWords= data.keyWords||[];
+  console.log(root, alts, entries, seeAlso, keyWords);
 });
 ```
 
@@ -81,7 +83,8 @@ wordist.getDefRandom(function exampleDefHandler(err, root, data){
   var entries = data.e||[];
   var alts    = data.a||[];
   var seeAlso = data.seeAlso||{};
-  console.log(root, alts, entries, seeAlso);
+  var keyWords= data.keyWords||[];
+  console.log(root, alts, entries, seeAlso, keyWords);
 });
 ```
 
@@ -155,6 +158,21 @@ wordist.getFindable(1, function(err, findableWords){
    console.log(findableWords);
 });
 ```
+
+### wordist.distillText(txt)
+
+Sometimes you want to pull out words from a larger block of text that are likely to be important or meaningful. Wordist has a simple function that takes in a text string and returns a list of words that are likely to be useful for further analysis.
+
+Essentially, this function filters out pronouns, prepositions, contractions, punctuation, and common dictionary words that are likely to be extraneous. 
+
+Note that the array may have duplicate words, so be sure to unique-ify it if routing into further processing so you don't do more data crunching than necessary.
+
+```
+wordist.distillText("It's not everyday that you see a flying goat eating breakfast on a surfboard, but today was no ordinary day")
+//  ["everyday", "flying", "goat", "eating", "breakfast", "surfboard", "today", "ordinary", "day"]
+```
+
+### 
 
 ### example code
 
