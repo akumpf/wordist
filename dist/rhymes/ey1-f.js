@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ey1-f-t-iy0":["biosafety","flightsafety","safety"],"ey1-f-iy2-l-d":["brayfield","hayfield","layfield","mayfield","rayfield"],"ey1-f":["chafe","grafe","lataif","rafe","raiff","safe","scaife","strafe","unsafe","waif"],"ey1-f-iy0":["chafee","hafey"],"ey1-f-s":["chafes","safes"],"ey1-f-ih0-ng":["chafing","safing","strafing"],"ey1-f-ah0-s":["dreyfus","dreyfuss"],"ey1-f-er0":["hafer","kafer","lafer","safer","schaefer","schafer","schaffer","schlafer","shaefer","shafer","shaffer","wafer","waifer"],"ey1-f-er0-d":["hayford","playford","raiford","rayford"],"ey1-f-t-iy0-z":["safeties","safety's"],"ey1-f-iy0-ah0-n":["safian","sarafian"],"ey1-f-er0-z":["schaefers","wafers"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ey1-f",o);
+})();

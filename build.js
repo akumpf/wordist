@@ -1,6 +1,6 @@
 console.log("Running jsdict...");
 // --
-var STAGE = 3;
+var STAGE = 2;
 console.log("STAGE: "+STAGE);
 var MAX_THOUSAND_TO_PROCESS = 1000; // words in dictionary ~ 100,000
 // --
@@ -10,8 +10,11 @@ var PATH_SRC      = __dirname+"/src";
 var PATH_DEBUG    = __dirname+"/debug";
 var FILE_MASTER   = PATH_DST+"/master.json";
 var PATH_BY_POS   = PATH_DST;
-
+var PATH_PRONOUNCE_DICT = __dirname+"/src/cmu_pronouncing_dict/cmudict.0.7a.txt";
 var FILE_SRC_IRVERBS    = PATH_SRC+"/ir_verbs_list.txt";
+// --
+var RHYME_GROUP_MAX_CHARS = 5;
+// --
 
 var fs          = require("fs");
 var rimraf   		= require("rimraf");
@@ -420,7 +423,10 @@ function prepareDirectories(cb){
             if(err) return cb("Error creating dist/sort_f dir.");
             fs.mkdir(PATH_DST+"/fields", function(err){
               if(err) return cb("Error creating dist/fields dir.");
-              cb(null);
+              fs.mkdir(PATH_DST+"/rhymes", function(err){
+                if(err) return cb("Error creating dist/rhymes dir.");
+                cb(null);
+              });
             });
           });
         });
@@ -702,8 +708,10 @@ function getAlternativesForWord(w,pos){
 // ------------------
 
 // --
-var masterDict    = {};
-var revLookup = {};
+var masterDict   = {};
+var revLookup    = {};
+var wordsByRhyme = {};
+var pronounceByWord = {};
 // --
 function buildMasterDict(cb){
   console.log("Building Master Dictionary 1...\n- - - - - - - - - -");
@@ -1077,7 +1085,7 @@ function buildMasterDictConnectedness(cb){
           var hits = getUsedCount(w)||0;
           masterDict[_word].f = hits;
           // --
-          if(index % 500 === 0) console.log("@"+index+", f Hits for: "+w+" = "+hits);
+          if(index % 100 === 0) console.log("@"+index+", f Hits for: "+w+" = "+hits);
         }
       }
       index++;
@@ -1214,7 +1222,187 @@ function buildMasterDictConnectedness(cb){
   dictReady();
 }
 // --
+function buildWordsByRhyme(cb){
+  if(Object.keys(wordsByRhyme).length > 0){
+    console.log("WordsByRhyme already parsed. OK.");
+    return cb();
+  }
+  console.log("Reading all word pronunciations.");
+  var data = fs.readFileSync(PATH_PRONOUNCE_DICT, {encoding: "utf-8"});
+  if(!data) return console.log("couldn't read pronunciations file.");
+  // --
+  var lines = (data||"").split("\n");
+  // --
+  console.log("PRONUNCIATIONS: LINES = "+lines.length);
+  let foundFirstLetter = false;
+  let wordCount = 0;
+  for(let i=0; i<lines.length; i++){
+    let line = (lines[i]||"").toLowerCase().trim();
+    if(line.indexOf(";")==0 || line.length == 0) continue;
+    if(!foundFirstLetter && line.indexOf("a") != 0) continue;
+    if(line.replace(/[^a-z0-9\'\s\(\)\-\_\.]/gi,"") != line){
+      //console.log("looks like a strange word/line?",line);
+      continue;
+    }
+    foundFirstLetter = true;
+    // --
+    let wordAndPhones = line.split("  ");
+    if(wordAndPhones.length != 2){
+      console.log("Improperly formed pronunciation line: ",line);
+      continue;
+    }
+    // --
+    let word   = wordAndPhones[0]||"";
+    let phones = (wordAndPhones[1]||"").trim().split(" ");
+    if(!word || phones.length <= 0){
+      console.log("Improperly formed wordAndPhones: ",word,phones);
+      continue;
+    }
+    // --
+    if(word.indexOf("(") > 0) word = word.substring(0,word.indexOf("("));
+    if(word.replace(/[^a-z\'\s\(\)\-\_\.]/gi,"") != word){
+      //console.log("strange word containing numbers?",word);
+      continue;
+    }
+    // --
+    let pWord = "_"+word.replace(/[\s\-\_]/g,"-"); // spaces, underscore, and dashes all pronounced the same.
+    pronounceByWord[pWord] = pronounceByWord[pWord]||[];
+    pronounceByWord[pWord].push(phones.join("-"));
+    // --
+    let subPhonesKey = getSubPhonesRhymeKeyFromPhones(phones);
+    if(!subPhonesKey) continue;
+    // --
+    wordCount++;
 
+    //if(i<150) console.log(line,subPhonesKey);
+    // --
+    wordsByRhyme[subPhonesKey] = wordsByRhyme[subPhonesKey]||[];
+    wordsByRhyme[subPhonesKey].push(word);
+    // --
+    //if(i == 500) console.log(wordsByRhyme);
+  }
+  console.log("word count = ",wordCount);
+  let wordsByRhymeKeys = Object.keys(wordsByRhyme);
+  console.log("rhyme keys:", wordsByRhymeKeys.length);
+  for(let r=wordsByRhymeKeys.length-1; r>=0; r--){
+    let key    = wordsByRhymeKeys[r];
+    let rhymes = wordsByRhyme[key]||[];
+    let uRhymes = _.uniq(rhymes);
+    wordsByRhyme[key] = uRhymes; // only keep unique words (sometimes there are duplicates).
+    if(uRhymes.length <= 1) delete wordsByRhyme[key];
+  }
+  wordsByRhymeKeys = Object.keys(wordsByRhyme);
+  console.log("rhyme keys with > 1 word:", wordsByRhymeKeys.length);
+  // --
+  return cb();
+}
+function getSubPhonesRhymeKeyFromPhones(phones){
+  let startAtPhoneIndex = -1;
+  for(let p=phones.length-1; p>=0; p--){
+    if(phones[p].indexOf("1")>0){
+      startAtPhoneIndex = p;
+      break;
+    }
+  }
+  if(startAtPhoneIndex == -1){
+    //console.log("No primary vowel stress?",line);
+    for(let p=phones.length-1; p>=0; p--){
+      if(phones[p].indexOf("2")>0){
+        startAtPhoneIndex = p;
+        break;
+      }
+    }
+    if(startAtPhoneIndex == -1){
+      //console.log("No secondary vowel stress?",line);
+      for(let p=phones.length-1; p>=0; p--){
+        if(phones[p].indexOf("3")>0){
+          startAtPhoneIndex = p;
+          break;
+        }
+      }
+      if(startAtPhoneIndex == -1){
+        //console.log("No tertiary vowel stress?",line);
+        for(let p=phones.length-1; p>=0; p--){
+          if(phones[p].indexOf("0")>0){
+            startAtPhoneIndex = p;
+            break;
+          }
+        }
+        if(startAtPhoneIndex == -1){
+          //console.log("No zero vowel stress?",line);
+          return null;
+        }
+      }
+    }
+  }
+  // --
+  let subPhones = phones.slice(startAtPhoneIndex);
+  let subPhonesKey = subPhones.join("-");
+  return subPhonesKey;
+}
+function addRhymeGroupsToMasterDict(cb){
+  _.each(masterDict,function(_data, _word){
+    let allWords = ([(_word||"_").substring(1)]).concat(_data.a||[]);
+    let p = [];
+    // let r = [];
+    // --
+    for(let i=0; i<allWords.length; i++){
+      let pWord = "_"+(allWords[i]||"").replace(/[\s\-\_]/g,"-"); // spaces, underscore, and dashes all pronounced the same.
+      let pron = pronounceByWord[pWord]||[];
+      if(pron.length==0 && pWord.indexOf("-") > 0){
+        let pWords = pWord.split("-");
+        let pronArrs = [(pronounceByWord[pWords[0]]||[]).slice(0)];
+        let failedOnSubword = pronArrs[0].length == 0;
+        for(let p2=1; p2<pWords.length; p2++){
+          let nextProns = pronounceByWord["_"+pWords[p2]];
+          if(nextProns) pronArrs.push(nextProns.slice(0));
+          else{
+            failedOnSubword = true;
+            break;
+          }
+        }
+        //console.log("Tried to break up word into sub-words:",pWord,pWords,pronArrs);
+        if(!failedOnSubword){
+          //console.log("build all permutations!",pWord,pronArrs);
+          function getSubsequentPermutations(sofar,sep,togo){
+            if(!togo || togo.length == 0) return sofar;
+            let results = [];
+            let p0 = togo[0]||[];
+            let p1 = (togo.length > 1)?togo.slice(1):null;
+            for(let a=0; a<p0.length; a++){
+              let pa = p0[a];
+              let sofarsep = sofar?(sofar+sep):"";
+              if(p1){
+                results = results.concat(getSubsequentPermutations(sofarsep+pa,"-",togo.slice(1)));
+              }else{
+                results.push(sofarsep+pa);
+              }
+            }
+            return results;
+          }
+          // --
+          let allPerms = getSubsequentPermutations("","-",pronArrs);
+          //console.log("All permutations:",pWord,allPerms);
+          pron = allPerms||[];
+        }
+      }
+      if(pron && pron.indexOf("?")>=0) pron=[]; // don't include pronunciation if incomplete.
+      pron = pron||[];
+      p.push(pron);
+      // --
+      // let subPhonesKeys = [];
+      // for(let x=0; x<pron.length; x++){
+      //   subPhonesKeys.push(getSubPhonesRhymeKeyFromPhones((pron[x]||"").split("-"))||"");
+      // }
+      // r.push(subPhonesKeys);
+    }
+    masterDict[_word].p = p;
+    // masterDict[_word].r = r;
+    if(_word == "_apple") console.log(masterDict[_word])
+  });
+  return cb();
+}
+// --
 function runStage1(){ // BUILD MASTER/REVERSE DICTIONARIES AND GENERATE LOTS OF JSON FILES (takes about 1 hour)
   prepareDirectories(function(){
     buildMasterDict(function(){
@@ -1222,26 +1410,30 @@ function runStage1(){ // BUILD MASTER/REVERSE DICTIONARIES AND GENERATE LOTS OF 
         buildFieldsDict(function(){
           buildReverseLookup(function(){
             findUndefinedWordsAndUpdateRev(function(){
-              // --
-              console.log("Saving master and reverse dictionaries...");
-              fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
-              fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
-              // --
-              buildMasterDictConnectedness(function(){
-                // --
-                console.log("Saving master and reverse dictionaries...");
-                fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
-                // --
-                buildMasterDictPages(function(){
-                  console.log("DONE");
-                  runStage2();
-                  // var word = "compelling";
-                  // var root = revLookup[WPREFIX+filenameWord(word)];
-                  // var data = masterDict[root];
-                  // console.log(word,root,data.a,data.e);
-                  // console.log("repeat",masterDict[WPREFIX+"repeat"]);
-                  // console.log("admit", masterDict[WPREFIX+"admit"]);
-                  // console.log("usual", masterDict[WPREFIX+"usual"]);
+              buildWordsByRhyme(function(){
+                addRhymeGroupsToMasterDict(function(){
+                  // --
+                  console.log("Saving master and reverse dictionaries...");
+                  fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
+                  fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
+                  // --
+                  buildMasterDictConnectedness(function(){
+                    // --
+                    console.log("Saving master and reverse dictionaries...");
+                    fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
+                    // --
+                    buildMasterDictPages(function(){
+                      console.log("DONE");
+                      runStage2();
+                      // var word = "compelling";
+                      // var root = revLookup[WPREFIX+filenameWord(word)];
+                      // var data = masterDict[root];
+                      // console.log(word,root,data.a,data.e);
+                      // console.log("repeat",masterDict[WPREFIX+"repeat"]);
+                      // console.log("admit", masterDict[WPREFIX+"admit"]);
+                      // console.log("usual", masterDict[WPREFIX+"usual"]);
+                    });
+                  });
                 });
               });
             });
@@ -1251,7 +1443,7 @@ function runStage1(){ // BUILD MASTER/REVERSE DICTIONARIES AND GENERATE LOTS OF 
     });
   });
 }
-function runStage2(){ // HANDLE IRREGULAR VERBS and GNEREATE TABLE OF CONTENTS (file lookup keys)
+function runStage2(){ // HANDLE IRREGULAR VERBS and GENEREATE TABLE OF CONTENTS (file lookup keys)
   fs.readFile(FILE_MASTER, {}, function(err, data) {
     if (err) console.log(err);
     try{
@@ -1318,16 +1510,25 @@ function runStage2(){ // HANDLE IRREGULAR VERBS and GNEREATE TABLE OF CONTENTS (
     // --
     console.log("Building Table of Contents (TOC)");
     fs.readdir(PATH_DST+"/defs", function(err, files) {
-    	if (err) return;
-      var toc = [];
+    	if (err) return console.log("ERR: couldn't reads defs dir!");
+      var toc = {defs:[],rhymes:[]};
     	files.forEach(function(f){
         if(f && f.lastIndexOf(".js") == f.length-3){
-          toc.push(f.substring(0,f.length-3));
+          toc.defs.push(f.substring(0,f.length-3));
         }
     	});
-      toc.sort();
-      fs.writeFileSync(PATH_DST+"/toc.js", getObjAsJSInlineCallback("toc", "toc", toc));
-      runStage3();
+      toc.defs.sort();
+      fs.readdir(PATH_DST+"/rhymes", function(err, files) {
+      	if (err) return console.log("ERR: couldn't reads rhymes dir!");
+      	files.forEach(function(f){
+          if(f && f.lastIndexOf(".js") == f.length-3){
+            toc.rhymes.push(f.substring(0,f.length-3));
+          }
+      	});
+        toc.rhymes.sort();
+        // --
+        fs.writeFileSync(PATH_DST+"/toc.js", getObjAsJSInlineCallback("toc", "toc", toc));
+      });
     });
     // --
     console.log("Building FieldsTOC");
@@ -1345,7 +1546,32 @@ function runStage2(){ // HANDLE IRREGULAR VERBS and GNEREATE TABLE OF CONTENTS (
     });
   }
 }
-function runStage3(){ // COPY OVER WORDIST.JS
+function runStage3(){ // PARSE PRONOUNCIONG DICT AND GROUP RHYMES
+  buildWordsByRhyme(function(){
+    // --
+    let wordsByRhymeKeys = Object.keys(wordsByRhyme);
+    let rhymeKeysByGroup = {};
+    for(let r=0; r<wordsByRhymeKeys.length; r++){
+      let key    = wordsByRhymeKeys[r];
+      let rhymes = wordsByRhyme[key]||[];
+      // --
+      let keyGroup = key.substring(0,RHYME_GROUP_MAX_CHARS);
+      // --
+      rhymeKeysByGroup[keyGroup] = rhymeKeysByGroup[keyGroup]||{};
+      rhymeKeysByGroup[keyGroup][key] = rhymes;
+    }
+    // --
+    let rhymeKeysByGroupKeys = Object.keys(rhymeKeysByGroup);
+    console.log("rhyme key groups:", rhymeKeysByGroupKeys.length);
+    for(let g=0; g<rhymeKeysByGroupKeys.length; g++){
+      let groupKey = rhymeKeysByGroupKeys[g];
+      fs.writeFileSync(PATH_DST+"/rhymes/"+groupKey+".js", getObjAsJSInlineCallback("rhymes", groupKey, rhymeKeysByGroup[groupKey]));
+    }
+    // --
+    runStage4();
+  });
+}
+function runStage4(){ // COPY OVER WORDIST.JS
 	fsExtra.copy(__dirname+"/src/wordist.js", PATH_DST+"/wordist.js", function(err){
 		if(err) console.log(err);
     // --
@@ -1356,3 +1582,4 @@ function runStage3(){ // COPY OVER WORDIST.JS
 if(STAGE == 1) runStage1();
 if(STAGE == 2) runStage2();
 if(STAGE == 3) runStage3();
+if(STAGE == 4) runStage4();

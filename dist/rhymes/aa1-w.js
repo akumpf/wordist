@@ -1,0 +1,4 @@
+(function(){
+ var o = {"aa1-w-ah0":["arakawa","chihuahua","fujikawa","fujisawa","furukawa","hasegawa","hosakawa","hosokawa","ichikawa","ishikawa","kagawa","kanawa","kanazawa","karasawa","kawa","kitagawa","kujawa","kurokawa","kurosawa","kurzawa","maekawa","mahwah","matsukawa","misawa","miyagawa","miyazawa","momokawa","morikawa","nakagawa","ninagawa","nishikawa","nishizawa","nogawa","ogawa","okinawa","onawa","oshawa","ozawa","shimokawa","terasawa","tonegawa","udagawa","yoshikawa","zabawa"],"aa1-w-iy0":["ashrawi","hrawi","malawi","qawi"],"aa1-w-eh0-l":["bowell","cowell","dowell","gowell","mowell","prowell","showell","sowell","stowell","towell","trowell","vowell","yowell"],"aa1-w-aa2":["chihuahua","warszawa"],"aa1-w-ah0-z":["hosokawa's","miyazawa's","momokawa's"],"aa1-w-ih0-t-s":["kowitz","krawitz"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("aa1-w",o);
+})();

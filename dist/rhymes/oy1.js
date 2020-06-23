@@ -1,0 +1,4 @@
+(function(){
+ var o = {"oy1":["ahoy","alroy","annoy","bolshoi","boy","boye","broy","choi","choy","cloy","coy","coye","croix","croy","deboy","decoy","dejoy","deploy","destroy","doi","elroy","employ","enjoy","flournoy","floy","foie","foy","foye","goy","hoi","hoy","hoye","illinois","joy","joye","knoy","kroy","laboy","lacroix","lafoy","lavoy","loy","loye","malloy","mccloy","mccoy","mckoy","mcroy","mcvoy","moy","moye","neu","oi","oie","oy","oye","ploy","polloi","redeploy","roi","roy","roye","savoy","scheu","sgroi","soy","stoy","toy","toye","troy","underemploy","unemploy","woy","yoy"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("oy1",o);
+})();

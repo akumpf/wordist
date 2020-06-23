@@ -1,0 +1,4 @@
+(function(){
+ var o = {"uh1-sh":["busch","bush","cush","kush","push","smosh","tush"],"uh1-sh-ih0-z":["busch's","bush's","pushes","tushes"],"uh1-sh-ah0-l":["bushel","bushell"],"uh1-sh-er0":["busher","pusher"],"uh1-sh-ah0-z":["bushes","pushes","smoshes"],"uh1-sh-iy0":["bushey","bushy","cushey","cushy","pushy"],"uh1-sh-m-ah0-n":["bushman","cushman"],"uh1-sh-ih0-ng":["cushing","pushing","smoshing"],"uh1-s-t-er0":["kuester","worcester"],"uh1-sh-ah2-p":["push-up","pushup"],"uh1-sh-ah2-p-s":["push-ups","pushups"],"uh1-sh-t":["pushed","smoshed"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("uh1-s",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ay1-ih0-ng":["allying","applying","belying","buying","complying","crying","decrying","defying","denying","drying","dyeing","dying","eyeing","flying","frying","implying","indemnifying","lying","misapplying","overflying","overlying","plying","prying","relying","replying","retrying","semidrying","shying","sighing","spying","supplying","tieing","trying","tying","underlying","undying","vying"],"ay1-ih0-n":["brien","o'brien","obrien","tiein","tryin'"],"ay1-ih0-m":["chaim","naim"],"ay1-ih0-s-t":["griest","wiest"],"ay1-ih0-s-t-er0":["hiester","kiester","riester"],"ay1-ih0-t":["huyett","piet"],"ay1-ih0-ch-eh0-k":["krajicek","zajicek"],"ay1-ih0-th":["rieth","vieth"],"ay1-ih0-d":["sayiid","sayyid"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ay1-i",o);
+})();

@@ -3,6 +3,52 @@ var wordist = (function(){
   // --
   var path  = "../dist";
   // --
+  var RHYME_GROUP_MAX_CHARS = 5;
+  function getSubPhonesRhymeKeyFromPhones(phones){
+    let startAtPhoneIndex = -1;
+    for(let p=phones.length-1; p>=0; p--){
+      if(phones[p].indexOf("1")>0){
+        startAtPhoneIndex = p;
+        break;
+      }
+    }
+    if(startAtPhoneIndex == -1){
+      //console.log("No primary vowel stress?",line);
+      for(let p=phones.length-1; p>=0; p--){
+        if(phones[p].indexOf("2")>0){
+          startAtPhoneIndex = p;
+          break;
+        }
+      }
+      if(startAtPhoneIndex == -1){
+        //console.log("No secondary vowel stress?",line);
+        for(let p=phones.length-1; p>=0; p--){
+          if(phones[p].indexOf("3")>0){
+            startAtPhoneIndex = p;
+            break;
+          }
+        }
+        if(startAtPhoneIndex == -1){
+          //console.log("No tertiary vowel stress?",line);
+          for(let p=phones.length-1; p>=0; p--){
+            if(phones[p].indexOf("0")>0){
+              startAtPhoneIndex = p;
+              break;
+            }
+          }
+          if(startAtPhoneIndex == -1){
+            //console.log("No zero vowel stress?",line);
+            return null;
+          }
+        }
+      }
+    }
+    // --
+    let subPhones = phones.slice(startAtPhoneIndex);
+    let subPhonesKey = subPhones.join("-");
+    return subPhonesKey;
+  }
+  // --
   var dataReqd  = {};
   var dataCache = {};
   var dataCbs   = {};
@@ -400,6 +446,7 @@ var wordist = (function(){
     var url = path;
     switch(pre){
       case _DEFS:   url += "/defs/"+key+".js";   break;
+      case _RHYMES: url += "/rhymes/"+key+".js";   break;
       case _POS:    url += "/pos/"+key+".js";    break;
       case _FIND:   url += "/sort_f/"+key+".js"; break;
       case _FIELD:  url += "/fields/"+key+".js"; break;
@@ -411,6 +458,7 @@ var wordist = (function(){
   }
   // --
   var _DEFS   = "defs_";
+  var _RHYMES = "rhymes_";
   var _POS    = "pos_";
   var _FIND   = "find_";
   var _TOC    = "toc_";
@@ -435,7 +483,7 @@ var wordist = (function(){
     // --
     callDataCbsAndRemoveScript(rid,key);
   };
-  window.on_field_cb      = function(key, data){
+  window.on_field_cb    = function(key, data){
     var pre = _FIELD;
     var rid = dataRootID+pre+key;
     // --
@@ -455,15 +503,27 @@ var wordist = (function(){
     var pre = _TOC;
     var rid = dataRootID+pre+key;
     // --
-    dataCache[pre+key] = data||[];
+    dataCache[pre+key] = data||{};
     // --
     callDataCbsAndRemoveScript(rid,key);
   };
-  window.on_fields_cb      = function(key, data){
+  window.on_fields_cb   = function(key, data){
     var pre = _FIELDS;
     var rid = dataRootID+pre+key;
     // --
     dataCache[pre+key] = data||[];
+    // --
+    callDataCbsAndRemoveScript(rid,key);
+  };
+  window.on_rhymes_cb   = function(key, data){
+    var pre = _RHYMES;
+    var rid = dataRootID+pre+key;
+    // --
+    //console.log("rhymes winddow cb!",key,data);
+    $.each(data,function(key2,val){
+      //var k2 = key2.substring(1);
+      dataCache[_RHYMES+key2] = val;
+    });
     // --
     callDataCbsAndRemoveScript(rid,key);
   };
@@ -473,7 +533,7 @@ var wordist = (function(){
     //console.log("looking up word: ", word);
     var wf     = filenameWord(word.replace(/\./g,""));
     var prefix = wf.substring(0,3);
-    if(dataCache[_TOC+"toc"] && dataCache[_TOC+"toc"].indexOf(prefix) < 0){
+    if(dataCache[_TOC+"toc"] && dataCache[_TOC+"toc"].defs && dataCache[_TOC+"toc"].defs.indexOf(prefix) < 0){
       //console.log("Shouldn't try to fetch def for word prefix that doesn't have a TOC entry.");
       return cb(null, unfilenameWord(wf), null);
     }
@@ -606,6 +666,18 @@ var wordist = (function(){
       }
       data.keyWords = [... new Set(distillTextToMeaningfulWordArr(keyWordsTxt,(data.a||[]).concat([root])))];
       // --
+      let r = [];
+      let ps = data.p||[];
+      for(let i=0; i<ps.length; i++){
+        let pron = ps[i];
+        let subPhonesKeys = [];
+        for(let x=0; x<pron.length; x++){
+          subPhonesKeys.push(getSubPhonesRhymeKeyFromPhones((pron[x]||"").split("-"))||"");
+        }
+        r.push(subPhonesKeys);
+      }
+      data.r = r;
+      // --
       return cb(null, root, data);
     });
   };
@@ -671,6 +743,26 @@ var wordist = (function(){
         exports.getDef(word, cb);
       });
     })
+  };
+  // --
+  exports.getRhymes     = function(rhymeKey, cb){
+    if(!rhymeKey) return cb(null,rhymeKey,null);
+    //console.log("looking up word: ", word);
+    var rk      = filenameWord(rhymeKey.replace(/\./g,""));
+    var rkGroup = rk.substring(0,RHYME_GROUP_MAX_CHARS);
+    if(dataCache[_TOC+"toc"] && dataCache[_TOC+"toc"].rhymes && dataCache[_TOC+"toc"].rhymes.indexOf(rkGroup) < 0){
+      //console.log("Shouldn't try to fetch def for word prefix that doesn't have a TOC entry.");
+      return cb(null, unfilenameWord(rk), null);
+    }
+    requestData(_RHYMES, rkGroup, function(err){
+      if(err) return console.warn(err);
+      var data = dataCache[_RHYMES+rk];
+      // --
+      let root = unfilenameWord(rk);
+      //console.log("rhyme data!",data);
+      // --
+      return cb(null, root, data);
+    });
   };
   // --
   exports.prettyPoS     = function(pos){

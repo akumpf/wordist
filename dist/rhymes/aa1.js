@@ -1,0 +1,4 @@
+(function(){
+ var o = {"aa1":["ah","aha","ahh","alvah","artois","awe","baccarat","bah","beffa","bekaa","blah","bogota","bois","bourgeois","bra","brisbois","ca","cha","chargois","cheng-hua","chua","comtois","contois","d'etat","da","dabah","dubois","duboise","dumas","elga","elna","fatah","francois","francoise","ga","gras","gravois","ha","hah","harnois","hsia","hua","hurrah","hwa","ja","jha","joie","ka","kah","krah","la","laframboise","langlois","lavoie","law","ma","macgraw","mah","markkaa","marois","mccaa","moi","murrah","na","nah","naw","olah","ona","otha","pa","pasha","pla","qua","ra","rah","raw","refah","rha","sa","salois","sanaa","seraw","sha","shah","sirois","spa","suhua","ta","trois","valois","voila","vrba","wa","waah","wah","ya","yah","zsa"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("aa1",o);
+})();

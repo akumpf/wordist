@@ -1,0 +1,4 @@
+(function(){
+ var o = {"er1-f-iy0-l-d":["bearfield","burfield","sherfield","sommerfield"],"er1-f-er0-d":["burford","comerford","herford","hurford","retherford"],"er1-f":["cerf","murff","murph","scherf","scherff","serf","smurf","surf","turf"],"er1-f-ah0-l-ih0-ng-er0":["derflinger","durflinger"],"er1-f-l-ih0-ng-er0":["derflinger","durflinger"],"er1-f-iy0":["durfee","durfey","mcmurphy","murphey","murphy","sherfey"],"er1-f-er0":["firfer","surfer","urfer"],"er1-f-ih0-n":["murfin","serfin"],"er1-f-iy0-z":["murphy's","murphys"],"er1-f-ah0-s":["resurface","searfoss","surface"],"er1-f-ah0-s-ih0-ng":["resurfacing","surfacing"],"er1-f-s":["serfs","smurfs","surf's"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("er1-f",o);
+})();

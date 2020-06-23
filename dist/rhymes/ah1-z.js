@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ah1-z":["abuzz","because","buzz","buzze","does","fuzz","luz","outdoes","overdoes","twas","was"],"ah1-z-b-iy0":["busby","buzby"],"ah1-z-er0-d-z":["buzzard's","buzzards"],"ah1-z-iy0":["buzzy","fuzzy","muzzey","muzzy","suzie"],"ah1-z-ah0-n":["cousin","doesn't","dozen"],"ah1-z-ah0-n-z":["cousin's","cousins","dozens"],"ah1-z-ah0-n-t":["doesn't","wasn't"],"ah1-z-ah0-l":["guzzle","mazel","muzzle","nuzzle","puzzle","uzzle"],"ah1-z-l-er0":["guzzler","puzzler"],"ah1-z-ah0-l-er0-z":["guzzler's","guzzlers"],"ah1-z-l-er0-z":["guzzler's","guzzlers"],"ah1-z-ah0-l-z":["guzzles","muzzles","puzzles"],"ah1-z-ah0-l-ih0-ng":["guzzling","puzzling"],"ah1-z-l-ih0-ng":["guzzling","puzzling"],"ah1-z-b-ah0-n-d-z":["husband's","husbands"],"ah1-z-ah0-l-d":["muzzled","puzzled"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ah1-z",o);
+})();

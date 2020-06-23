@@ -1,0 +1,4 @@
+(function(){
+ var o = {"er1":["bir","birr","blur","bur","burr","chauffeur","chesshir","cofer","concur","confer","connoisseur","credeur","cur","defer","defleur","demur","der","deter","dirr","dufur","duhr","durr","entrepreneur","err","esquer","eure","fer","feur","fir","fleur","fluhr","francoeur","fur","furr","furrh","gurr","her","hur","incur","infer","inter","jerr","ker","kerr","kuhr","lafleur","lefleur","liqueur","luhr","mccur","mcgirr","mer","monsieur","murr","myrrh","nurr","nurre","o'clair","occur","oclair","payeur","per","pere","prefer","pur","purr","ramseur","recur","redifer","refer","reoccur","restauranteur","restaurateur","saboteur","scher","schnur","schnurr","schreur","schur","schurr","schwer","sher","shir","shirr","shur","shurr","sir","slur","spur","spurr","stir","stuhr","sur","swor","ter","thur","transfer","ur","ver","we're","were","yer"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("er1",o);
+})();

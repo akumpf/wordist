@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ow1-ch":["approach","broach","brooch","caroche","coach","doetsch","encroach","goetsch","poach","reproach","roach","roache","roche"],"ow1-ch-t":["approached","broached","coached","encroached","poached"],"ow1-ch-ih0-z":["approaches","broaches","coach's","coaches","encroaches","roaches"],"ow1-ch-ih0-ng":["approaching","broaching","coaching","encroaching","poaching"],"ow1-ch-iy0":["bocce","borocce","croce","macioce","martocci","rakocy","rakoczy","santa-croce","socci","sochi","tocci"],"ow1-ch-ah0":["boccia","coccia","eudocia","moccia","socha","socia"],"ow1-ch-iy0-ow0":["boccio","dicioccio","moccio","saccoccio"],"ow1-ch-eh2-k":["bocek","plocek"],"ow1-ch-er0":["boetcher","boettcher","cloture","poacher","rocher"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ow1-c",o);
+})();

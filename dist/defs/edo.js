@@ -1,4 +1,4 @@
 (function(){
- var o = {"_mite":{"e":[["noun",["One of the descendants of Esau or Edom, the brother of Jacob; an Idumean."]]],"a":["edomites"],"c":[],"f":0},"_mites":"_edomite"};
+ var o = {"_mite":{"e":[["noun",["One of the descendants of Esau or Edom, the brother of Jacob; an Idumean."]]],"a":["edomites"],"c":[],"p":[[],[]],"f":0},"_mites":"_edomite"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("edo",o);
 })();

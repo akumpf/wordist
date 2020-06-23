@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["noun",["a bloody and prolonged military operation in which American marines landed and defeated Japanese defenders (February and March 1945)."]]],"a":["iwoes"],"c":[],"f":0},"_es":"_iwo"};
+ var o = {"_":{"e":[["noun",["a bloody and prolonged military operation in which American marines landed and defeated Japanese defenders (February and March 1945)."]]],"a":["iwoes"],"c":[],"p":[["ay1-w-ow0"],[]],"f":0},"_es":"_iwo"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("iwo",o);
 })();

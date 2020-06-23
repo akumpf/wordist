@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ao1":["albaugh","allbaugh","alpaugh","alspaugh","anspaugh","ashbaugh","aw","awe","bashaw","baugh","carnaud","caw","chaw","claw","colaw","craugh","craw","czeslaw","daw","dawe","draw","eshbaugh","faw","flaugh","flaw","foresaw","gaugh","gaw","glawe","gnaw","graw","grawe","guffaw","haugh","haw","hawe","inlaw","jaw","law","loblaw","macaw","maw","mccaw","mccraw","mcgagh","mcgaugh","mcgaw","mcgraw","ocaw","paugh","paw","rauh","rawe","redraw","robertshaw","saw","shaw","slaugh","slaw","spaugh","spaw","straw","thaw","traugh","vaugh","waugh","withdraw","xio","yaw"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ao1",o);
+})();

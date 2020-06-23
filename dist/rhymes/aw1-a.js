@@ -1,0 +1,4 @@
+(function(){
+ var o = {"aw1-ah0-b-ah0-l":["allowable","unallowable"],"aw1-ah0-n-s":["allowance","disallowance","reallowance"],"aw1-ah0-n-s-ih0-z":["allowances","disallowances"],"aw1-ah0-n":["aoun","auen","boughan","cowan","cowen","dowen","gowan","gowen","macgowan","mccowan","mccowen","mcgowan","mcgowen","mcgowin","mckowen","rauen"],"aw1-ah0-n-z":["aoun's","bouwens","cowans","cowens","gowans","gowens","mcgowan's","palauans"],"aw1-ah0-l":["auel","bowel","dowel","fowle","grauel","howell","howle","kowal","kowall","lawall","macdowell","mcdowall","mcdowell","powell","sprowle","towel","vowel"],"aw1-ah0-l-z":["bowels","cowles","dowels","fowles","howell's","howells","nowels","powles","towels","vowels","vowles"],"aw1-ah0":["chichauha","daishowa","moua","nowa"],"aw1-ah0-t":["howat","howatt"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("aw1-a",o);
+})();

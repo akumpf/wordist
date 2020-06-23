@@ -1,4 +1,4 @@
 (function(){
- var o = {"_hard":{"e":[["noun",["Cast iron to which nickel has been added to make it resist abrasion."]]],"a":["ni-hards"],"c":[],"f":0},"_resist":{"e":[["noun",["Cast iron consisting of graphite in a matrix of austenite."]]],"a":["ni-resists"],"c":[],"f":0},"_hards":"_ni-hard","_resists":"_ni-resist"};
+ var o = {"_hard":{"e":[["noun",["Cast iron to which nickel has been added to make it resist abrasion."]]],"a":["ni-hards"],"c":[],"p":[["n-iy1-hh-aa1-r-d"],["n-iy1-hh-aa1-r-d-z"]],"f":0},"_resist":{"e":[["noun",["Cast iron consisting of graphite in a matrix of austenite."]]],"a":["ni-resists"],"c":[],"p":[["n-iy1-r-ih0-z-ih1-s-t","n-iy1-r-iy0-z-ih1-s-t"],["n-iy1-r-ih0-z-ih1-s-t-s","n-iy1-r-iy0-z-ih1-s-t-s","n-iy1-r-ih0-z-ih1-s","n-iy1-r-iy0-z-ih1-s"]],"f":0},"_hards":"_ni-hard","_resists":"_ni-resist"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ni-",o);
 })();

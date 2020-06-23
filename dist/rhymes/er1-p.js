@@ -1,0 +1,4 @@
+(function(){
+ var o = {"er1-p-ah0-s":["all-purpose","multipurpose","purpose"],"er1-p":["burp","chirp","earp","hjerpe","serpe","slurp","usurp"],"er1-p-iy0":["burpee","chirpy"],"er1-p-iy0-z":["burpees","herpes"],"er1-p-ih0-ng":["burping","chirping","usurping"],"er1-p-s":["chirps","erps","usurps"],"er1-p-t":["excerpt","usurped"],"er1-p-r-ah0-t":["interpret","misinterpret","reinterpret"],"er1-p-r-ah0-t-s":["interprets","misinterprets"],"er1-p-r-ah0-t-ih0-d":["misinterpreted","reinterpreted"],"er1-p-r-ah0-t-ih0-ng":["misinterpreting","reinterpreting"],"er1-p-ah0-t-r-ey2-t-er0-z":["perpetrator's","perpetrators"],"er1-p-ah0-n-t-s":["serpent's","serpents"],"er1-p-ah0-n-t-ay2-n":["serpentine","turpentine"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("er1-p",o);
+})();

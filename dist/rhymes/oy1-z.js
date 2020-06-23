@@ -1,0 +1,4 @@
+(function(){
+ var o = {"oy1-z":["aloys","annoys","boies","bolshoi's","boy's","boyes","boys","boys'","boyz","croix's","deploys","destroys","eloise","employs","enjoys","hanoi's","illinois","illinois's","joy's","joys","mccoys","moise","moyes","noise","noyes","ploys","poise","roy's","roys","toy's","toys","toys'","troise"],"oy1-z-iy0":["boise","foisy","noisy"],"oy1-z-ah0-n":["boyson","poison"],"oy1-z-ih0-z":["moises","noises"],"oy1-z-ah0-n-ah0-s":["nonpoisonous","poisonous"],"oy1-z-s-ah0-n":["poisson","soisson"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("oy1-z",o);
+})();

@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ey1-ih0-k":["algebraic","altaic","archaic","deltaic","deoxyribonucleic","formulaic","hayek","mosaic","nucleic","passaic","photovoltaic","prosaic","ptolemaic","ribonucleic"],"ey1-ih0-ng":["allaying","arraying","baying","betraying","buffeting","conveying","crocheting","decaying","delaying","dismaying","disobeying","displaying","doomsaying","fraying","graying","greying","haying","heying","laying","nonpaying","obeying","overplaying","paying","playing","portraying","praying","prepaying","preying","purveying","repaying","replaying","saying","slaying","spraying","staying","straying","surveying","swaying","weighing"],"ey1-iy0":["bartolomei","clayey","mazzei","seyi"],"ey1-ih0-n":["fayanne","payin'","playin'","sayin'"],"ey1-ih0-k-s":["mosaics","photovoltaics"],"ey1-ih0-ng-z":["sayings","slayings"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ey1-i",o);
+})();

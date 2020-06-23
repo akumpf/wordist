@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ao1-b":["aube","daub","daube","fob","gaub","glaub","haub","knaub","laub","laube","raub","schaub","schwabe","shaub","staub","taube","traub"],"ao1-b-er0":["auber","sauber","traughber"],"ao1-b-eh2-r-iy0":["auberry","strawberry"],"ao1-b-ih0-n":["aubin","zlobin"],"ao1-b-ah0-l":["auble","bauble","bobble","cauble","fauble","kauble"],"ao1-b-r-iy0":["aubrey","aubry","awbrey"],"ao1-b-ah0-l-z":["baubles","bobbles"],"ao1-b-ah0":["carnauba","catawba"],"ao1-b-r-ih2-jh":["drawbridge","strawbridge"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ao1-b",o);
+})();

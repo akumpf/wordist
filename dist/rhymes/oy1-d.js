@@ -1,0 +1,4 @@
+(function(){
+ var o = {"oy1-d-ah0-l":["alkaloidal","colloidal","rhizoidal","sigmoidal"],"oy1-d":["annoyed","avoid","baroid","bloyd","boyd","boyde","cloyd","deployed","destroyed","devoid","employed","enjoyed","floyd","freud","gloyd","lloyd","loyd","noyd","overjoyed","redeployed","royd","steroid","toyed","underemployed","unemployed","void"],"oy1-d-ah0-b-ah0-l":["avoidable","unavoidable"],"oy1-d-ih0-d":["avoided","voided"],"oy1-d-ih0-ng":["avoiding","voiding"],"oy1-d-z":["avoids","boyd's","freud's","lloyd's","lloyds","lloyds'","voids"],"oy1-d-ah0-n":["boyden","royden","roydon"],"oy1-d-s-t-ah0-n":["boydston","boydstun"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("oy1-d",o);
+})();

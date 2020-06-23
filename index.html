@@ -8,6 +8,7 @@
   .clickword, .fieldtag {cursor: pointer;}
   .clickword:hover, .fieldtag:hover {text-decoration: underline;}
 	.fieldtag {color: #38F; font-style: italic;}
+	.rhyme {color: #b4b; font-style: italic;}
   #exampleDef b {font-size: 1.4em;}
 </style>
 </head>
@@ -144,6 +145,33 @@ $(document).ready(function(){
 			}
 			// --
       $("#exampleDef").html(html);
+			// --
+			let activeword = prevWord;
+			if(data.r && data.r.length>0 && data.r[0].length>0){
+				wordist.getRhymes(data.r[0][0],(err,rhymeKey,rhymes)=>{
+					if(err) return console.log("no rhymes for key:",rhymeKey);
+					if(activeword != prevWord) return console.log("word changed while looking up rhymes.");
+					// --
+					rhymes = rhymes||[];
+					let html2 = "";
+					html2 += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em; border-bottom: 1px solid #EEE; margin-bottom: 7px;'>rhymes:</div><div style='margin-left: 40px;'>";
+					let rhymesAdded = 0;
+					for(let i=0; i<rhymes.length; i++){
+						if(rhymes[i] == activeword) continue;
+						html2 += (rhymesAdded++>0?", ":"")+"<span class='clickword rhyme'>"+rhymes[i]+"</span>";
+					}
+					html2 += "</div>";
+					$("#exampleDef").append(html2);
+					//console.log("Rhymes:",rhymeKey,rhymes);
+					// --
+					$("#exampleDef .clickword.rhyme").click(function(){
+						var newWord = $(this).text();
+						newWord = newWord.toLowerCase().replace(/[^a-z0-9\'\ \-]/g, "");
+						$("#exampleInput").val(newWord);
+						showWordDef(newWord);
+					});
+				});
+			}
       // --
       $("#exampleDef .clickword").click(function(){
         var newWord = $(this).text();

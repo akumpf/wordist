@@ -1,0 +1,4 @@
+(function(){
+ var o = {"aw1":["allow","arau","aue","avow","bao","bilbao","blau","blough","bough","bow","brau","brough","brow","cao","cau","chao","chow","ciao","clough","cow","crough","dao","depauw","disallow","disavow","dow","dowe","endow","fao","fernao","frau","gnau","gow","grau","graue","hao","hau","how","howe","hsiao","kao","kau","kough","kowtow","lao","lau","liao","lough","macao","macau","mao","mau","mcdow","mcgough","meow","mindanao","ndau","now","ow","pao","pathet-lao","pfau","plough","plow","pough","pow","powe","prough","prow","qiao","qingdao","rao","rau","sadao","sao","schlough","schow","scow","shao","shough","skow","sow","sprow","strough","tao","thao","thau","thou","tsao","vow","wow","xiao","yao","yow","zhao","zschau"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("aw1",o);
+})();

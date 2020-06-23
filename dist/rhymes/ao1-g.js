@@ -1,0 +1,4 @@
+(function(){
+ var o = {"ao1-g":["acog","blog","bog","cog","dog","fog","haug","log","zaugg"],"ao1-g-ah0-s-t":["aug","august","auguste"],"ao1-g-er0":["auger","augur","blogger","mauger"],"ao1-g-er0-z":["augers","augurs"],"ao1-g-ih0-ng":["blogging","bogging","clogging","dogging","hogging","jogging","logging"],"ao1-g-d":["bogged","clogged","dogged","logged"],"ao1-g-z":["boggs","bogs","dog's","dogs","dogs'","fogs","logs"],"ao1-g-iy0":["doggie","doggy","smoggy"],"ao1-g-iy0-z":["doggies","doggy's"],"ao1-g-w-uh2-d":["dogwood","hogwood"],"ao1-g-ah0-n":["haugan","maughan"],"ao1-g-l-ah0-n-d":["haugland","hoglund"],"ao1-g-l-ah0-n-d-z":["hoglund's","hoglunds"],"ao1-g-ah0":["mississauga","onondaga"],"ao1-g-ah0-l":["naugle","woggle"],"ao1-g-r-ah0-f-er0":["siderographer","videographer"]};
+ if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("ao1-g",o);
+})();
