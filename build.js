@@ -1,6 +1,6 @@
 console.log("Running jsdict...");
 // --
-var STAGE = 2;
+var STAGE = 1; // either start from scratch (stage 1), or just copy over js (stage 4). others may be half-baked.
 console.log("STAGE: "+STAGE);
 var MAX_THOUSAND_TO_PROCESS = 1000; // words in dictionary ~ 100,000
 // --
@@ -710,7 +710,7 @@ function getAlternativesForWord(w,pos){
 // --
 var masterDict   = {};
 var revLookup    = {};
-var wordsByRhyme = {};
+var wordsByRhyme    = {};
 var pronounceByWord = {};
 // --
 function buildMasterDict(cb){
@@ -1294,6 +1294,33 @@ function buildWordsByRhyme(cb){
   wordsByRhymeKeys = Object.keys(wordsByRhyme);
   console.log("rhyme keys with > 1 word:", wordsByRhymeKeys.length);
   // --
+  // sort rhymes by findability
+  let sortByF = (a,b)=>{
+    if(a[1] < b[1]) return  1;
+    if(a[1] > b[1]) return -1;
+    return 0;
+  }
+  for(let r=wordsByRhymeKeys.length-1; r>=0; r--){
+    let key    = wordsByRhymeKeys[r];
+    let rhymes = wordsByRhyme[key]||[];
+    let rhymesF = [];
+    for(let r=0; r<rhymes.length; r++){
+      let f = (masterDict["_"+rhymes[r]]||{}).f;
+      rhymesF.push([rhymes[r],f||0]);
+    }
+    rhymesF.sort(sortByF);
+    let rhymesFlat = [];
+    for(let r=0; r<rhymesF.length; r++){
+      rhymesFlat.push(rhymesF[r][0]);
+      rhymesFlat.push(rhymesF[r][1]);
+    }
+    wordsByRhyme[key] = rhymesFlat;
+    // --
+    if(key == "ey1"){
+      console.log("'A' RHYMES w/ Findability:",rhymesFlat);
+    }
+  }
+  // --
   return cb();
 }
 function getSubPhonesRhymeKeyFromPhones(phones){
@@ -1410,16 +1437,15 @@ function runStage1(){ // BUILD MASTER/REVERSE DICTIONARIES AND GENERATE LOTS OF 
         buildFieldsDict(function(){
           buildReverseLookup(function(){
             findUndefinedWordsAndUpdateRev(function(){
-              buildWordsByRhyme(function(){
-                addRhymeGroupsToMasterDict(function(){
-                  // --
-                  console.log("Saving master and reverse dictionaries...");
-                  fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
-                  fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
-                  // --
-                  buildMasterDictConnectedness(function(){
-                    // --
-                    console.log("Saving master and reverse dictionaries...");
+              console.log("Saving master and reverse dictionaries...");
+              fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
+              fs.writeFileSync(PATH_DST+"/reverse.json", JSON.stringify(revLookup));
+              // --
+              buildMasterDictConnectedness(function(){
+                // --
+                buildWordsByRhyme(function(){
+                  addRhymeGroupsToMasterDict(function(){
+                    console.log("Saving master dictionary with updates...");
                     fs.writeFileSync(FILE_MASTER,              JSON.stringify(masterDict));
                     // --
                     buildMasterDictPages(function(){

@@ -1,4 +1,4 @@
 (function(){
- var o = {"_er":{"e":[["noun",["The glandular organ in which milk is secreted and stored; -- popularly called the bag in cows and other quadrupeds. See Mamma.","One of the breasts of a woman."]]],"a":["udders"],"c":["anat"],"p":[[],[]],"f":9},"_ered":{"e":[["adje",["Having an udder or udders."]]],"a":[],"c":[],"p":[[]],"f":0},"_erless":{"e":[["adje",["Destitute or deprived of an udder.","Hence, without mother's milk; motherless; as, udderless lambs."]]],"a":[],"c":[],"p":[[]],"f":0},"_ers":"_udder"};
+ var o = {"_er":{"e":[["noun",["The glandular organ in which milk is secreted and stored; -- popularly called the bag in cows and other quadrupeds. See Mamma.","One of the breasts of a woman."]]],"a":["udders"],"c":["anat"],"f":9,"p":[[],[]]},"_ered":{"e":[["adje",["Having an udder or udders."]]],"a":[],"c":[],"f":0,"p":[[]]},"_erless":{"e":[["adje",["Destitute or deprived of an udder.","Hence, without mother's milk; motherless; as, udderless lambs."]]],"a":[],"c":[],"f":0,"p":[[]]},"_ers":"_udder"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("udd",o);
 })();

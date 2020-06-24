@@ -1,4 +1,4 @@
 (function(){
- var o = {"_nagi":{"e":[["noun",["the god who fathered the islands and gods of Japan with his sister Izanami."]]],"a":["izanagis"],"c":["japanese_mythology"],"p":[[],[]],"f":0},"_nami":{"e":[["noun",["The sister and consort of Izanami; mother of the islands and gods of Japan."]]],"a":["izanamis"],"c":["japanese_mythology"],"p":[[],[]],"f":1},"_rd":{"e":[["noun",["A variety of the chamois found in the Pyrenees."]]],"a":["izards"],"c":["zool"],"p":[["ih1-z-er0-d"],[]],"f":1},"_nagis":"_izanagi","_namis":"_izanami","_rds":"_izard"};
+ var o = {"_nagi":{"e":[["noun",["the god who fathered the islands and gods of Japan with his sister Izanami."]]],"a":["izanagis"],"c":["japanese_mythology"],"f":0,"p":[[],[]]},"_nami":{"e":[["noun",["The sister and consort of Izanami; mother of the islands and gods of Japan."]]],"a":["izanamis"],"c":["japanese_mythology"],"f":1,"p":[[],[]]},"_rd":{"e":[["noun",["A variety of the chamois found in the Pyrenees."]]],"a":["izards"],"c":["zool"],"f":1,"p":[["ih1-z-er0-d"],[]]},"_nagis":"_izanagi","_namis":"_izanami","_rds":"_izard"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("iza",o);
 })();

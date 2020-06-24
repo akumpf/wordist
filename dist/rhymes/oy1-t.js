@@ -1,4 +1,4 @@
 (function(){
- var o = {"oy1-t":["adroit","beloit","benoit","boyt","boyte","coit","deloitte","detroit","dutoit","exploit","foyt","hoit","hoyt","maladroit","voight","voigt","voit"],"oy1-t-er0":["boyter","goiter","kreuter","loiter","reconnoiter","reuter","reutter"],"oy1-t-ah0-s":["coitus","wojtas"],"oy1-t-s":["detroit's","deutz","voigts"],"oy1-t-er0-z":["detroiters","reuter's","reuters","reuters'","reuters's"],"oy1-t-iy0":["hoity","toity"]};
+ var o = {"oy1-t":["exploit",28,"adroit",11,"beloit",0,"benoit",0,"boyt",0,"boyte",0,"coit",0,"deloitte",0,"detroit",0,"dutoit",0,"foyt",0,"hoit",0,"hoyt",0,"maladroit",0,"voight",0,"voigt",0,"voit",0],"oy1-t-er0":["loiter",16,"goiter",9,"reconnoiter",3,"boyter",0,"kreuter",0,"reuter",0,"reutter",0],"oy1-t-ah0-s":["coitus",0,"wojtas",0],"oy1-t-s":["detroit's",0,"deutz",0,"voigts",0],"oy1-t-er0-z":["detroiters",0,"reuter's",0,"reuters",0,"reuters'",0,"reuters's",0],"oy1-t-iy0":["hoity",0,"toity",0]};
  if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("oy1-t",o);
 })();

@@ -154,11 +154,13 @@ $(document).ready(function(){
 					// --
 					rhymes = rhymes||[];
 					let html2 = "";
-					html2 += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em; border-bottom: 1px solid #EEE; margin-bottom: 7px;'>rhymes:</div><div style='margin-left: 40px;'>";
+					html2 += "<div style='margin-left: 10px; margin-top: 10px; line-height: 2em; border-bottom: 1px solid #EEE; margin-bottom: 7px;'>rhymes (in order of findability):</div><div style='margin-left: 40px;'>";
 					let rhymesAdded = 0;
 					for(let i=0; i<rhymes.length; i++){
-						if(rhymes[i] == activeword) continue;
-						html2 += (rhymesAdded++>0?", ":"")+"<span class='clickword rhyme'>"+rhymes[i]+"</span>";
+						let rWord = (rhymes[i]||{}).w||"";
+						if(rWord == activeword) continue;
+						let opacity = Math.min(1.0,Math.max(0,(((rhymes[i]||{}).f||0)+10)/30.0));
+						html2 += (rhymesAdded++>0?", ":"")+"<span class='clickword rhyme' style='opacity: "+opacity+";'>"+rWord+"</span>";
 					}
 					html2 += "</div>";
 					$("#exampleDef").append(html2);

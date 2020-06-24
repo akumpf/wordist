@@ -181,7 +181,7 @@ wordist.distillText("It's not everyday that you see a flying goat eating breakfa
 
 ### wordist.getRhymes(rhymeKey, callback)
 
-Get all rhymes for a phoneme rhyme key (returned for most words when you get a definition).
+Get all rhymes for a phoneme rhyme key (returned for most words when you get a definition). The returned array includes both the rhyming words (`r`) and their relative findability in the dictionary (`f`) since it can be useful when bubbling up relevant suggestions to a user.
 
 ```
 // get words that rhyme with the common pronunciation of the word "apple" (which is specified with a rhyme key of "ae1-p-ah0-l", as found when fetching the definition).
@@ -192,7 +192,25 @@ wordist.getRhymes("ae1-p-ah0-l", function exampleDefHandler(err, rhymeKey, rhymi
   // --
   console.log(rhymeKey, rhymingWords);
 });
-// ae1-p-ah0-l  ["appel", "appell", "apple", "cappel", "chapel", "chappel", "chappell", "chapple", "grapple", "happel", "kappel", "mapel", "schappell", "shappell", "snapple", "stapel"]
+// ae1-p-ah0-l 
+(16) [
+  0: {w: "apple",     f: 158}
+  1: {w: "chapel",    f: 23}
+  2: {w: "grapple",   f: 10}
+  3: {w: "appel",     f: 0}
+  4: {w: "appell",    f: 0}
+  5: {w: "cappel",    f: 0}
+  6: {w: "chappel",   f: 0}
+  7: {w: "chappell",  f: 0}
+  8: {w: "chapple",   f: 0}
+  9: {w: "happel",    f: 0}
+ 10: {w: "kappel",    f: 0}
+ 11: {w: "mapel",     f: 0}
+ 12: {w: "schappell", f: 0}
+ 13: {w: "shappell",  f: 0}
+ 14: {w: "snapple",   f: 0}
+ 15: {w: "stapel",    f: 0}
+]
 ```
 
 

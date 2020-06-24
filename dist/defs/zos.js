@@ -1,4 +1,4 @@
 (function(){
- var o = {"_ter":{"e":[["noun",["Shingles."]]],"a":["zosters"],"c":["med"],"p":[["z-aa1-s-t-er0"],[]],"f":4},"_tera":{"e":[["noun",["A genus of plants of the Naiadaceae, or Pondweed family. Zostera marina is commonly known as sea wrack, and eelgrass."]]],"a":["zosteras"],"c":["bot"],"p":[[],[]],"f":2},"_terops":{"e":[["noun",["A genus of birds that comprises the white-eyes. See White-eye."]]],"a":["zosteropses"],"c":["zool"],"p":[[],[]],"f":1},"_ters":"_zoster","_teras":"_zostera","_teropses":"_zosterops"};
+ var o = {"_ter":{"e":[["noun",["Shingles."]]],"a":["zosters"],"c":["med"],"f":4,"p":[["z-aa1-s-t-er0"],[]]},"_tera":{"e":[["noun",["A genus of plants of the Naiadaceae, or Pondweed family. Zostera marina is commonly known as sea wrack, and eelgrass."]]],"a":["zosteras"],"c":["bot"],"f":2,"p":[[],[]]},"_terops":{"e":[["noun",["A genus of birds that comprises the white-eyes. See White-eye."]]],"a":["zosteropses"],"c":["zool"],"f":1,"p":[[],[]]},"_ters":"_zoster","_teras":"_zostera","_teropses":"_zosterops"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("zos",o);
 })();

@@ -1,4 +1,4 @@
 (function(){
- var o = {"_":{"e":[["unkn",["R, the eighteenth letter of the English alphabet, is a vocal consonant. It is sometimes called a semivowel, and a liquid. See Guide to Pronunciation, §§ 178, 179, and 250-254."]]],"a":["r-co-"],"c":[],"p":[["aa1-r"],[]],"f":57}};
+ var o = {"_":{"e":[["unkn",["R, the eighteenth letter of the English alphabet, is a vocal consonant. It is sometimes called a semivowel, and a liquid. See Guide to Pronunciation, §§ 178, 179, and 250-254."]]],"a":["r-co-"],"c":[],"f":57,"p":[["aa1-r"],[]]}};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("r",o);
 })();

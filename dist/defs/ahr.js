@@ -1,4 +1,4 @@
 (function(){
- var o = {"_iman":{"e":[["noun",["The Evil Principle or Being of the ancient Persians; the Prince of Darkness as opposer to Ormuzd, the King of Light."]]],"a":["ahrimen"],"c":[],"p":[[],[]],"f":5},"_imen":"_ahriman"};
+ var o = {"_iman":{"e":[["noun",["The Evil Principle or Being of the ancient Persians; the Prince of Darkness as opposer to Ormuzd, the King of Light."]]],"a":["ahrimen"],"c":[],"f":5,"p":[[],[]]},"_imen":"_ahriman"};
  if(!window.on_defs_cb) console.warn("on_defs_cb?"); else on_defs_cb("ahr",o);
 })();

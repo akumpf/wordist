@@ -1,4 +1,4 @@
 (function(){
- var o = {"uw1-jh-ah0":["baluja","farrugia"],"uw1-jh":["baton-rouge","buege","cluj","fruge","fuge","googe","hooge","huge","juge","kluge","luge","ruge","scrooge","stooge","zuege"],"uw1-jh-ih0-z":["baton-rouge's","bruges","kluge's","stooges"],"uw1-jh-iy0":["cohentannoudji","fuji","saloojee","tetsuji","tsuji"],"uw1-jh-ah0-l":["dugal","pujol"],"uw1-jh-ih0-t":["fugett","fugitt","puget"],"uw1-jh-iy0-ow0":["fujio","refugio"],"uw1-jh-ah0-n-t":["neugent","nugent"]};
+ var o = {"uw1-jh-ah0":["baluja",0,"farrugia",0],"uw1-jh":["huge",29,"luge",1,"baton-rouge",0,"buege",0,"cluj",0,"fruge",0,"fuge",0,"googe",0,"hooge",0,"juge",0,"kluge",0,"ruge",0,"scrooge",0,"stooge",0,"zuege",0],"uw1-jh-ih0-z":["baton-rouge's",0,"bruges",0,"kluge's",0,"stooges",0],"uw1-jh-iy0":["cohentannoudji",0,"fuji",0,"saloojee",0,"tetsuji",0,"tsuji",0],"uw1-jh-ah0-l":["dugal",0,"pujol",0],"uw1-jh-ih0-t":["fugett",0,"fugitt",0,"puget",0],"uw1-jh-iy0-ow0":["fujio",0,"refugio",0],"uw1-jh-ah0-n-t":["neugent",0,"nugent",0]};
  if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("uw1-j",o);
 })();

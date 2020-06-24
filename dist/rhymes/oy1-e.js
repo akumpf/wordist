@@ -1,4 +1,4 @@
 (function(){
- var o = {"oy1-er0":["bloyer","bouyer","boyer","coyer","destroyer","employer","foyer","goyer","hoyer","lawyer","loyer","moyer","multiemployer","neuer","oyer","poyer","royer","sawyer","scheuer","schmoyer","schroyer","shroyer","smoyer","steuer","stoyer","swoyer","troyer","voyer"],"oy1-er0-z":["boyers","destroyers","employer's","employers","employers'","lawyers","moyer's","moyers","soyars"],"oy1-er0-m-ah0-n":["heuerman","heuermann","scheuerman","scheuermann"]};
+ var o = {"oy1-er0":["lawyer",31,"employer",27,"destroyer",15,"sawyer",2,"oyer",1,"bloyer",0,"bouyer",0,"boyer",0,"coyer",0,"foyer",0,"goyer",0,"hoyer",0,"loyer",0,"moyer",0,"multiemployer",0,"neuer",0,"poyer",0,"royer",0,"scheuer",0,"schmoyer",0,"schroyer",0,"shroyer",0,"smoyer",0,"steuer",0,"stoyer",0,"swoyer",0,"troyer",0,"voyer",0],"oy1-er0-z":["boyers",0,"destroyers",0,"employer's",0,"employers",0,"employers'",0,"lawyers",0,"moyer's",0,"moyers",0,"soyars",0],"oy1-er0-m-ah0-n":["heuerman",0,"heuermann",0,"scheuerman",0,"scheuermann",0]};
  if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("oy1-e",o);
 })();

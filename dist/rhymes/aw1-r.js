@@ -1,4 +1,4 @@
 (function(){
- var o = {"aw1-r-ih0-k":["aurich","laurich"],"aw1-r":["blauer","bour","dessauer","dour","dower","flour","hour","jour","krauer","lour","n'dour","our","scour","sour"],"aw1-r-iy0-z":["cowries","maoris"],"aw1-r-z":["dowers","hours","hours'","ours","sours"],"aw1-r-iy0":["dowry","howry","khouri","khoury","koury","loughrey","loughry","lourie","lowrey","lowry","maori"],"aw1-r-ah0-n":["loughran","skowron"],"aw1-r-ih0-ng":["overpowering","towering"]};
+ var o = {"aw1-r-ih0-k":["aurich",0,"laurich",0],"aw1-r":["hour",140,"our",136,"sour",85,"flour",79,"scour",20,"dower",18,"blauer",0,"bour",0,"dessauer",0,"dour",0,"jour",0,"krauer",0,"lour",0,"n'dour",0],"aw1-r-iy0-z":["cowries",0,"maoris",0],"aw1-r-z":["hours",73,"ours",1,"dowers",0,"hours'",0,"sours",0],"aw1-r-iy0":["dowry",5,"maori",1,"howry",0,"khouri",0,"khoury",0,"koury",0,"loughrey",0,"loughry",0,"lourie",0,"lowrey",0,"lowry",0],"aw1-r-ah0-n":["loughran",0,"skowron",0],"aw1-r-ih0-ng":["overpowering",14,"towering",2]};
  if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("aw1-r",o);
 })();

@@ -522,7 +522,12 @@ var wordist = (function(){
     //console.log("rhymes winddow cb!",key,data);
     $.each(data,function(key2,val){
       //var k2 = key2.substring(1);
-      dataCache[_RHYMES+key2] = val;
+      let v2 = val||[];
+      let prettyVals = [];
+      for(let i=0; i<v2.length-1; i+=2){
+        prettyVals.push({w:v2[i],f:v2[i+1]});
+      }
+      dataCache[_RHYMES+key2] = prettyVals;
     });
     // --
     callDataCbsAndRemoveScript(rid,key);

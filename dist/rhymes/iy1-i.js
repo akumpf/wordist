@@ -1,4 +1,4 @@
 (function(){
- var o = {"iy1-ih0-z-ah0-m":["absenteeism","deism","theism"],"iy1-ih0-ng":["agreeing","being","disagreeing","fleeing","foreseeing","freeing","geeing","guaranteeing","keying","kneeing","seeing","sightseeing","skiing","teeing","wellbeing"],"iy1-ih0-ng-z":["being's","beings"],"iy1-ih0-sh-er0":["deisher","kreisher"],"iy1-ih0-s-t":["deist","fiest","freest","leist","reist","weist"],"iy1-iy0":["fujii","iie","ishii","keay","sheehy"],"iy1-ih0-s-t-er0":["keister","reister"]};
+ var o = {"iy1-ih0-z-ah0-m":["theism",5,"deism",2,"absenteeism",0],"iy1-ih0-ng":["being",6807,"seeing",57,"agreeing",36,"disagreeing",0,"fleeing",0,"foreseeing",0,"freeing",0,"geeing",0,"guaranteeing",0,"keying",0,"kneeing",0,"sightseeing",0,"skiing",0,"teeing",0,"wellbeing",0],"iy1-ih0-ng-z":["being's",0,"beings",0],"iy1-ih0-sh-er0":["deisher",0,"kreisher",0],"iy1-ih0-s-t":["deist",3,"fiest",0,"freest",0,"leist",0,"reist",0,"weist",0],"iy1-iy0":["fujii",0,"iie",0,"ishii",0,"keay",0,"sheehy",0],"iy1-ih0-s-t-er0":["keister",0,"reister",0]};
  if(!window.on_rhymes_cb) console.warn("on_rhymes_cb?"); else on_rhymes_cb("iy1-i",o);
 })();
