@@ -42,13 +42,13 @@ wordist.getDef("apple", function exampleDefHandler(err, root, data){
   if(!root) return console.warn("Unexpected result?", root, data);
   if(!data) return console.log("No def for: "+root);
   // --
-  var entries = data.e||[];
-  var alts    = data.a||[];
-  var seeAlso = data.seeAlso||{};
-  var keyWords= data.keyWords||[];
+  var entries        = data.e||[];
+  var altWords       = data.a||[];
+  var seeAlso        = data.seeAlso||{};
+  var keyWords       = data.keyWords||[];
   var pronunciations = data.p||[];
-  var rhymeKeys = data.r||[];
-  console.log(root, alts, entries, seeAlso, keyWords, pronunciations, rhymeKeys, data);
+  var rhymeKeys      = data.r||[];
+  console.log(root, altWords, entries, seeAlso, keyWords, pronunciations, rhymeKeys, data);
 });
 
 // note that pronunciations and rhymeKeys are an array of arrays of strings and map to:
@@ -66,13 +66,13 @@ wordist.getDefClosest("applely", function exampleDefHandler(err, root, data){
   if(!root) return console.warn("Unexpected result?", root, data);
   if(!data) return console.log("No def for: "+root);
   // --
-  var entries = data.e||[];
-  var alts    = data.a||[];
-  var seeAlso = data.seeAlso||{};
-  var keyWords= data.keyWords||[];
+  var entries        = data.e||[];
+  var altWords       = data.a||[];
+  var seeAlso        = data.seeAlso||{};
+  var keyWords       = data.keyWords||[];
   var pronunciations = data.p||[];
-  var rhymeKeys = data.r||[];
-  console.log(root, alts, entries, seeAlso, keyWords, pronunciations, rhymeKeys, data);
+  var rhymeKeys      = data.r||[];
+  console.log(root, altWords, entries, seeAlso, keyWords, pronunciations, rhymeKeys, data);
 });
 ```
 
@@ -87,11 +87,13 @@ wordist.getDefRandom(function exampleDefHandler(err, root, data){
   if(!root) return console.warn("Unexpected result?", root, data);
   if(!data) return console.log("No def for: "+root);
   // --
-  var entries = data.e||[];
-  var alts    = data.a||[];
-  var seeAlso = data.seeAlso||{};
-  var keyWords= data.keyWords||[];
-  console.log(root, alts, entries, seeAlso, keyWords);
+  var entries        = data.e||[];
+  var altWords       = data.a||[];
+  var seeAlso        = data.seeAlso||{};
+  var keyWords       = data.keyWords||[];
+  var pronunciations = data.p||[];
+  var rhymeKeys      = data.r||[];
+  console.log(root, altWords, entries, seeAlso, keyWords, pronunciations, rhymeKeys, data);
 });
 ```
 
@@ -105,9 +107,9 @@ Note that `partOfSpeech` is just the first 4 lettters of the part of speech you 
 
 ```
 // get all the adjectives!
-wordist.getPoSAll("adje", function(err, allAdjectives){
+wordist.getPoSAll("adje", function(err, pos, allWords){
   if(err) return console.warn(err);
-  console.log(allAdjectives);
+  console.log(pos,allWords);
 });
 ```
 
@@ -160,9 +162,9 @@ The findable words are pre-sorted into 100 sections. 1 will return the most comm
 
 ```
 // Get the most findable words in the dictioary!
-wordist.getFindable(1, function(err, findableWords){
+wordist.getFindable(1, function(err, pgNum, findableWords){
    if(err) return console.warn(err);
-   console.log(findableWords);
+   console.log(pgNum,findableWords);
 });
 ```
 
@@ -181,35 +183,29 @@ wordist.distillText("It's not everyday that you see a flying goat eating breakfa
 
 ### wordist.getRhymes(rhymeKey, callback)
 
-Get all rhymes for a phoneme rhyme key (returned for most words when you get a definition). The returned array includes both the rhyming words (`r`) and their relative findability in the dictionary (`f`) since it can be useful when bubbling up relevant suggestions to a user.
+Each definition also returns a set of rhymeKeys (`r`, which is a text representation of the phonemes from the last strong vowel sound in the word) for each pronunciation of the word. You can then use a rhymeKey to get all rhymes for words ending with those same phonemes. 
+
+The returned array includes both the rhyming words (`w`) and their relative findability in the dictionary (`f`) since findability can be a useful metric when bubbling up relevant suggestions to a user.
 
 ```
-// get words that rhyme with the common pronunciation of the word "apple" (which is specified with a rhyme key of "ae1-p-ah0-l", as found when fetching the definition).
-wordist.getRhymes("ae1-p-ah0-l", function exampleDefHandler(err, rhymeKey, rhymingWords){
+// get words that rhyme with the common pronunciation of the word "bubble" (which is specified with a rhyme key of "ah1-b-ah0-l", as found when fetching the definition).
+wordist.getRhymes("ah1-b-ah0-l", function exampleRhymeHandler(err, rhymeKey, rhymingWords){
   if(err)   return console.warn(err); 
   if(!rhymeKey) return console.warn("Unexpected result?", rhymeKey, rhymingWords);
   if(!rhymingWords) return console.log("No rhymes for: "+rhymeKey);
   // --
   console.log(rhymeKey, rhymingWords);
 });
-// ae1-p-ah0-l 
-(16) [
-  0: {w: "apple",     f: 158}
-  1: {w: "chapel",    f: 23}
-  2: {w: "grapple",   f: 10}
-  3: {w: "appel",     f: 0}
-  4: {w: "appell",    f: 0}
-  5: {w: "cappel",    f: 0}
-  6: {w: "chappel",   f: 0}
-  7: {w: "chappell",  f: 0}
-  8: {w: "chapple",   f: 0}
-  9: {w: "happel",    f: 0}
- 10: {w: "kappel",    f: 0}
- 11: {w: "mapel",     f: 0}
- 12: {w: "schappell", f: 0}
- 13: {w: "shappell",  f: 0}
- 14: {w: "snapple",   f: 0}
- 15: {w: "stapel",    f: 0}
+// ah1-b-ah0-l 
+(8) [
+  0: {w: "double",   f: 306}
+  1: {w: "trouble",  f: 104}
+  2: {w: "bubble",   f: 47}
+  3: {w: "stubble",  f: 12}
+  4: {w: "rubble",   f: 6}
+  5: {w: "redouble", f: 2}
+  6: {w: "hubbell",  f: 0}
+  7: {w: "hubble",   f: 0}
 ]
 ```
 
