@@ -67,7 +67,7 @@ var wordist = (function(){
     // negation
     "not","no",
     // too common
-    "as","like","unlike","if","similar","especially","typically","commonly","often","usually","called","used","former","latter","also","pertaining","anything","something","other","supposed","any","resemble","resembling","differs","different","etc","few","many","containing","contains","termed","term","collectively","belonging","use","sets","set","see","esp",
+    "as","like","unlike","if","similar","especially","typically","commonly","specifically","often","usually","called","used","former","latter","also","pertaining","anything","something","other","supposed","any","resemble","resembling","differs","different","etc","few","many","containing","contains","termed","term","collectively","belonging","use","sets","set","see","esp",
   ];
   function distillTextToMeaningfulWordArr(txt,otherUnhelpfulWordsArr){
     otherUnhelpfulWordsArr = otherUnhelpfulWordsArr||[];
@@ -630,6 +630,7 @@ var wordist = (function(){
                 semi = semi.replace(/(^)(also)(\s|$)/g, "");
                 semi = semi.replace(/(^)(typically)(\s|$)/g, "");
                 semi = semi.replace(/(^)(especially)(\s|$)/g, "");
+                semi = semi.replace(/(^)(specifically)(\s|$)/g, "");
                 semi = semi.replace(/(^)(so)(\s|$)/g, "");
 								semi = semi.replace(/(^)(called)(\s|$)/g, "");
                 semi = semi.replace(/(^)(used)(\s|$)/g, "");
@@ -648,11 +649,11 @@ var wordist = (function(){
                 if(semi.indexOf("}")>=0) continue; // something is not quite right
 								// --
 								if(semi.indexOf(root) >= 0){
-									seeAlso.usedBy.push(semi);
+									if(seeAlso.usedBy.indexOf(semi) < 0) seeAlso.usedBy.push(semi);
 								}else if(semi.indexOf(" ") > 0){
-									seeAlso.phrases.push(semi);
+									if(seeAlso.phrases.indexOf(semi) < 0) seeAlso.phrases.push(semi);
 								}else{
-									seeAlso.words.push(semi);
+									if(seeAlso.words.indexOf(semi) < 0) seeAlso.words.push(semi);
 								}
 							}
 						}

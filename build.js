@@ -1,6 +1,6 @@
 console.log("Running jsdict...");
 // --
-var STAGE = 1; // either start from scratch (stage 1), or just copy over js (stage 4). others may be half-baked.
+var STAGE = 4; // either start from scratch (stage 1), or just copy over js (stage 4). others may be half-baked.
 console.log("STAGE: "+STAGE);
 var MAX_THOUSAND_TO_PROCESS = 1000; // words in dictionary ~ 100,000
 // --
