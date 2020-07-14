@@ -616,7 +616,7 @@ var wordist = (function(){
 							let semiAs = semiA.split(",");
 							for(let m=0; m<semiAs.length; m++){
 								let semi = $.trim(semiAs[m]);
-								semi = semi.replace(/(^)(a|as|an|in|the|or|to)(\s|$)/g, "");
+								semi = semi.replace(/(^)(a|as|an|in|the|or|to|and)(\s|$)/g, "");
                 semi = semi.replace(/(^)(a|as|an|in|the|or|to)(\s|$)/g, "");
 								semi = semi.replace(/(\.|\!|\?|\-)/g, "");
 								semi = $.trim(semi).toLowerCase();
@@ -631,10 +631,13 @@ var wordist = (function(){
                 semi = semi.replace(/(^)(typically)(\s|$)/g, "");
                 semi = semi.replace(/(^)(especially)(\s|$)/g, "");
                 semi = semi.replace(/(^)(specifically)(\s|$)/g, "");
+                semi = semi.replace(/(^)(like)(\s|$)/g, "");
                 semi = semi.replace(/(^)(so)(\s|$)/g, "");
 								semi = semi.replace(/(^)(called)(\s|$)/g, "");
                 semi = semi.replace(/(^)(used)(\s|$)/g, "");
                 semi = semi.replace(/(^)(whether)(\s|$)/g, "");
+                semi = semi.replace(/(^)(see (above|below|synonym|definition|def|defs|image|picture|entry))(\s|$)/g, "");
+                semi = semi.replace(/(^)(above|below)(\s|$)/g, "");
                 // --
 								semi = semi.replace(/(^)(a|as|an|so|the|or|to|with|esp|of)(\s|$)/g, ""); // esp = "especially" in dictionary speak
 								// --
